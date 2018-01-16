@@ -19,7 +19,7 @@ if (isset($_POST['connexion'])) {
                 if (mysqli_num_rows($Requete) == 0) {
                     echo '<script language = "JavaScript">
                         alert("Mot de passe ou login incorrect.");
-                            window.location.replace("connexion.html");
+                            window.location.replace("identification.html");
                             </script>';
                 } else {
                     // on ouvre la session avec $_SESSION:
