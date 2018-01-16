@@ -105,10 +105,14 @@ $donnees2 = mysqli_fetch_array($Requete2);
         <td>
             <table>
                 <tr>
-                    <th id="Titre"><?php echo $donnees['Titre']; ?></th>
+                    <th id="Titre"><?php
+                        if ($donnees['type'] == 1)
+                            echo $donnees['Titre']; ?></th>
                 </tr>
                 <tr>
-                    <td id="Description"><?php echo $donnees['Description']; ?></td>
+                    <td id="Description"><?php
+                        if ($donnees['type'] == 1)
+                            echo $donnees['Description']; ?></td>
                 </tr>
             </table>
         </td>
