@@ -1,13 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1061fb84-9a20-4696-97f9-7ac57acf29b7" name="Default" comment="Afficher profil">
+    <list default="true" id="1061fb84-9a20-4696-97f9-7ac57acf29b7" name="Default" comment="Integration + logo">
+      <change beforePath="" afterPath="$PROJECT_DIR$/CODE HTML READ MORE.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/css/JiSlider.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/css/font-awesome.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/css/owl.carousel.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/css/simpleLightbox.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/identification.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/annonce.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/apple.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/arrow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/banana.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/c1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/c2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/c3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/c4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g10.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g11.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g12.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g13.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g14.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g15.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g16.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g17.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g18.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g19.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g20.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g21.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g22.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g23.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g24.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g25.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g26.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/g9.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/lemon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/logo1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/orange.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/pomme.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/quotes.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/search.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/serv1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/serv2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/serv3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/serv4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/serv5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/serv6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/serv7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/serv8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/services.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/t1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/t2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/t3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/t4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/JiSlider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/SmoothScroll.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/easing.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/jquery-2.1.4.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/jquery.wmuSlider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/move-top.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/owl.carousel.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/js/simpleLightbox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pomme.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/w3layouts-License.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/accueil_testco.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/affichage_prod.php" afterPath="$PROJECT_DIR$/affichage_prod.php" />
-      <change beforePath="$PROJECT_DIR$/connexion.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/inscription.html" afterPath="$PROJECT_DIR$/inscription.html" />
-      <change beforePath="$PROJECT_DIR$/trait_login.php" afterPath="$PROJECT_DIR$/trait_login.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,17 +151,27 @@
         <entry file="file://$PROJECT_DIR$/identification.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="550">
-              <caret line="272" column="7" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="272" selection-end-column="7" />
+              <caret line="266" column="7" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="266" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="43" column="68" lean-forward="true" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+              <caret line="43" column="68" lean-forward="false" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="owl.carousel.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/owl.carousel.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -94,7 +181,7 @@
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
-              <caret line="131" column="5" lean-forward="false" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="5" />
+              <caret line="155" column="5" lean-forward="false" selection-start-line="155" selection-start-column="1" selection-end-line="155" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -187,7 +274,7 @@
             <path>
               <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
               <item name="pommepomme" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -203,6 +290,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="C:/wamp64/bin/php/php7.1.9/php.exe" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\images" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -233,7 +325,7 @@
       <option name="presentableId" value="Default" />
       <updated>1516017057337</updated>
       <workItem from="1516017064367" duration="8521000" />
-      <workItem from="1516090445477" duration="10143000" />
+      <workItem from="1516090445477" duration="10421000" />
     </task>
     <task id="LOCAL-00001" summary="connexion">
       <created>1516028320313</created>
@@ -270,19 +362,27 @@
       <option name="project" value="LOCAL" />
       <updated>1516096952819</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Integration + logo">
+      <created>1516108161864</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1516108161864</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18664000" />
+    <option name="totallyTimeSpent" value="18942000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.49791667" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.50677085" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.50208336" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -311,7 +411,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="connexion" />
     <MESSAGE value="Afficher profil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Afficher profil" />
+    <MESSAGE value="Integration + logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integration + logo" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -456,7 +559,7 @@
     <entry file="file://$PROJECT_DIR$/identification.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
-          <caret line="272" column="7" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="272" selection-end-column="7" />
+          <caret line="266" column="7" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="266" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -464,7 +567,7 @@
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="131" column="5" lean-forward="false" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="5" />
+          <caret line="155" column="5" lean-forward="false" selection-start-line="155" selection-start-column="1" selection-end-line="155" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -472,7 +575,15 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="43" column="68" lean-forward="true" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+          <caret line="43" column="68" lean-forward="false" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/owl.carousel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding />
         </state>
       </provider>
