@@ -26,7 +26,7 @@ if (isset($_POST['connexion'])) {
                     $_SESSION["pseudo"] = $Pseudo; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     echo '<script language = "JavaScript">
                         alert("Connexion effectuée");
-                            window.location.replace("affichage_prod.php");
+                            window.location.replace("index.php");
                             </script>';
                 }
             }

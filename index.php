@@ -1,9 +1,4 @@
-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
@@ -48,16 +43,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                 </button>
                 <div class="logo">
-                    <img src="images/logo1.png"/>
+                    <img src="images/logo_litte.png"/>
                 </div>
             </div>
 
             <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                 <nav>
                     <ul class="nav navbar-nav" style="background-color:green;">
-                        <li class="active"><a href="index.html">ACCUEIL</a></li>
-                        <li><a href="inscription.html">INSCRIPTION</a></li>
-                        <li><a href="identification.html" ">IDENTIFICATION</a></li>
+
+                        <li class="active"><a href="index.php">ACCUEIL</a></li>
+
+
+                        <li>
+                            <a href="/traitements/traitement/create_user.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                        </li>
+                        <li>
+                            <a href="identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                        </li>
+                        <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                        </li>
+                        <li>
+                            <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                        </li>
                     </ul>
                 </nav>
             </div>
