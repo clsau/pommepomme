@@ -52,9 +52,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                 <nav>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php">ACCUEIL</a></li>
-                        <li><a href="inscription.html">INSCRIPTION</a></li>
-                        <li><a href="identification.html">IDENTIFICATION</a></li>
+                        <li><a href="index.php">ACCUEIL</a></li>
+
+
+                        <li>
+                            <a href="inscription.html"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                        </li>
+                        <li>
+                            <a href="identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                        </li>
+                        <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                        </li>
+                        <li>
+                            <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                        </li>
                     </ul>
                 </nav>
             </div>
