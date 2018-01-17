@@ -251,6 +251,8 @@ th {
   }
   .label {
     border: 1px solid #000;
+   
+
   }
   .table {
     border-collapse: collapse !important;
@@ -2502,9 +2504,13 @@ legend {
 }
 label {
   display: inline-block;
+  display: block;
+    width: 200;
+    float: left;
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
+
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
