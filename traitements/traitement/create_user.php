@@ -40,10 +40,7 @@ $user->Description = $data->Description;
 
 if($user->create_user()){
         echo '"message": "Vous avez bien été inscrit avec succés"';
-}
- 
-// if unable to update the product, tell the user
-else{
+} else{
         echo '"message": "Vous etes nuls"';
 }
 

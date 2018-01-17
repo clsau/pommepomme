@@ -45,7 +45,6 @@ class userModel{
 			// echo $query;
 			    // prepare query statement
 			    $stmt = $this->conn->prepare($query);
-			 
 			    // sanitize
 			    //$this->id_user=htmlspecialchars(strip_tags($this->id_user));
 			    $this->mdp=htmlspecialchars(strip_tags($this->mdp));
