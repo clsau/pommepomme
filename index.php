@@ -28,96 +28,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- Body -->
 <body>
-
 <!-- header    MENU  -->
-<div class="header-bottom">
-    <div class="container-fluid">
-        <nav class="navbar navbar-default">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="logo">
-                    <img src="images/logo_litte.png"/>
-                </div>
-            </div>
 
-            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-                <nav>
-                    <ul class="nav navbar-nav" style="background-color:green;">
+<div class="container-fluid">
+    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
 
-                        <li><a href="index.php">ACCUEIL</a></li>
-                        <li>
-                            <a href="inscription.html"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
-                        </li>
-                        <li>
-                            <a href="identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                        </li>
-                        <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                        </li>
-                        <li>
-                            <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="logo" id="LeLogo">
+                <a href="index.php"><img src="images/logo_litte.png" alt="LOGO"/></a>
             </div>
-            <!-- /.navbar-collapse -->
-        </nav>
-    </div>
+        </div>
+
+        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+            <nav>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                    </li>
+                    <li>
+                        <a href="identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                    </li>
+                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                    </li>
+                    <li>
+                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                    </li>
+                    <li style="margin-top:15px;"><select name="departement" size="1">
+                            <option value="departement" selected>Departement</option>
+                            <option value="33">Gironde - 33</option>
+                            <option value="17">Charente-Maritime - 17</option>
+                            <option value="16">Charente -16</option>
+                            <option value="40">Landes - 40</option>
+                        </select>
+                    </li>
+                    <li style="margin-top:15px;margin-left:10px;"><input type='submit'
+                                                                         value='Rechercher des producteurs'
+                                                                         align="center">
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
 </div>
+</body>
+
 <!-- //header A REDUIRE  -->
 
 
 <!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-<section>
-    <br>
-    <center>
-        <form action="/action_page.php" style="margin-top:150px;">
-            <fieldset>
-                <legend align="center"> Choisissez le departement de recherche</legend>
-                <br>
-                <select name="departement" size="1">
-                    <option value="departement" selected>Departement</option>
-                    <option value="33">Gironde - 33</option>
-                    <option value="17">Charente-Maritime - 17</option>
-                    <option value="16">Charente -16</option>
-                    <option value="40">Landes - 40</option>
-                </select>
-                <br>
-                <br>
-                <input type='submit' value='Rechercher' align="center">
-                <input type="reset" align="center">
-            </fieldset>
-        </form>
-    </center>
 
 
-</section>
-
-<!--/about   A SUPRIMER LE ABOUT-->
-<!--<div class="about" id="about">
-	<div class="container">
-		
-			<h3>IMAGE OU COULEUR DE FOND</h3>
-	
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>-->
 <!--//about-->
 
 
 <!-- services section -->
-<section class="service-w3ls" id="services">
+<section class="service-w3ls" id="services" style="margin-top:5px;">
     <div class="container">
-        <h3 class="heading"> Astuces</h3>
+        <h3 class="heading"> Pourquoi aller sur livrer-les-tous ? </h3>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
-            <h4 class="slideanim">Voir les anonces</h4>
             <div class="ch-grid slideanim">
                 <div>
                     <div class="ch-item ch-img-1">
@@ -127,10 +97,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
+            <h5 class="slideanim"> Voir les producteurs près de chez vous </h5>
+
 
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
-            <h4 class="slideanim">Bons plans</h4>
             <div class="ch-grid slideanim">
                 <div>
                     <div class="ch-item ch-img-2">
@@ -140,10 +111,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
+            <h5 class="slideanim"> Acheter directement chez le producteur </h5>
 
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
-            <h4 class="slideanim">Conserver vos produits</h4>
             <div class="ch-grid slideanim">
                 <div>
                     <div class="ch-item ch-img-3">
@@ -153,10 +124,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
+            <h5 class="slideanim"> Manger des produits de qualité </h5>
 
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
-            <h4 class="slideanim">Livraison</h4>
             <div class="ch-grid slideanim">
                 <div>
                     <div class="ch-item ch-img-4">
@@ -166,25 +137,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
             </div>
+            <h5 class="slideanim"> Soutenir l'agriculture locale </h5>
             <div class="clearfix"></div>
         </div>
     </div>
 </section>
 
-<div style="margin-top:200px;">
-
-
+<div style="margin-top:0px;background-color: #A1D067;">
 </div>
 
 
 <!-- footer -->
 <div class="footer">
-    <div class="container" style="margin-top:30px;">
+    <div class="container" style="margin-top:5px;">
         <div class="col-md-6 footernav">
             <div class="agileits-social">
-                <ul><a href="#home" class="scroll">ACCUEIL</a></ul>
-                <ul><a href="#about" class="scroll">INSCRIPTION</a></ul>
-                <ul><a href="#services" class="scroll">IDENTIFICATION</a></ul>
+                <ul>
+                    <a href="inscription.php"
+                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                </ul>
+                <ul>
+                    <a href="identification.html"
+                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                </ul>
+                <ul><a href="affichage_prod.php"
+                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                </ul>
+                <ul>
+                    <a href="deconnexion.php"
+                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                </ul>
             </div>
         </div>
         <div class="col-md-6 footernav">
@@ -201,7 +183,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- //footer -->
 <!--//////////////////////////           FIN -->
-
 
 <!-- bootstrap-pop-up -->
 <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">

@@ -33,89 +33,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- Body -->
 <body>
-
 <!-- header    MENU  -->
-<div class="header-bottom">
-    <div class="container-fluid">
-        <nav class="navbar navbar-default">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="logo">
-                    <img src="images/logo_litte.png"/>
-                </div>
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-                <nav>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.php">ACCUEIL</a></li>
-                        <li><a href="inscription.html">INSCRIPTION</a></li>
-                        <li><a href="identification.html">IDENTIFICATION</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
+<div class="container-fluid">
+    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
 
-        <div class="head-search">
-            <form action="#" method="post">
-                <div class="formborder">
-                    <input type="text" placeholder="Search..." name="Search..." required="">
-                    <input type="submit" value="">
-                </div>
-            </form>
+            <div class="logo" id="LeLogo">
+                <a href="index.php"><img src="images/logo_litte.png" alt="LOGO"/></a>
+            </div>
         </div>
 
-    </div>
+        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+            <nav>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                    </li>
+                    <li>
+                        <a href="identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                    </li>
+                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                    </li>
+                    <li>
+                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                    </li>
+                    <li style="margin-top:15px;"><select name="departement" size="1">
+                            <option value="departement" selected>Departement</option>
+                            <option value="33">Gironde - 33</option>
+                            <option value="17">Charente-Maritime - 17</option>
+                            <option value="16">Charente -16</option>
+                            <option value="40">Landes - 40</option>
+                        </select>
+                    </li>
+                    <li style="margin-top:15px;margin-left:10px;"><input type='submit'
+                                                                         value='Rechercher des producteurs'
+                                                                         align="center">
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
 </div>
-<!-- //header A REDUIRE  -->
 
-
-<!-- BASE DE FOND DU MENU -->
-<section class="service-w3ls" id="services">
-    <h1></h1>
-</section>
-
-
-<!--/about   A SUPRIMER LE ABOUT-->
-<div class="about" id="about">
-    <div class="container">
-
-        <h3>Inscription</h3>
-
-    </div>
-    <div class="clearfix"></div>
-</div>
-</div>
-<!--//about-->
+</body>
 
 
 <!-- services section -->
-<section class="identificationUser" id="identificationUser">
-    <form action="#" method="post">
+
+<section class="service-w3ls" id="services" style="margin-top:5px;">
+    <h3 class="heading"> Inscription </h3>
+    <form action="#" method="post" class="formInscription">
         <div>
-            <label>Login :</label>
+            <label>Nom d'utilisateur :</label>
             <input type="text" id="login" required/>
-        </div>
-        <div>
-            <label>Mot de passe :</label>
-            <input type="password" id="mdp" required/>
         </div>
         <div>
             <label>Nom :</label>
             <input type="text" id="nom" required/>
         </div>
         <div>
-            <label>Prenom :</label>
+            <label>Prénom :</label>
             <input type="text" id="prenom" required/>
+        </div>
+        <div>
+            <label>Mot de passe :</label>
+            <input type="password" id="mdp" required/>
         </div>
         <div>
             <label>Adresse mail :</label>
@@ -156,22 +141,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <!-- footer -->
-<div class="footer">
-    <div class="container">
+<div class="footer" style="margin-top:1px;">
+    <div class="container" style="margin-top:1px;">
         <div class="col-md-6 footernav">
             <div class="agileits-social">
                 <ul>
-
-
-                    <li><a href="#home" class="scroll">ACCUEIL</a></li>
-                    <li><a href="#about" class="scroll">INSCRIPTION</a></li>
-                    <li><a href="#services" class="scroll">IDENTIFICATION</a></li>
-
+                    <a href="inscription.php"
+                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                </ul>
+                <ul>
+                    <a href="identification.html"
+                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                </ul>
+                <ul><a href="affichage_prod.php"
+                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                </ul>
+                <ul>
+                    <a href="deconnexion.php"
+                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
                 </ul>
             </div>
         </div>
-        <div class="col-md-6 copyright">
-            <p>© 2017 Fruit Land. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+        <div class="col-md-6 footernav">
+            <div class="agileits-social">
+                <ul><a href="#home" class="scroll">MENTIONS LEGALES</a></ul>
+            </div>
+        </div>
+        <div class="col-md-6 footernav">
+            <div class="agileits-social">
+                <ul><a href="#home" class="scroll">CONTACTS</a></ul>
+            </div>
         </div>
     </div>
 </div>
@@ -179,6 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//////////////////////////           FIN -->
 
 
+<!-- bootstrap-pop-up -->
 <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -205,12 +205,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //bootstrap-pop-up -->
 
 <!-- Default-JavaScript-File -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 <!-- //Default-JavaScript-File -->
 
 <!-- Banner Slider js script file-->
-<script src="js/JiSlider.js"></script>
+<script src="../js/JiSlider.js"></script>
 <script>
     $(window).load(function () {
         $('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: false}).addClass('ff')
@@ -236,8 +236,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //Banner Slider js script file-->
 
 <!-- required-js-files-->
-<link href="css/owl.carousel.css" rel="stylesheet">
-<script src="js/owl.carousel.js"></script>
+<link href="../css/owl.carousel.css" rel="stylesheet">
+<script src="../js/owl.carousel.js"></script>
 <script>
     $(document).ready(function () {
         $("#owl-demo").owlCarousel({
@@ -253,14 +253,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//required-js-files-->
 
 <!-- Light box js-file-->
-<script src="js/simpleLightbox.js"></script>
+<script src="../js/simpleLightbox.js"></script>
 <script>
     $('.w3layouts_gallery_grid a').simpleLightbox();
 </script>
 <!-- //Light box js-file-->
 
 <!-- clients js file-->
-<script src="js/jquery.wmuSlider.js"></script>
+<script src="../js/jquery.wmuSlider.js"></script>
 <script>
     $('.example1').wmuSlider();
 </script>
@@ -278,9 +278,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //scrolling script -->
 
 <!-- Stars scrolling script -->
-<script src="js/SmoothScroll.min.js"></script>
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script src="../js/SmoothScroll.min.js"></script>
+<script type="text/javascript" src="../js/move-top.js"></script>
+<script type="text/javascript" src="../js/easing.js"></script>
 <!-- here stars scrolling icon -->
 <script type="text/javascript">
     $(document).ready(function () {
@@ -299,6 +299,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 <!-- //here ends scrolling icon -->
 <!-- //Ends scrolling script -->
+
 </body>
 <!-- //Body -->
 </html>
