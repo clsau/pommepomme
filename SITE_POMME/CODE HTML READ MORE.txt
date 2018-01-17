@@ -1,3 +1,0 @@
-<div class="more">
-				<a href="#" class="hvr-shutter-in-vertical" data-toggle="modal" data-target="#myModal">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-			</div>
