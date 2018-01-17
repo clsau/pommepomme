@@ -51,9 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <nav>
                     <ul class="nav navbar-nav" style="background-color:green;">
 
-                        <li class="active"><a href="index.php">ACCUEIL</a></li>
-
-
+                        <li><a href="index.php">ACCUEIL</a></li>
                         <li>
                             <a href="inscription.html"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                         </li>

@@ -71,6 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <!-- /.navbar-collapse -->
         </nav>
+        ('
 
         <div class="head-search">
             <form action="#" method="post">
