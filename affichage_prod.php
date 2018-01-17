@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
                         <li>
-                            <a href="inscription.html"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                            <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                         </li>
                         <li>
                             <a href="identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
