@@ -10,17 +10,17 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
 
     <!-- default css files -->
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
-    <link href="css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
-    <link href="css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
-    <link rel="stylesheet" href="css/font-awesome.min.css"/><!-- Font awesome css file -->
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
+    <link href="../Vue/css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
+    <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
+    <link rel="stylesheet" href="../Vue/css/font-awesome.min.css"/><!-- Font awesome css file -->
+    <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
     <!--web font-->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+    <link href="../Vue/fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
           rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
+    <link href="../Vue/fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
           rel="stylesheet">
     <!--//web font-->
 
@@ -28,6 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- Body -->
 <body>
+
 <!-- header    MENU  -->
 
 <div class="container-fluid">
@@ -36,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="navbar-header">
 
             <div class="logo" id="LeLogo">
-                <a href="index.php"><img src="images/logo_litte.png" alt="LOGO"/></a>
+                <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
             </div>
         </div>
 
@@ -47,26 +48,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                     </li>
                     <li>
-                        <a href="identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                        <a href="../Vue/identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
                     </li>
                     <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
                     </li>
                     <li>
                         <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
                     </li>
-                    <li style="margin-top:15px;"><select name="departement" size="1">
-                            <option value="departement" selected>Departement</option>
-                            <option value="33">Gironde - 33</option>
-                            <option value="17">Charente-Maritime - 17</option>
-                            <option value="16">Charente -16</option>
-                            <option value="40">Landes - 40</option>
-                        </select>
-                    </li>
-                    <li style="margin-top:15px;margin-left:10px;"><input type='submit'
-                                                                         value='Rechercher des producteurs'
-                                                                         align="center">
-                    </li>
-                </ul>
+                     <li style="margin-top:15px;">  
+                            <?php //Connection avec la BDD.
+$mysqli = mysqli_connect("localhost", "root", "root", "Pomme");
+$request = mysqli_query($mysqli, "SELECT * FROM departement");?>
+<form method="GET" action="recherche.php">
+<select name="cboDept">
+<?php while($donnees = mysqli_fetch_array($request)){?>
+  <option name="dpt" value="<?php echo $donnees['departement_code']; ?>"><?php echo $donnees['departement_nom']; ?></option>
+<?php }?>
+</select>
+<?php
+mysqli_close($mysqli); //deconnection de mysql
+?>
+                        </li>
+                        <li style="margin-top:15px;margin-left:10px;">  <input type='submit' name='recherche' value='Rechercher' align="center" ></li></form>
+                        </ul>
             </nav>
         </div>
         <!-- /.navbar-collapse -->
@@ -157,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                        class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                 </ul>
                 <ul>
-                    <a href="identification.html"
+                    <a href="../Vue/identification.html"
                        class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
                 </ul>
                 <ul><a href="affichage_prod.php"
@@ -195,7 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div>
                 <div class="modal-body">
-                    <img src="images/banana.png" alt=" " class="img-responsive"/>
+                    <img src="../Vue/images/banana.png" alt=" " class="img-responsive"/>
                     <p>Ut enim ad minima veniam, quis nostrum
                         exercitationem ullam corporis suscipit laboriosam,
                         nisi ut aliquid ex ea commodi consequatur? Quis autem
@@ -211,12 +215,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //bootstrap-pop-up -->
 
 <!-- Default-JavaScript-File -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="../Vue/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../Vue/js/bootstrap.js"></script>
 <!-- //Default-JavaScript-File -->
 
 <!-- Banner Slider js script file-->
-<script src="js/JiSlider.js"></script>
+<script src="../Vue/js/JiSlider.js"></script>
 <script>
     $(window).load(function () {
         $('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: false}).addClass('ff')
@@ -242,8 +246,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //Banner Slider js script file-->
 
 <!-- required-js-files-->
-<link href="css/owl.carousel.css" rel="stylesheet">
-<script src="js/owl.carousel.js"></script>
+<link href="../Vue/css/owl.carousel.css" rel="stylesheet">
+<script src="../Vue/js/owl.carousel.js"></script>
 <script>
     $(document).ready(function () {
         $("#owl-demo").owlCarousel({
@@ -259,14 +263,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//required-js-files-->
 
 <!-- Light box js-file-->
-<script src="js/simpleLightbox.js"></script>
+<script src="../Vue/js/simpleLightbox.js"></script>
 <script>
     $('.w3layouts_gallery_grid a').simpleLightbox();
 </script>
 <!-- //Light box js-file-->
 
 <!-- clients js file-->
-<script src="js/jquery.wmuSlider.js"></script>
+<script src="../Vue/js/jquery.wmuSlider.js"></script>
 <script>
     $('.example1').wmuSlider();
 </script>

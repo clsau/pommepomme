@@ -11,11 +11,11 @@ session_start();
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
 
     <!-- default css files -->
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
-    <link href="css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
-    <link href="css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
-    <link rel="stylesheet" href="css/font-awesome.min.css"/><!-- Font awesome css file -->
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
+    <link href="../Vue/css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
+    <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
+    <link rel="stylesheet" href="../fonts/font-awesome.min.css"/><!-- Font awesome css file -->
+    <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
     <!--web font-->
@@ -44,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                 </button>
                 <div class="logo">
-                    <img src="images/logo_litte.png"/>
+                    <img src="../Vue/images/logo_litte.png"/>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                         </li>
                         <li>
-                            <a href="identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                            <a href="../Vue/identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
                         </li>
                         <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
                         </li>

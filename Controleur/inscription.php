@@ -15,11 +15,11 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
 
     <!-- default css files -->
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
-    <link href="css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
-    <link href="css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
-    <link rel="stylesheet" href="css/font-awesome.min.css"/><!-- Font awesome css file -->
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
+    <link href="../Vue/css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
+    <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
+    <link rel="stylesheet" href="../Vue/fonts/font-awesome.min.css"/><!-- Font awesome css file -->
+    <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
     <!--web font-->
@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="navbar-header">
 
             <div class="logo" id="LeLogo">
-                <a href="index.php"><img src="images/logo_litte.png" alt="LOGO"/></a>
+                <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
             </div>
         </div>
 
@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                     </li>
                     <li>
-                        <a href="identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                        <a href="../Vue/identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
                     </li>
                     <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
                     </li>
@@ -150,7 +150,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                        class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                 </ul>
                 <ul>
-                    <a href="identification.html"
+                    <a href="../Vue/identification.html"
                        class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
                 </ul>
                 <ul><a href="affichage_prod.php"
@@ -179,6 +179,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <!-- bootstrap-pop-up -->
+<!--
+
 <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -205,11 +207,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //bootstrap-pop-up -->
 
 <!-- Default-JavaScript-File -->
+<!--
 <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
 <!-- //Default-JavaScript-File -->
 
 <!-- Banner Slider js script file-->
+<!--
 <script src="../js/JiSlider.js"></script>
 <script>
     $(window).load(function () {
@@ -236,6 +240,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //Banner Slider js script file-->
 
 <!-- required-js-files-->
+<!--
 <link href="../css/owl.carousel.css" rel="stylesheet">
 <script src="../js/owl.carousel.js"></script>
 <script>
@@ -253,6 +258,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//required-js-files-->
 
 <!-- Light box js-file-->
+<!--
 <script src="../js/simpleLightbox.js"></script>
 <script>
     $('.w3layouts_gallery_grid a').simpleLightbox();
@@ -260,6 +266,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //Light box js-file-->
 
 <!-- clients js file-->
+<!--
 <script src="../js/jquery.wmuSlider.js"></script>
 <script>
     $('.example1').wmuSlider();
@@ -267,6 +274,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //clients js file -->
 
 <!-- scrolling script -->
+<!--
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
         $(".scroll").click(function (event) {
@@ -278,10 +286,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //scrolling script -->
 
 <!-- Stars scrolling script -->
+<!--
 <script src="../js/SmoothScroll.min.js"></script>
 <script type="text/javascript" src="../js/move-top.js"></script>
 <script type="text/javascript" src="../js/easing.js"></script>
 <!-- here stars scrolling icon -->
+<!--
 <script type="text/javascript">
     $(document).ready(function () {
         /*
