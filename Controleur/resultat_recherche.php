@@ -2,18 +2,18 @@
 <html lang="en">
 <!-- Head -->
 <head>
-<title>Fruit land an Agriculture Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Livrer-les-tous</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="Fruit land a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 
 <!-- default css files -->
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
 	<link href="css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
 	<link href="css/simpleLightbox.css" rel="stylesheet" type="text/css" /><!-- gallery css file -->
-	<link rel="stylesheet" href="css/font-awesome.min.css" /><!-- Font awesome css file -->
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../Vue/css/font-awesome.min.css" /><!-- Font awesome css file -->
+	<link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
 <!-- default css files -->
 	
 <!--web font-->
@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="icon-bar"></span>
 				  </button>
 					<div class="logo" id="LeLogo">
-					 <a href="index.html"><img src="logo1.png" alt="LOGO" /></a>
+					 <a href="index.html"><img src="../Vue/images/logo1.png" alt="LOGO" /></a>
 					</div>
 				</div>
 			

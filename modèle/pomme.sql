@@ -1,81 +1,77 @@
 CREATE TABLE IF NOT EXISTS `departement`
 (
-  `departement_id` int(11) NOT NULL AUTO_INCREMENT,
+  `departement_id` int(3) NOT NULL AUTO_INCREMENT,
   `departement_code` varchar(3) CHARACTER SET utf8 DEFAULT NULL,
   `departement_nom` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`departement_id`),
-  KEY `departement_code` (`departement_code`));
+  PRIMARY KEY (`departement_id`));
 
-  	DROP TABLE IF EXISTS `code_postal`;
+DROP TABLE IF EXISTS `code_postal`;
 CREATE TABLE IF NOT EXISTS `code_postal` (
-  `id_CP` varchar(7) NOT NULL,
-  `CP` int(5) NOT NULL,
-  `Nom_commune` varchar(50) NOT NULL,
-  `id_dpt` VARCHAR(2) NOT NULL,
+  `code_postal_id` varchar(5) NOT NULL,
+  `code_postal_nom` int(5) NOT NULL,
+  `code_postal_commune` varchar(50) NOT NULL,
+  `code_postal_departement_id` int(3) NOT NULL,
+PRIMARY KEY(‘code_postal_id’),
   CONSTRAINT `fk_Dpt`
-    FOREIGN KEY (`id_dpt`)
+    FOREIGN KEY (`code_postal_departement_id`)
     REFERENCES `Pomme`.`departement` (`departement_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-DROP TABLE user;
-   CREATE TABLE `Pomme`.`user` (
-   `id_user` int(11) NOT NULL,
-  `login` varchar(25) NOT NULL,
-  `mdp` varchar(30) NOT NULL,
-  `type` int(1) NOT NULL,
-  `Nom` VARCHAR(45) NOT NULL,
-  `Prenom` VARCHAR(45) NULL,
-  `Tel` INT(10) NULL,
-  `Mail` VARCHAR(100) NULL,
-  `Adresse` VARCHAR(100) NULL,
-  `Id_CP` INT NULL,
-  `Titre` VARCHAR(60) NULL,
-  `Description` VARCHAR(5000) NULL,
-  PRIMARY KEY (`id_user`),
+    ON UPDATE NO ACTION);
+
+  CREATE TABLE IF NOT EXISTS `Pomme`.`users` (
+  `user_id` int(11) NOT NULL,
+  `user_login` varchar(25) NOT NULL,
+  `user_mdp` varchar(30) NOT NULL,
+  `user_type` int(1) NOT NULL,
+  `user_nom` VARCHAR(45) NOT NULL,
+  `user_prenom` VARCHAR(45) NULL,
+  `user_tel` INT(10) NULL,
+  `user_mail` VARCHAR(100) NULL,
+  `user_adresse` VARCHAR(100) NULL,
+  `user_code_postal_id` INT NULL,
+  `user_titre` VARCHAR(60) NULL,
+  `user_description` VARCHAR(5000) NULL,
+  PRIMARY KEY (`user_id`),
   CONSTRAINT `fk_Cp`
-    FOREIGN KEY (`Id_CP`)
-    REFERENCES `Pomme`.`code_postal` (`id_CP`)
+    FOREIGN KEY (`user_code_postal_id`)
+    REFERENCES `Pomme`.`code_postal` (`code_postal_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 
   ;
-drop TABLE Categorie;
-  CREATE TABLE `Pomme`.`Categorie` (
-  `idCategorie` INT NOT NULL,
-  `NomCategorie` VARCHAR(45) NOT NULL,
-  `PereCategorie` VARCHAR(45) NULL,
-  PRIMARY KEY (`idCategorie`),
-   CONSTRAINT `fk_Produit_6`
-    FOREIGN KEY (`PereCategorie`)
-    REFERENCES `Pomme`.`Categorie` (`idCategorie`)
+drop TABLE categorie;
+  CREATE TABLE `Pomme`.`categorie` (
+  `categorie_id` INT NOT NULL,
+  `categorie_nom` VARCHAR(45) NOT NULL,
+  `categorie_pere` INT NULL,
+  PRIMARY KEY (`categorie_id`),
+   CONSTRAINT `fk_categorie`
+    FOREIGN KEY (`categorie_pere`)
+    REFERENCES `Pomme`.`categorie` (`categorie_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
   );
 
 
 
-DROP TABLE Produit;
-  CREATE TABLE `Pomme`.`Produit` (
-  `idProduit` INT NOT NULL,
-  `idProducteur` INT NOT NULL,
-  `NomProduit` VARCHAR(150) NOT NULL,
-  `DescriptionProduit` VARCHAR(5000) NULL,
-  `PhotoProduit` VARCHAR(100) NULL,
-  `PrixProduit` DECIMAL(5,3) NOT NULL,
-  `StockProduit` INT NOT NULL,
-  `UniteProduit` VARCHAR(50) NOT NULL,
-  `Valeur_UniteProduit` DECIMAL(5,2) NOT NULL,
-  `IdCategorieProduit` INT NOT NULL,
-  PRIMARY KEY (`idProduit`),
-  INDEX `fk_Produit_1_idx` (`idProducteur` ASC),
-  CONSTRAINT `fk_Produit_1`
-    FOREIGN KEY (`idProducteur`)
-    REFERENCES `Pomme`.`Producteur` (`idProducteur`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-		 CONSTRAINT `fk_Produit_5`
-    FOREIGN KEY (`IdCategorieProduit`)
-    REFERENCES `Pomme`.`Categorie` (`idCategorie`)
+DROP TABLE produit;
+  CREATE TABLE `Pomme`.`produit` (
+  `produit_id` INT NOT NULL,
+  `produit_user_id` INT(11) NOT NULL,
+  `produit_nom` VARCHAR(150) NOT NULL,
+  `produit_description` VARCHAR(5000) NULL,
+  `produit_photo` VARCHAR(100) NULL,
+  `produit_prix` DECIMAL(5,3) NOT NULL,
+  `produit_stock` INT NOT NULL,
+  `produit_unite` VARCHAR(50) NOT NULL,
+  `produit_valeur_unite` DECIMAL(5,2) NOT NULL,
+  `produit_categorie_id` INT NOT NULL,
+  PRIMARY KEY (`produit_id`),
+  INDEX `fk_Produit_1_idx` (`produit_user_id` ASC),
+  CONSTRAINT `fk_Produit_1` FOREIGN KEY (`user_id`) REFERENCES `Pomme`.`user` (`user_id`)
+  ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Produit_5` FOREIGN KEY (`produit_categorie_id`)
+    REFERENCES `Pomme`.`categorie` (`categorie_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
