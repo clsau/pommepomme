@@ -15,18 +15,16 @@ include_once 'Models/prodModel.php';
 // get database connection
 $database = new database();
 $db = $database->getConnection();
+$mysqli = mysqli_connect("localhost", "root", "", "Pomme");
 $product = new prodModel($db);
-//$Pseudo = $_SESSION["pseudo"];
-//$Requete = mysqli_query($mysqli, "SELECT id_user FROM users  WHERE login = '" . $Pseudo . "'");
-//$donnees = mysqli_fetch_array($Requete);
-// get id of user to be edited
+$Pseudo = $_SESSION["pseudo"];
 $data = json_decode(file_get_contents("php://input"));
 
 //$data = json_decode($json,TRUE);
 echo $data->produit_prix;
 
 // set ID property of user to be edited
-$product->produit_user_id = 2;//$donnees['id_user'];
+$product->produit_user_login = $_SESSION['pseudo'];
 $product->produit_nom = $data->produit_nom;
 $product->produit_description = $data->produit_description;
 $product->produit_photo = $data->produit_photo;

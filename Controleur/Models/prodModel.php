@@ -2,13 +2,9 @@
 
 class prodModel
 {
-
-    // database connection and table name
     public $produit_user_id;
     public $produit_nom;
-
-    // object properties
-    // public $produit_id;
+    public $produit_user_login;
     public $produit_description;
     public $produit_photo;
     public $produit_prix;
@@ -42,8 +38,17 @@ class prodModel
 			                 produit_unite = :produit_unite,
 			                 produit_valeur_unite = :produit_valeur_unite,
 			                produit_categorie_id = :produit_categorie_id;';
+        $query_id = 'SELECT user_id FROM users  WHERE user_login = :produit_user_login';
 
         // prepare query statement
+        echo $this->produit_user_login;
+        $quid = $this->conn->prepare($query_id);
+        $quid->bindParam(':produit_user_login', $this->produit_user_login);
+        $quid->execute();
+        $row = $quid->fetchObject();
+        echo $row->user_id;
+
+
         $stmt = $this->conn->prepare($query);
         // sanitize
         $this->produit_user_id = htmlspecialchars(strip_tags($this->produit_user_id));
@@ -57,7 +62,7 @@ class prodModel
         $this->produit_categorie_id = htmlspecialchars(strip_tags($this->produit_categorie_id));
 
         // bind new values
-        $stmt->bindParam(':produit_user_id', $this->produit_user_id);
+        $stmt->bindParam(':produit_user_id', $row->user_id);
         $stmt->bindParam(':produit_nom', $this->produit_nom);
         $stmt->bindParam(':produit_description', $this->produit_description);
         $stmt->bindParam(':produit_photo', $this->produit_photo);
