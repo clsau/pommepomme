@@ -4,15 +4,18 @@
     License: Creative Commons Attribution 3.0 Unported
     License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
 <!DOCTYPE html>
 <html lang="en">
-<!-- Head -->
+
+<!-- HEAD paramètres de base -->
 <head>
+    <!-- paramètres de base responsive design -->
     <title>Livrer-les-tous</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="keywords" content="Fruit land a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <meta name="keywords" content="Livrer-les-tous"/>
+    <!-- paramètres de base responsive design -->
 
     <!-- default css files -->
     <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
@@ -22,9 +25,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
+    <!-- incorporation du framework angular, et des javascripts correspondants -->
     <script src="../angular-1.6.6/angular.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="inscriptionCtlr.js"></script>
+    <!-- incorporation du framework angular, et des javascripts correspondants -->
 
     <!--web font-->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
@@ -33,18 +38,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           rel="stylesheet">
     <!--//web font-->
 
-
 </head>
+<!-- HEAD paramètres de base -->
 
-<!-- Body -->
+<!-- BODY -->
 <body ng-app="AppModule" ng-controller="InscriptionCtrl">
-<!-- header    MENU  -->
 
-<div class="container-fluid">
+<!-- Barre de MENU du haut -->
+
     <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
-        <!-- Brand and toggle get grouped for better mobile display -->
+       
         <div class="navbar-header">
-
             <div class="logo" id="LeLogo">
                 <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
             </div>
@@ -64,7 +68,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
                     </li>
-                    <li style="margin-top:15px;"><select name="departement" size="1">
+                    <li style="margin-top:15px;">
+                            <select name="departement" size="1">
                             <option value="departement" selected>Departement</option>
                             <option value="33">Gironde - 33</option>
                             <option value="17">Charente-Maritime - 17</option>
@@ -79,17 +84,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
             </nav>
         </div>
-        <!-- /.navbar-collapse -->
     </nav>
-</div>
 
-</body>
+<!-- barre de MENU du haut  -->
 
 
 <!-- services section -->
 
 <section class="service-w3ls" id="services" style="margin-top:5px;" ng-init="init()" >
+
     <h3 class="heading"> Inscription </h3>
+
+<div class="inscriptionForm">
     <form>
         <div>
             <label>login :</label>
@@ -122,6 +128,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div>
             <label>Code postal :</label>
             <input type="number" id="CP" ng-model="item.cp" required maxlength="5"/>
+        </div>
+        <div>
             <label>Ville :</label>
             <input type="text" id="Ville" ng-model="item.ville" required/>
         </div>
@@ -135,14 +143,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div>
             <label>Description de votre entreprise :</label>
-            <input type="text" id="Description" ng-model="item.Description"/>
-        </div>
+            <textarea id="Description" ng-model="item.Description"></textarea>
+        </div><br>
         <div>
+            <center>
             <button  ng-click="save()">Inscription</button>
+            </center>
         </div>
-
     </form>
+</div>
+
+
 </section>
+
+<!-- services section -->
 
 
 <!-- footer -->
@@ -182,138 +196,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //footer -->
 <!--//////////////////////////           FIN -->
 
-
-<!-- bootstrap-pop-up -->
-<!--
-
-<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Fruit land</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div>
-                <div class="modal-body">
-                    <img src="images/banana.png" alt=" " class="img-responsive"/>
-                    <p>Ut enim ad minima veniam, quis nostrum
-                        exercitationem ullam corporis suscipit laboriosam,
-                        nisi ut aliquid ex ea commodi consequatur? Quis autem
-                        vel eum iure reprehenderit qui in ea voluptate velit
-                        e.
-                        <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-                            esse quam nihil molestiae consequatur.</i></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //bootstrap-pop-up -->
-
-<!-- Default-JavaScript-File -->
-<!--
-<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap.js"></script>
-<!-- //Default-JavaScript-File -->
-
-<!-- Banner Slider js script file-->
-<!--
-<script src="../js/JiSlider.js"></script>
-<script>
-    $(window).load(function () {
-        $('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: false}).addClass('ff')
-    })
-</script>
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
-<!-- //Banner Slider js script file-->
-
-<!-- required-js-files-->
-<!--
-<link href="../css/owl.carousel.css" rel="stylesheet">
-<script src="../js/owl.carousel.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#owl-demo").owlCarousel({
-            items: 1,
-            lazyLoad: true,
-            autoPlay: true,
-            navigation: false,
-            navigationText: false,
-            pagination: true,
-        });
-    });
-</script>
-<!--//required-js-files-->
-
-<!-- Light box js-file-->
-<!--
-<script src="../js/simpleLightbox.js"></script>
-<script>
-    $('.w3layouts_gallery_grid a').simpleLightbox();
-</script>
-<!-- //Light box js-file-->
-
-<!-- clients js file-->
-<!--
-<script src="../js/jquery.wmuSlider.js"></script>
-<script>
-    $('.example1').wmuSlider();
-</script>
-<!-- //clients js file -->
-
-<!-- scrolling script -->
-<!--
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-            event.preventDefault();
-            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
-        });
-    });
-</script>
-<!-- //scrolling script -->
-
-<!-- Stars scrolling script -->
-<!--
-<script src="../js/SmoothScroll.min.js"></script>
-<script type="text/javascript" src="../js/move-top.js"></script>
-<script type="text/javascript" src="../js/easing.js"></script>
-<!-- here stars scrolling icon -->
-<!--
-<script type="text/javascript">
-    $(document).ready(function () {
-        /*
-            var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-            };
-        */
-
-        $().UItoTop({easingType: 'easeOutQuart'});
-
-    });
-</script>
-<!-- //here ends scrolling icon -->
-<!-- //Ends scrolling script -->
 
 </body>
 <!-- //Body -->
