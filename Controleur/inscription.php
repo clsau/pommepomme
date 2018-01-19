@@ -1,14 +1,14 @@
 <!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
 <head>
-    <title>Fruit land an Agriculture Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <title>Livrer-les-tous</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="keywords" content="Fruit land a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -22,6 +22,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
+    <script src="../angular-1.6.6/angular.min.js"></script>
+    <script src="../Config/app.js"></script>
+    <script src="inscriptionCtlr.js"></script>
+
     <!--web font-->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
           rel="stylesheet">
@@ -29,10 +33,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           rel="stylesheet">
     <!--//web font-->
 
+
 </head>
 
 <!-- Body -->
-<body>
+<body ng-app="AppModule" ng-controller="InscriptionCtrl">
 <!-- header    MENU  -->
 
 <div class="container-fluid">
@@ -83,57 +88,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- services section -->
 
-<section class="service-w3ls" id="services" style="margin-top:5px;">
+<section class="service-w3ls" id="services" style="margin-top:5px;" ng-init="init()" >
     <h3 class="heading"> Inscription </h3>
-    <form action="#" method="post" class="formInscription">
+    <form>
         <div>
-            <label>Nom d'utilisateur :</label>
-            <input type="text" id="login" required/>
+            <label>login :</label>
+            <input type="text" id="login" ng-model="item.login" required/>
         </div>
+         <div>
+            <label>Mot de passe :</label>
+            <input type="password" id="mdp" ng-model="item.pass" required/>
         <div>
             <label>Nom :</label>
-            <input type="text" id="nom" required/>
+            <input type="text" id="nom" ng-model="item.nom" required/>
         </div>
         <div>
             <label>Prénom :</label>
-            <input type="text" id="prenom" required/>
-        </div>
-        <div>
-            <label>Mot de passe :</label>
-            <input type="password" id="mdp" required/>
+            <input type="text" id="prenom" ng-model="item.prenom" required/>
         </div>
         <div>
             <label>Adresse mail :</label>
-            <input type="email" id="mail" required/>
+            <input type="email" id="mail" ng-model="item.mail" required/>
         </div>
         <div>
             <label>Confirmer l'adresse mail :</label>
-            <input type="email" id="mailconf" required/>
+            <input type="email" id="mailconf" ng-model="item.mailconf" required/>
+            <div ng-if="!item.verif" style="color:red; font-size="10px;">verifier la saisie de votre mail</div>
         </div>
         <div>
             <label>Adresse postale :</label>
-            <input type="text" id="adresse" required/>
+            <input type="text" id="adresse" ng-model="item.adresse" required/>
         </div>
         <div>
             <label>Code postal :</label>
-            <input type="number" id="CP" required maxlength="5"/>
+            <input type="number" id="CP" ng-model="item.cp" required maxlength="5"/>
             <label>Ville :</label>
-            <input type="text" id="Ville" required/>
+            <input type="text" id="Ville" ng-model="item.ville" required/>
         </div>
         <div>
             <label>Numéro de téléphone :</label>
-            <input type="tel" id="Tel" required/>
+            <input type="tel" id="Tel" ng-model="item.tel" required/>
         </div>
         <div>
             <label>Titre de votre profil producteur :</label>
-            <input type="text" id="Titre"/>
+            <input type="text" id="Titre" ng-model="item.titre" />
         </div>
         <div>
             <label>Description de votre entreprise :</label>
-            <input type="text" id="Description" class="#"/>
+            <input type="text" id="Description" ng-model="item.Description"/>
         </div>
         <div>
-            <button type="submit">Inscription</button>
+            <button  ng-click="save()">Inscription</button>
         </div>
 
     </form>
