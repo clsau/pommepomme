@@ -172,6 +172,11 @@ $donnees2 = mysqli_fetch_array($Requete2);
         <input type="submit" name="modifier" value="modifier"/>
     </div>
 </form>
+<form action="../Vue/create_product.html" method="post">
+    <div align="center">
+        <input type="submit" name="AjouterProduit" value="Ajouter un produit"/>
+    </div>
+</form>
 <?php
 mysqli_close($mysqli); //deconnection de mysql
 ?>
