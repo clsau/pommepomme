@@ -57,12 +57,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                      <li style="margin-top:15px;">  
                             <?php //Connection avec la BDD.
-$mysqli = mysqli_connect("localhost", "root", "root", "Pomme");
+$mysqli = mysqli_connect("localhost", "root", "", "pomme");
 $request = mysqli_query($mysqli, "SELECT * FROM departement");?>
 <form method="GET" action="recherche.php">
 <select name="cboDept">
 <?php while($donnees = mysqli_fetch_array($request)){?>
-  <option name="dpt" value="<?php echo $donnees['departement_code']; ?>"><?php echo $donnees['departement_nom']; ?></option>
+  <option name="departement" value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
 <?php }?>
 </select>
 <?php
