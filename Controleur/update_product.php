@@ -15,7 +15,6 @@ include_once 'Models/prodModel.php';
 // get database connection
 $database = new database();
 $db = $database->getConnection();
-
 $product = new prodModel($db);
 $Pseudo = $_SESSION["pseudo"];
 $data = json_decode(file_get_contents("php://input"));
