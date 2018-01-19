@@ -3,9 +3,9 @@
 
 if (isset($_GET['recherche'])) {
             $departement = htmlentities($_GET['cboDept'], ENT_QUOTES, "ISO-8859-1"); // le htmlentities() passera les guillemets en entités HTML, ce qui empêchera les injections SQL
-            $mysqli = mysqli_connect("localhost", "root", "root", "Pomme") or die ('Impossible de se connecter');
+            $mysqli = mysqli_connect("localhost", "root", "", "pomme") or die ('Impossible de se connecter');
                 // on fait maintenant la requête dans la base de données pour rechercher si ces données existe et correspondent:
-                $Requete = mysqli_query($mysqli, "SELECT * FROM user WHERE id_CP=(select id_CP From code_postal where id_dpt='" . $departement . "')");
+                $Requete = mysqli_query($mysqli, "SELECT * FROM users WHERE user_code_postal_id=(select code_postal_id From code_postal where code_postal_departement_id='" . $departement . "')");
                 if (mysqli_num_rows($Requete) == 0){ 
                     //echo "dpt:".$departement;
 					echo '<script language = "JavaScript">
