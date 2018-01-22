@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" ng-app="displayProduct">
 <head>
     <title>Fruit land an Agriculture Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +14,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
     <link href="../Vue/css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
     <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
-    <link rel="stylesheet" href="../fonts/font-awesome.min.css"/><!-- Font awesome css file -->
+    <!--  <link rel="stylesheet" href="../Vue/fonts/font-awesome.min.css"/><!-- Font awesome css file -->
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
-
+    <script src="../Vue/js/javanous/display_product.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <!--web font-->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
           rel="stylesheet">
@@ -71,7 +72,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-        ('
 
         <div class="head-search">
             <form action="#" method="post">
@@ -107,9 +107,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <?php //Connection avec la BDD.
 $mysqli = mysqli_connect("localhost", "root", "", "pomme");
 $Pseudo = $_SESSION["pseudo"];
-$Requete = mysqli_query($mysqli, "SELECT * FROM users  WHERE login = '" . $Pseudo . "'");
+$Requete = mysqli_query($mysqli, "SELECT * FROM users  WHERE user_login = '" . $Pseudo . "'");
 $donnees = mysqli_fetch_array($Requete);
-$Requete2 = mysqli_query($mysqli, "SELECT * FROM users, code_postal  WHERE login = '" . $Pseudo . "' AND users.Id_CP = code_postal.id_CP");
+$Requete2 = mysqli_query($mysqli, "SELECT * FROM users, code_postal  WHERE user_login = '" . $Pseudo . "' AND users.user_code_postal_id = code_postal.code_postal_id");
 $donnees2 = mysqli_fetch_array($Requete2);
 ?>
 <table border="3">
@@ -118,13 +118,13 @@ $donnees2 = mysqli_fetch_array($Requete2);
             <table>
                 <tr>
                     <th id="Titre"><?php
-                        if ($donnees['type'] == 1)
-                            echo $donnees['Titre']; ?></th>
+                        if ($donnees['user_type'] == 1)
+                            echo $donnees['user_titre']; ?></th>
                 </tr>
                 <tr>
                     <td id="Description"><?php
-                        if ($donnees['type'] == 1)
-                            echo $donnees['Description']; ?></td>
+                        if ($donnees['user_type'] == 1)
+                            echo $donnees['user_description']; ?></td>
                 </tr>
             </table>
         </td>
@@ -132,35 +132,35 @@ $donnees2 = mysqli_fetch_array($Requete2);
             <table border="3">
                 <tr>
                     <td>Login</td>
-                    <td id="login"><?php echo $donnees['login']; ?></td>
+                    <td id="login"><?php echo $donnees['user_login']; ?></td>
                 </tr>
                 <tr>
                     <td>Nom</td>
-                    <td id="Nom"><?php echo $donnees['Nom']; ?></td>
+                    <td id="Nom"><?php echo $donnees['user_nom']; ?></td>
                 </tr>
                 <tr>
                     <td>Prenom</td>
-                    <td id="Prenom"><?php echo $donnees['Prenom']; ?></td>
+                    <td id="Prenom"><?php echo $donnees['user_prenom']; ?></td>
                 </tr>
                 <tr>
                     <td>Téléphone</td>
-                    <td id="Tel">0<?php echo $donnees['Tel']; ?></td>
+                    <td id="Tel">0<?php echo $donnees['user_tel']; ?></td>
                 </tr>
                 <tr>
                     <td>Mail</td>
-                    <td id="mail">0<?php echo $donnees['Mail']; ?></td>
+                    <td id="mail">0<?php echo $donnees['user_mail']; ?></td>
                 </tr>
                 <tr>
                     <td>Adresse</td>
-                    <td id="adresse"><?php echo $donnees['Adresse']; ?></td>
+                    <td id="adresse"><?php echo $donnees['user_adresse']; ?></td>
                 </tr>
                 <tr>
                     <td>Code postal</td>
-                    <td id="CP"><?php echo $donnees2['CP']; ?></td>
+                    <td id="CP"><?php echo $donnees2['code_postal_code']; ?></td>
                 </tr>
                 <tr>
                     <td>Ville</td>
-                    <td id="Ville"><?php echo $donnees2['Nom_commune']; ?></td>
+                    <td id="Ville"><?php echo $donnees2['code_postal_commune']; ?></td>
                 </tr>
             </table>
         </td>
@@ -172,11 +172,14 @@ $donnees2 = mysqli_fetch_array($Requete2);
         <input type="submit" name="modifier" value="modifier"/>
     </div>
 </form>
-<form action="../Vue/create_product.html" method="post">
+<form action="../Vue/display_products.html" method="post">
     <div align="center">
-        <input type="submit" name="AjouterProduit" value="Ajouter un produit"/>
+        <input type="submit" name="DisplayProduct" value="Gérer ses  produits"/>
     </div>
 </form>
+</div>
+
+
 <?php
 mysqli_close($mysqli); //deconnection de mysql
 ?>
@@ -231,7 +234,7 @@ mysqli_close($mysqli); //deconnection de mysql
             </div>
             <div>
                 <div class="modal-body">
-                    <img src="images/banana.png" alt=" " class="img-responsive" />
+                    <img src="../Vue/images/banana.png" alt=" " class="img-responsive"/>
                     <p>Ut enim ad minima veniam, quis nostrum
                         exercitationem ullam corporis suscipit laboriosam,
                         nisi ut aliquid ex ea commodi consequatur? Quis autem
@@ -247,12 +250,12 @@ mysqli_close($mysqli); //deconnection de mysql
 <!-- //bootstrap-pop-up -->
 
 <!-- Default-JavaScript-File -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="../Vue/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../Vue/js/bootstrap.js"></script>
 <!-- //Default-JavaScript-File -->
 
 <!-- Banner Slider js script file-->
-<script src="js/JiSlider.js"></script>
+<script src="../Vue/js/JiSlider.js"></script>
 <script>
     $(window).load(function () {
         $('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: false}).addClass('ff')
@@ -274,8 +277,8 @@ mysqli_close($mysqli); //deconnection de mysql
 <!-- //Banner Slider js script file-->
 
 <!-- required-js-files-->
-<link href="css/owl.carousel.css" rel="stylesheet">
-<script src="js/owl.carousel.js"></script>
+<link href="../Vue/css/owl.carousel.css" rel="stylesheet">
+<script src="../Vue/js/owl.carousel.js"></script>
 <script>
     $(document).ready(function() {
         $("#owl-demo").owlCarousel({
@@ -291,14 +294,14 @@ mysqli_close($mysqli); //deconnection de mysql
 <!--//required-js-files-->
 
 <!-- Light box js-file-->
-<script src="js/simpleLightbox.js"></script>
+<script src="../Vue/js/simpleLightbox.js"></script>
 <script>
     $('.w3layouts_gallery_grid a').simpleLightbox();
 </script>
 <!-- //Light box js-file-->
 
 <!-- clients js file-->
-<script src="js/jquery.wmuSlider.js"></script>
+<script src="../Vue/js/jquery.wmuSlider.js"></script>
 <script>
     $('.example1').wmuSlider();
 </script>
@@ -316,9 +319,9 @@ mysqli_close($mysqli); //deconnection de mysql
 <!-- //scrolling script -->
 
 <!-- Stars scrolling script -->
-<script src="js/SmoothScroll.min.js"></script>
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script src="../Vue/js/SmoothScroll.min.js"></script>
+<script type="text/javascript" src="../Vue/js/move-top.js"></script>
+<script type="text/javascript" src="../Vue/js/easing.js"></script>
 <!-- here stars scrolling icon -->
 <script type="text/javascript">
     $(document).ready(function() {

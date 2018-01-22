@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="formDisplayProduct" ng-app="formCreateProduct">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          type="text/css"/>
+    <title>Afficher les produits</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="js/javanous/display_product.js"></script>
+    <script src="js/javanous/create_product.js"></script>
+</head>
+<body>
+<div class="container">
+    <div ng-controller="formDisplayCtrl">
+        <h2 class="text-center text-primary">Gestion des produits</h2>
+        <hr>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <table>
+                    <tr>
+                        <td width="700" align="center">
+                            <form name="displayProductForm" class="form-horizontal well form-search">
+
+                                <button type="submit" ng-click="formsubmit(displayProductForm.$valid)"
+                                        ng-disabled="displayProductForm.$invalid"
+                                        class="btn btn-primary">Gérer les produits existant
+                                </button>
+
+                            </form>
+                        </td>
+                        <td width="700" align="center">
+                            <form class="form-horizontal well form-search" action="../Vue/create_product.html"
+                                  method="post">
+
+                                <input class="btn btn-primary" type="submit" name="AjouterProduit"
+                                       value="Ajouter un produit"/>
+
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <table>
+            <tbody ng-repeat="i in products">
+            <tr>
+                <th>Nom</th>
+                <th>{{i.produit_nom}}</th>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{i.produit_description}}</td>
+            </tr>
+            <tr>
+                <td>Photo</td>
+                <td>{{i.produit_photo}}</td>
+            </tr>
+            <tr>
+                <td>Prix</td>
+                <td>{{i.produit_prix}} le {{i.produit_unite}}</td>
+            </tr>
+            <tr>
+                <td>Stock</td>
+                <td>{{i.produit_stock}} {{i.produit_unite}}</td>
+            </tr>
+            <tr>
+                <td>Taille du lot</td>
+                <td>{{i.produit_valeur_unite}} {{i.produit_unite}}</td>
+            </tr>
+            <tr>
+                <td>Categorie</td>
+                <td>{{i.produit_categorie_id}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" ng-click="formsubmit(displayProductForm.$valid)"
+                            ng-disabled="displayProductForm.$invalid"
+                            class="btn btn-primary">Modifier
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <pre ng-model="result">
+                    {{result}}
+                </pre>
+    </div>
+</div>
+</body>
+</html>

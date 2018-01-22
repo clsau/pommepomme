@@ -3,9 +3,6 @@ var app = angular.module('formCreateProduct', []);
 app.controller("formCtrl", ['$scope', '$http', function ($scope, $http) {
     $scope.url = 'http://localhost:63342/pommepomme/Controleur/create_product.php';
     $scope.formsubmit = function (isValid) {
-
-
-        if (isValid) {
             var sent = {
                 "produit_nom": $scope.produit_nom,
                 "produit_description": $scope.produit_description,
@@ -16,9 +13,15 @@ app.controller("formCtrl", ['$scope', '$http', function ($scope, $http) {
                 "produit_unite": $scope.produit_unite,
                 "produit_categorie_id": $scope.produit_categorie_id
             };
-            $http.post($scope.url, sent)
-        } else {
-            alert('Form is not valid');
-        }
+        $http.post($scope.url, sent).success(function (response) {
+            if (response.message == "true") {
+                alert("Produit bien ajouté");
+                window.location.replace("http://localhost:63342/pommepomme/Vue/display_products.html");
+            }
+            else {
+                alert("produit non ajouté. Vérifiez votre saisie");
+            }
+        });
+        //$scope.orderProp = 'age';
     }
 }]);

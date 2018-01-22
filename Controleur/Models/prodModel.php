@@ -41,17 +41,14 @@ class prodModel
         $query_id = 'SELECT user_id FROM users  WHERE user_login = :produit_user_login';
 
         // prepare query statement
-        echo $this->produit_user_login;
         $quid = $this->conn->prepare($query_id);
         $quid->bindParam(':produit_user_login', $this->produit_user_login);
         $quid->execute();
         $row = $quid->fetchObject();
-        echo $row->user_id;
 
 
         $stmt = $this->conn->prepare($query);
         // sanitize
-        $this->produit_user_id = htmlspecialchars(strip_tags($this->produit_user_id));
         $this->produit_nom = htmlspecialchars(strip_tags($this->produit_nom));
         $this->produit_description = htmlspecialchars(strip_tags($this->produit_description));
         $this->produit_photo = htmlspecialchars(strip_tags($this->produit_photo));
@@ -129,6 +126,33 @@ class prodModel
             return true;
         }
         return false;
+    }
+
+    public function read_products()
+    {
+        $query = 'SELECT * FROM 
+			                ' . $this->table_name . '
+			            WHERE
+			              
+			                produit_user_id = :produit_user_id';
+
+        $query_id = 'SELECT user_id FROM users  WHERE user_login = :produit_user_login';
+
+        // prepare query statement
+        $quid = $this->conn->prepare($query_id);
+        $quid->bindParam(':produit_user_login', $this->produit_user_login);
+        $quid->execute();
+        $row = $quid->fetchObject();
+        $stmt = $this->conn->prepare($query);
+
+
+        $stmt->bindParam(':produit_user_id', $row->user_id);
+
+        if ($stmt->execute())
+            return $stmt->fetchAll();
+        print_r($stmt->errorInfo());
+        return null;
+
     }
 }
 
