@@ -16,9 +16,14 @@ include_once 'Models/prodModel.php';
 $database = new database();
 $db = $database->getConnection();
 $product = new prodModel($db);
+$Pseudo = $_SESSION["pseudo"];
 $data = json_decode(file_get_contents("php://input"));
 
+//$data = json_decode($json,TRUE);
+echo $data->produit_prix;
+
 // set ID property of user to be edited
+$product->produit_user_login = $_SESSION['pseudo'];
 $product->produit_nom = $data->produit_nom;
 $product->produit_description = $data->produit_description;
 $product->produit_photo = $data->produit_photo;
@@ -27,20 +32,17 @@ $product->produit_stock = $data->produit_stock;
 $product->produit_unite = $data->produit_unite;
 $product->produit_valeur_unite = $data->produit_valeur_unite;
 $product->produit_categorie_id = $data->produit_categorie_id;
-$product->produit_id = $data->produit_id;
 
 
 $product->produit_prix = (float)$product->produit_prix;
 $product->produit_stock = (int)$product->produit_stock;
 $product->produit_valeur_unite = (float)$product->produit_valeur_unite;
-$product->produit_id = (int)$product->produit_id;
-
-header('Content-Type: application/json');
-if ($product->update_product()) {
-    $response = array('message' => 'true');
-    echo json_encode($response);
+$product->produit_categorie_id = (int)$product->produit_categorie_id;
+if ($product->create_product()) {
+    header('Location: ../Vue/prod_ajout.html');
+    echo '"message": "Produit ajouté"';
 } else {
-    $response = array('message' => 'false');
-    echo json_encode($response);
+    echo '"message": "Produit non zzvzrvzezrvz"';
 }
+
 ?>

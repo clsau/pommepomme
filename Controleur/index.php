@@ -35,9 +35,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-
-            <div class="logo" id="LeLogo">
-                <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            <div class="logo">
+                <img src="../Vue/images/logo_litte.png"/>
             </div>
         </div>
 
@@ -57,7 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                      <li style="margin-top:15px;">  
                             <?php //Connection avec la BDD.
-$mysqli = mysqli_connect("localhost", "root", "", "pomme");
+$mysqli = mysqli_connect("localhost", "root", "", "Pomme");
 $request = mysqli_query($mysqli, "SELECT * FROM departement");?>
 <form method="GET" action="recherche.php">
 <select name="cboDept">
@@ -77,6 +83,7 @@ mysqli_close($mysqli); //deconnection de mysql
     </nav>
 </div>
 </body>
+
 
 <!-- //header A REDUIRE  -->
 
