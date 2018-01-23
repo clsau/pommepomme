@@ -22,13 +22,17 @@ $data = json_decode(file_get_contents("php://input"));
 
 // set ID property of user to be edited
 $product->produit_user_login = $_SESSION['pseudo'];
+if ($data->produit_id == "null")
+    $id = null;
+else {
+    $id = $data->produit_id;
+}
 
-
-if (is_null($product->read_products())) {
+if (is_null($product->read_products($id))) {
     echo '"message": "Produit non zzvzrvzezrvz"';
 } else {
     header('Content-Type: application/json');
-    echo json_encode($product->read_products());
+    echo json_encode($product->read_products($id));
 }
 
 ?>

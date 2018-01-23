@@ -3,7 +3,7 @@ var app = angular.module('formCreateProduct', []);
 app.controller("formCtrl", ['$scope', '$http', function ($scope, $http) {
     $scope.url = 'http://localhost:63342/pommepomme/Controleur/create_product.php';
     $scope.formsubmit = function (isValid) {
-            var sent = {
+        let sent = {
                 "produit_nom": $scope.produit_nom,
                 "produit_description": $scope.produit_description,
                 "produit_prix": $scope.produit_prix,

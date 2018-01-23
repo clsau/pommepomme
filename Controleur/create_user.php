@@ -37,11 +37,13 @@ $user->Description = $data->Description;
 
 
 // create the user
-
-if($user->create_user()){
-        echo '"message": "Vous avez bien été inscrit avec succés"';
-} else{
-        echo '"message": "Vous etes nuls"';
+header('Content-Type: application/json');
+if ($product->create_product()) {
+    $response = array('message' => 'true');
+    echo json_encode($response);
+} else {
+    $response = array('message' => 'false');
+    echo json_encode($response);
 }
 
  ?>
