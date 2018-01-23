@@ -93,7 +93,7 @@ mysqli_close($mysqli); //deconnection de mysql
     <?php
 		$id = $_GET['cboDept'];
 		$mysqli = mysqli_connect("localhost", "root", "", "pomme") or die ('Impossible de se connecter');
-		$Requete2 = mysqli_query($mysqli, "SELECT user_titre, user_code_postal_id, user_nom, user_prenom FROM users WHERE user_code_postal_id=(select code_postal_id From code_postal where code_postal_departement_id='" . $id . "')");
+		$Requete2 = mysqli_query($mysqli,  "SELECT * FROM users WHERE user_code_postal_id=(select code_postal_id From code_postal where code_postal_departement_id='" . $id . "')");
 		
 	?>
 
