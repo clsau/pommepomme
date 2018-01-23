@@ -10,7 +10,7 @@ if (isset($_POST['connexion'])) {
         } else {
             $Pseudo = htmlentities($_POST['login'], ENT_QUOTES, "ISO-8859-1"); // le htmlentities() passera les guillemets en entités HTML, ce qui empêchera les injections SQL
             $MotDePasse = htmlentities($_POST['mdp'], ENT_QUOTES, "ISO-8859-1");
-            $mysqli = mysqli_connect("localhost", "root", "root", "Pomme");
+            $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
             if (!$mysqli) {
                 echo "Erreur de connexion à la base de données.";
             } else {

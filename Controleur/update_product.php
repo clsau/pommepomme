@@ -42,7 +42,7 @@ if ($product->create_product()) {
     header('Location: ../Vue/prod_ajout.html');
     echo '"message": "Produit ajouté"';
 } else {
-    echo '"message": "Produit non zzvzrvzezrvz"';
+    echo '"message": "Produit non ajouté"';
 }
 
 ?>
