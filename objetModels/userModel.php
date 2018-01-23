@@ -137,5 +137,30 @@ class userModel{
 			    }			 
 			     return false ;
 			}
+			
+					public function search($keywords){
+ 
+    // select all query
+    $query =  "SELECT user_nom, user_prenom, user_code_postal_id, user_titre 
+	FROM users WHERE user_code_postal_id=(select code_postal_id FROM code_postal where code_postal_departement_id= ":code_postal_departement_id")";
+ 
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+ 
+    // sanitize
+    $keywords=htmlspecialchars(strip_tags($keywords));
+    $keywords = "%{$keywords}%";
+ 
+    // bind
+    $stmt->bindParam(":code_postal_departement_id", $keywords);
+ 
+   // execute the query
+			    if($stmt->execute()){
+			         //true;
+			         return $stmt;
+			    }			
+    }
+			
+			
 	}
 ?>
