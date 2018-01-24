@@ -46,7 +46,7 @@ app.controller("formDisplayCtrl", ['$scope', '$http', function ($scope, $http) {
             "produit_id": $scope.produit_id
         };
         $http.post($scope.url, sent).success(function (data) {
-            alert("Produit modifié !")
+            alert("Produit modifié !");
             $scope.formsubmit();
         });
     };
