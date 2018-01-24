@@ -96,7 +96,6 @@ class prodModel
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);
-
         // sanitize
 
         $this->produit_nom = htmlspecialchars(strip_tags($this->produit_nom));
