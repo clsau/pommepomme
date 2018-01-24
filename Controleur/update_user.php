@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
@@ -9,11 +9,13 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
  
 // include database and object files
 include_once '../config/database.php';
-include_once '../objetModels/userModel.php';
+include_once 'Models/userModel.php';
 
 // get database connection
 $database = new database();
 $db = $database->getConnection();
+
+//$pseudo = $_SESSION["Pseudo"];
 
 // prepare user object
 $user = new userModel($db);
@@ -22,12 +24,9 @@ $user = new userModel($db);
 $data = json_decode(file_get_contents("php://input"));
  
 // set ID property of user to be edited
-$user->id_user = $data->id_user;
-$user->login = $data->login;
-$user->mdp = $data->mdp;
+
+$user->login = $_SESSION['pseudo'];
 $user->type = $data->type;
-$user->Nom = $data->Nom;
-$user->Prenom = $data->Prenom;
 $user->Tel = $data->Tel;
 $user->Mail = $data->Mail;
 $user->Adresse = $data->Adresse;
@@ -36,18 +35,18 @@ $user->Titre = $data->Titre;
 $user->Description = $data->Description;
 
 
-// update the user
-
+$user->type = (int)$user->type;
+$user->Tel = (int)$user->Tel;
+$user->Id_CP = (int)$user->Id_CP;
 
 // update the product
-if($user->update_user()){
-        echo '"message": "User mis a jour avec succes"';
+header('Content-Type: application/json');
+if ($user->update_user()) {
+    $response = array('message' => 'true');
+    echo json_encode($response);
+} else {
+    $response = array('message' => 'false');
+    echo json_encode($response);
 }
- 
-// if unable to update the product, tell the user
-else{
-        echo '"message": "Update user non executee"';
-}
-
  ?>
 

@@ -167,7 +167,7 @@ $donnees2 = mysqli_fetch_array($Requete2);
     </tr>
 </table>
 <br>
-<form action="modifier_profil.php" method="post">
+<form action="../Vue/modification.html" method="post">
     <div align="center">
         <input type="submit" name="modifier" value="modifier"/>
     </div>

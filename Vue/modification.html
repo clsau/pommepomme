@@ -1,0 +1,145 @@
+<html lang="en">
+<!-- Head -->
+<head>
+    <title>Fruit land an Agriculture Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Fruit land a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+    <script src="js/javanous/app.js"></script>
+    <script src="js/javanous/modificationCtrl.js"></script>
+
+
+    <!-- default css files -->
+    <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
+    <link href="../Vue/css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
+    <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
+    <link rel="stylesheet" href="../Vue/css/font-awesome.min.css"/><!-- Font awesome css file -->
+    <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
+    <!-- default css files -->
+
+    <!--web font-->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
+          rel="stylesheet">
+    <!--//web font-->
+
+
+</head>
+
+<!-- Body -->
+<body ng-app="AppModule" ng-controller="ModificationCtrl">
+<!-- header    MENU  -->
+<div class="header-bottom">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="logo">
+                    <img src="../Vue/images/logo_litte.png"/>
+                </div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                <nav>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.php">ACCUEIL</a></li>
+                        <li><a href="inscription.html">INSCRIPTION</a></li>
+                        <li><a href="identification.html">IDENTIFICATION</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div class="head-search">
+            <form action="#" method="post">
+                <div class="formborder">
+                    <input type="text" placeholder="Search..." name="Search..." required="">
+                    <input type="submit" value="">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<!-- //header A REDUIRE  -->
+
+
+<!-- BASE DE FOND DU MENU -->
+<section class="service-w3ls" id="services">
+    <h1></h1>
+</section>
+
+
+<!--/about   A SUPRIMER LE ABOUT-->
+<div class="about" id="about">
+    <div class="container">
+
+        <h3>Modification</h3>
+
+    </div>
+    <div class="clearfix"></div>
+</div>
+<!--//about-->
+
+
+<!-- services section -->
+<div style="background:black;">
+    <section class="modificationUser" id="modificationUser" ng-init="init()">
+        <form>
+            <fieldset>
+
+                <legend>Modification de Compte :</legend>
+                <br/>
+                <div>
+                    <label for="courriel">Mail :</label>
+                    <input type="email" id="courriel" ng-model="item.mail"/><br/><br/>
+                </div>
+                <div>
+                    <label for="telephone">Telephone :</label>
+                    <input type="text" id="telephone" ng-model="item.tel"/><br/><br/>
+                </div>
+                <div>
+                    <label for="adresse">Adresse :</label>
+                    <input type="text" id="adresse" ng-model="item.adresse"/><br/><br/>
+                </div>
+                <div>
+                    <label for="ville">Ville :</label>
+                    <input type="text" id="ville" ng-model="item.ville"/><br/><br/> <br/>
+                </div>
+                <div>
+                    <label for="codepostale">Code postale :</label>
+                    <input type="text" id="codepostale" ng-model="item.cp"/><br/><br/>
+                </div>
+                <div>
+                    <label for="titre">Titre :</label>
+                    <input type="text" id="titre" ng-model="item.titre"/><br/><br/>
+                </div>
+                <div>
+                    <label for="description">Description :</label>
+                    <input type="text" id="description" ng-model="item.description"/><br/><br/>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+</div>
+<div>
+    <input type="button" ng-click="myFunc()" value="ok"/>
+    <button ng-click="save()">Modification</button>
+</div>
+</body>
+</html>
