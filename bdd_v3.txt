@@ -1,0 +1,73 @@
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS commande (
+  
+commande_id int(11) NOT NULL AUTO_INCREMENT,
+  
+commande_statut varchar(55) NOT NULL,
+  
+commande_date_livraison date NOT NULL,
+  
+commande_lieu varchar(255) DEFAULT NULL,
+  
+commande_date_description varchar(500) NOT NULL,
+  
+commande_users_producteur int(11) NOT NULL,
+  
+commande_contenance int(2) NOT NULL,
+  
+commande_users_client int(11) NOT NULL,
+  
+PRIMARY KEY (commande_id)
+,
+CONSTRAINT `fk_commande_users_producteur`
+    FOREIGN KEY (`commande_users_producteur`)
+    REFERENCES `pomme`.`users` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+CONSTRAINT `fk_commande_users_client`
+    FOREIGN KEY (`commande_users_client`)
+    REFERENCES `pomme`.`users` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION) ;
+
+
+
+INSERT INTO `pomme`.`commande` (`commande_id`, `commande_statut`, `commande_date_livraison`, `commande_lieu`, `commande_date_description`, `commande_users_producteur`, `commande_contenance`, `commande_users_client`) VALUES (NULL, 'En cours', '2018-01-23', 'a talence', 'entre 2h et 3h', '1', '3', '1');
+
+CREATE TABLE IF NOT EXISTS ligne (
+  
+ligne_id int(11) NOT NULL AUTO_INCREMENT,
+  
+ligne_users_client_id int(11) NOT NULL,
+  
+ligne_produit_id int(11) NOT NULL,
+  
+ligne_quantite int(2) NOT NULL,
+ 
+ ligne_commande_id int(11) NOT NULL,
+  
+PRIMARY KEY (ligne_id),
+
+CONSTRAINT `fk_ligne_commande_id`
+    FOREIGN KEY (`ligne_commande_id`)
+    REFERENCES `pomme`.`commande` (`commande_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+CONSTRAINT `fk_ligne_users_client_id`
+    FOREIGN KEY (`ligne_users_client_id`)
+    REFERENCES `pomme`.`users` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+CONSTRAINT `fk_ligne_produit_id`
+    FOREIGN KEY (`ligne_produit_id`)
+    REFERENCES `pomme`.`produit` (`produit_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+INSERT INTO `pomme`.`ligne` (`ligne_id`, `ligne_users_client_id`, `ligne_produit_id`, `ligne_quantite`, `ligne_commande_id`) VALUES (NULL, '1', '1', '1', '1');
