@@ -137,12 +137,73 @@ class userModel{
 			    }			 
 			     return false ;
 			}
+
+    public function identification_user()
+    {
+
+        // update query
+        $query = "SELECT
+							user_id,
+			                user_mdp ,
+			                user_tel,
+			                user_mail,
+			                user_adresse,
+			                user_titre,
+			                user_description,
+			                user_login,
+			                user_type,
+			                user_nom,
+			                user_prenom,
+							user_code_postal_id 
+							
+						FROM " . $this->table_name . "
+			            WHERE
+			                user_login = :login  AND
+							user_mdp = :mdp 
+						LIMIT 1 ";
+
+
+        // echo $query;
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // sanitize
+        $this->mdp = htmlspecialchars(strip_tags($this->mdp));
+        $this->login = htmlspecialchars(strip_tags($this->login));
+
+        $stmt->bindParam(':mdp', $this->mdp);
+        $stmt->bindParam(':login', $this->login);
+
+
+        // execute the query
+        if ($stmt->execute()) {
+            // get retrieved row
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            // set values to object properties
+            $this->user_id = $row['user_id'];
+            $this->user_code_postal_id = $row['user_code_postal_id'];
+
+            $this->user_nom = $row['user_nom'];
+            $this->user_mdp = $row['user_mdp'];
+            $this->user_tel = $row['user_tel'];
+            $this->user_adresse = $row['user_adresse'];
+            $this->user_titre = $row['user_titre'];
+            $this->user_description = $row['user_description'];
+            $this->user_login = $row['user_login'];
+            $this->user_type = $row['user_type'];
+            $this->user_prenom = $row['user_prenom'];
+            $this->user_mail = $row['user_mail'];
+
+        }
+        return false;
+    }
 			
 					public function search($keywords){
  
     // select all query
-    $query =  "SELECT user_nom, user_prenom, user_code_postal_id, user_titre 
-	FROM users WHERE user_code_postal_id=(select code_postal_id FROM code_postal where code_postal_departement_id= ":code_postal_departement_id")";
+                        //$query =  "SELECT user_nom, user_prenom, user_code_postal_id, user_titre
+                        //FROM users WHERE user_code_postal_id=(select code_postal_id FROM code_postal where code_postal_departement_id= ":code_postal_departement_id")";
  
     // prepare query statement
     $stmt = $this->conn->prepare($query);

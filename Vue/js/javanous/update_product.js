@@ -1,4 +1,4 @@
-var app = angular.module('formUpdateProduct', []);
+//var app = angular.module('formUpdateProduct', []);
 
 app.controller("formDisplayCtrl", function ($scope, $http) {
     $scope.update = function (isValid) {

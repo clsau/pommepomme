@@ -1,4 +1,4 @@
-var app = angular.module('formCreateProduct', []);
+//var app = angular.module('formCreateProduct', []);
 
 app.controller("formCtrl", ['$scope', '$http', function ($scope, $http) {
     $scope.url = 'http://localhost:63342/pommepomme/Controleur/create_product.php';

@@ -16,6 +16,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
+    <!-- incorporation du framework angular, et des javascripts correspondants -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="../Config/app.js"></script>
+    <script src="js/javanous/identificationCtlr.js"></script>
+
     <!--web font-->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
           rel="stylesheet">
@@ -26,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <!-- Body -->
-<body>
+<body ng-app="AppModule" ng-controller="IdentificationCtrl">
 <!-- header    MENU  -->
 
 <div class="container-fluid">
@@ -71,17 +76,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- services section -->
 <section class="service-w3ls" id="services" style="margin-top:5px;">
     <h3 class="heading"> Identification </h3>
-    <form action="../Controleur/trait_login.php" method="post">
+    <form>
         <div style="margin-left:35%; margin-top:50px;">
             <label>Login :</label>
-            <input type="text" name="login"/>
+            <input type="text" name="login" ng-model="item.login"/>
         </div>
         <div style="margin-left:35%;margin-top:10px;">
             <label>Mot de passe :</label>
-            <input type="password" name="mdp"/>
+            <input type="password" name="mdp" ng-model="item.pass"/>
         </div>
         <div style="margin-left:35%; margin-top:10px;">
-            <input href="../traitements/traitement/create_user.php" type="submit" name="connexion" value="Connexion"/>
+            <!--<input href="../traitements/traitement/create_user.php" type="submit" name="connexion" value="Connexion"/> -->
+            <input type="button" name="connexion" ng-click="connexion()" value="Connexion"/>
         </div>
 
     </form>

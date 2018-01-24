@@ -1,9 +1,5 @@
-var app = angular.module('formDisplayProduct', []);
-
-app.controller("formDisplayCtrl", ['$scope', '$http', function ($scope, $http) {
-
-
-    $scope.formsubmit = function (isValid) {
+app.controller("formDisplayCtrl", function ($scope, $http, $window) {
+    $scope.displayProduct = function () {
         $scope.url = 'http://localhost:63342/pommepomme/Controleur/display_product.php';
         let sent = {"produit_id": "null"};
         $http.post($scope.url, sent).success(function (data) {
@@ -11,7 +7,7 @@ app.controller("formDisplayCtrl", ['$scope', '$http', function ($scope, $http) {
             $scope.products = data;
         });
     };
-    $scope.update = function (isValid) {
+    $scope.update = function () {
         $scope.url = 'http://localhost:63342/pommepomme/Controleur/display_product.php';
         let sent = {
             "produit_id": event.target.id
@@ -29,10 +25,11 @@ app.controller("formDisplayCtrl", ['$scope', '$http', function ($scope, $http) {
             $scope.produit_categorie_id = $scope.modif[0].produit_categorie_id;
             $scope.produit_id = $scope.modif[0].produit_id;
             $scope.show = true;
+            $window.scrollTo(0, 0);
         });
     };
 
-    $scope.validate = function (isValid) {
+    $scope.validate = function () {
         $scope.url = 'http://localhost:63342/pommepomme/Controleur/update_product.php';
         let sent = {
             "produit_nom": $scope.produit_nom,
@@ -47,7 +44,8 @@ app.controller("formDisplayCtrl", ['$scope', '$http', function ($scope, $http) {
         };
         $http.post($scope.url, sent).success(function (data) {
             alert("Produit modifié !");
-            $scope.formsubmit();
+            $scope.displayProduct();
+
         });
     };
-}]);
+});

@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="formDisplayProduct" ng-app="formCreateProduct" ng-app="formUpdateProduct">
+<html lang="en" ng-app="AppModule">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           type="text/css"/>
     <title>Afficher les produits</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="../Config/app.js"></script>
     <script src="js/javanous/display_product.js"></script>
-    <script src="js/javanous/create_product.js"></script>
-    <script src="js/javanous/update_product.js"></script>
 </head>
 <body>
-<div class="container">
-    <div ng-controller="formDisplayCtrl">
+<div ng-app="AppModule" ng-controller="formDisplayCtrl" class="container">
         <h2 class="text-center text-primary">Gestion des produits</h2>
         <hr>
         <div class="form-group">
@@ -20,13 +18,9 @@
                 <table>
                     <tr>
                         <td width="700" align="center">
-                            <form name="displayProductForm" class="form-horizontal well form-search">
-
-                                <button type="submit" ng-click="formsubmit(displayProductForm.$valid)"
-                                        ng-disabled="displayProductForm.$invalid"
-                                        class="btn btn-primary">Gérer les produits existant
-                                </button>
-
+                            <form class="form-horizontal well form-search">
+                                <input type="button" class="btn btn-primary" ng-click="displayProduct()"
+                                       value="Gérer les produits existant"/>
                             </form>
                         </td>
                         <td width="700" align="center">
@@ -88,7 +82,7 @@
                         </tbody>
                     </table>
                 </td>
-                <td>
+                <td valign="top">
                     <form ng-show="show" class="form-horizontal well form-search">
                         <table>
                             <tbody>
@@ -139,7 +133,6 @@
                 </td>
             </tr>
         </table>
-    </div>
 </div>
 </body>
 </html>
