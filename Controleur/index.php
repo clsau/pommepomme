@@ -1,13 +1,12 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <!-- Head -->
 <head>
-    <title>Fruit land an Agriculture Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <title>Livrer les tous</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="keywords" content="Fruit land a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <meta name="keywords" content="livrer-les-tous"/>
 
     <!-- default css files -->
     <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
@@ -24,10 +23,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           rel="stylesheet">
     <!--//web font-->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="../Config/app.js"></script>
+    <script src="../Vue/js/javanous/search_dept.js"></script>
+
 </head>
 
 <!-- Body -->
-<body>
+<body ng-app="AppModule" >
 
 <!-- header    MENU  -->
 
@@ -47,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
 
-        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse nav-wil" ng-controller="formSearchCtrl" id="bs-example-navbar-collapse-1">
             <nav>
                 <ul class="nav navbar-nav">
                     <li>
@@ -63,20 +66,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </li>
                      <li style="margin-top:15px;">  
                             <?php //Connection avec la BDD.
-$mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-$request = mysqli_query($mysqli, "SELECT * FROM departement");?>
-<form method="GET" action="recherche.php">
-<select name="cboDept">
-<?php while($donnees = mysqli_fetch_array($request)){?>
-  <option name="departement" value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
-<?php }?>
-</select>
-<?php
-mysqli_close($mysqli); //deconnection de mysql
-?>
+                            $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                            $request = mysqli_query($mysqli, "SELECT * FROM departement");?>
+
+                            <form name = "SearchForm">
+                                <select name="cboDept" ng-model="item.cboDept" >
+                                <?php while($donnees = mysqli_fetch_array($request)){?>
+                                <option name="departement" value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
+                                <?php }?>
+                                </select>
+                            <?php
+                        mysqli_close($mysqli); //deconnection de mysql ?>
                         </li>
-                        <li style="margin-top:15px;margin-left:10px;">  <input type='submit' name='recherche' value='Rechercher' align="center" ></li></form>
-                        </ul>
+                        <li style="margin-top:15px;margin-left:10px;"> 
+                         <button type="button" ng-click="formsubmit(item.cboDept)" ng-disabled="SearchForm.$invalid" class="btn btn-primary">Rechercher des producteurs
+                        </button>
+                     </li>
+                 </form>
+                </ul>
             </nav>
         </div>
         <!-- /.navbar-collapse -->
@@ -295,9 +302,9 @@ mysqli_close($mysqli); //deconnection de mysql
 <!-- //scrolling script -->
 
 <!-- Stars scrolling script -->
-<script src="js/SmoothScroll.min.js"></script>
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script src="../Vue/js/SmoothScroll.min.js"></script>
+<script type="text/javascript" src="../Vue/js/move-top.js"></script>
+<script type="text/javascript" src="../Vue/js/easing.js"></script>
 <!-- here stars scrolling icon -->
 <script type="text/javascript">
     $(document).ready(function () {

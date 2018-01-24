@@ -62,7 +62,15 @@ a:focus, a:hover {
 	text-decoration: none;
 	outline: none;
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
 
+th, td {
+    text-align: left;
+    padding: 8px;
+}
 
 .inscriptionForm {
     margin:auto;

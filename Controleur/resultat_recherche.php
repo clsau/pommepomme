@@ -1,13 +1,13 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <!-- Head -->
 <head>
-    <title>Fruit land an Agriculture Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+
+    <title>Résultat de recherche</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="keywords" content="Fruit land a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <meta name="keywords" content="livrer-les-tous"/>
 
     <!-- default css files -->
     <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
@@ -24,10 +24,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           rel="stylesheet">
     <!--//web font-->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="../Config/app.js"></script>
+    <script src="../Vue/js/javanous/display_search.js"></script>
+
+
 </head>
 
 <!-- Body -->
-<body>
+<body ng-app ="AppModule" ng-controller="resultSearch" >
 
 <!-- header    MENU  -->
 
@@ -92,39 +97,31 @@ mysqli_close($mysqli); //deconnection de mysql
 
     <?php
 		$id = $_GET['cboDept'];
-		$mysqli = mysqli_connect("localhost", "root", "", "pomme") or die ('Impossible de se connecter');
-		$Requete2 = mysqli_query($mysqli,  "SELECT * FROM users WHERE user_code_postal_id=(select code_postal_id From code_postal where code_postal_departement_id='" . $id . "')");
+		$mysqli = mysqli_connect("localhost", "root", "", "Pomme") or die ('Impossible de se connecter');
+		$Requete2 = mysqli_query($mysqli, "Select * from users, code_postal where users.user_code_postal_id = code_postal.code_postal_id and code_postal.code_postal_departement_id ='".$id."'");
 		
 	?>
 
 <!--Fin du header -->
 
-	<center>
-	<table style="margin-top:200px;" border="1">
-   <tr>
+	<table style="margin-top:200px;" border="1" >
+    <tr>
 		
 		<th>Titre</th>
 		<th>Nom</th>
        <th>Prénom</th>
        <th>Code Postale</th>
        
-		
-   </tr> 
-<?php while($donnees = mysqli_fetch_array($Requete2)) {   ?>
-	<tr>
-       <td><?php echo $donnees['user_titre'];?></td>
-	   <td><?php echo $donnees['user_nom'];?></td>
-	   <td><?php echo $donnees['user_prenom'];?></td>
-	   <td><?php echo $donnees['user_code_postal_id'];?></td>
+	</tr> 
+
+	<tr ng-repeat="i in listeProducteurs" >
+       <td> {{i.Titre}} </td>
+	   <td> {{i.Nom}} </td>
+	   <td> {{i.Prenom}} </td>
+	   <td> {{i.CP}} </td>
 	</tr>
-	<?php }?>
-	<?
-		mysqli_close($mysqli); //deconnection de mysql
-	?>
-
-</table>
-</center>
-
+	
+    </table>
 
 </section>
 

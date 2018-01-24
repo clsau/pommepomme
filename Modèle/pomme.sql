@@ -18,7 +18,7 @@ PRIMARY KEY(`code_postal_id`),
     ON UPDATE NO ACTION);
 
   CREATE TABLE IF NOT EXISTS `Pomme`.`users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL ,
   `user_login` varchar(25) NOT NULL,
   `user_mdp` varchar(30) NOT NULL,
   `user_type` int(1) NOT NULL,

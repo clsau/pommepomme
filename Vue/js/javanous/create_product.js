@@ -16,12 +16,11 @@ app.controller("formCtrl", ['$scope', '$http', function ($scope, $http) {
         $http.post($scope.url, sent).success(function (response) {
             if (response.message == "true") {
                 alert("Produit bien ajouté");
-                window.location.replace("http://localhost:63342/pommepomme/Vue/display_products.html");
+                window.location.replace("http://localhost:8888/pommepomme/Vue/display_products.html");
             }
             else {
                 alert("produit non ajouté. Vérifiez votre saisie");
             }
         });
-        //$scope.orderProp = 'age';
     }
 }]);
