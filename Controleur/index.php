@@ -18,16 +18,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="../Vue/js/javanous/search_dept.js"></script>
-
 </head>
 
 <!-- Body -->
 <body ng-app="AppModule" >
-
 <!-- header    MENU  -->
-
 <div class="container-fluid">
-    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
+    <nav class="navbar navbar-default" style=" height: 150px">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -43,8 +40,8 @@
         </div>
 
         <div class="collapse navbar-collapse nav-wil" ng-controller="formSearchCtrl" id="bs-example-navbar-collapse-1">
-            <nav>
-                <ul class="nav navbar-nav">
+            <nav >
+                <ul class="nav navbar-nav" >
                     <li>
                         <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                     </li>
@@ -59,19 +56,32 @@
                      <li style="margin-top:15px;">  
                             <?php //Connection avec la BDD.
                             $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-                            $request = mysqli_query($mysqli, "SELECT * FROM departement");?>
+                            $request = mysqli_query($mysqli, "SELECT * FROM departement");
+                            $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+                            ?>
 
                             <form name = "SearchForm">
-                                <select name="cboDept" ng-model="item.cboDept" >
+                                <select name="cboDept" ng-model="item.cboDept">
+                                <option value="" selected> Département</option>
                                 <?php while($donnees = mysqli_fetch_array($request)){?>
+
                                 <option name="departement" value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
+                                <?php }?>
+
+                                </select>
+
+
+                                <select name="categorie" ng-model="item.categorie" hint="Produit" >
+                                <option value="" selected> Produit</option>
+                                <?php while($donnees = mysqli_fetch_array($request1)){?>
+                                <option name="categorie" value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
                                 <?php }?>
                                 </select>
                             <?php
                         mysqli_close($mysqli); //deconnection de mysql ?>
                         </li>
                         <li style="margin-top:15px;margin-left:10px;"> 
-                         <button type="button" ng-click="formsubmit(item.cboDept)" ng-disabled="SearchForm.$invalid" class="btn btn-primary">Rechercher des producteurs
+                         <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)" ng-disabled="SearchForm.$invalid" class="btn btn-primary">Recherche
                         </button>
                      </li>
                  </form>
@@ -94,7 +104,7 @@
 
 
 <!-- services section -->
-<section class="service-w3ls" id="services" style="margin-top:5px;">
+<section class="service-w3ls" id="services" >
     <div class="container">
         <h3 class="heading"> Pourquoi aller sur livrer-les-tous ? </h3>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">

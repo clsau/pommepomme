@@ -14,18 +14,24 @@ include_once '../objetModels/userModel.php';
 $database = new database();
 $db = $database->getConnection();
 
+
 // prepare user object
 $user = new userModel($db);
 
 // get id of user to be edited
 $data = json_decode(file_get_contents("php://input"));
- 
 
 // get keywords
-$keywords=isset($_GET["cboDept"]) ? $_GET["cboDept"] : "";
+
+
+$keywords1=isset($_GET["cboDept"]) ? $_GET["cboDept"] : "";
+ 
+$keywords2=isset($_GET["categorie"]) ? $_GET["categorie"] : "";
+
 // query products
-$stmt = $user->search($keywords);
+$stmt = $user->search($keywords1,$keywords2);
 $num = $stmt->rowCount();
+
 
 // check if more than 0 record found
 if($num>0){
@@ -40,13 +46,16 @@ if($num>0){
         // this will make $row['name'] to
         // just $name only
         extract($row);
+       // extract($row1);
  
         $user_item=array(
             'Nom' => $user_nom,
             'Prenom' => $user_prenom,
-            'CP' => $user_code_postal_id,
-			'Titre' => $user_titre,
-			
+            'CP' => $code_postal_code,
+            'Commune'=>$code_postal_commune,
+            'Titre' => $user_titre,
+            'Produit'=>$produit_nom,
+            'Prix'=>$produit_prix,
         );
  
         array_push($user_arr, $user_item);

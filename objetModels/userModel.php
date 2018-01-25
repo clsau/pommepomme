@@ -197,23 +197,36 @@ class userModel{
         return false;
     }
 			
-	public function search($keywords){
-
+	public function search($keywords1, $keywords2){
 
     // select all query
 
- 	$query = "Select * from users, code_postal where users.user_code_postal_id = code_postal.code_postal_id and code_postal.code_postal_departement_id ='".$keywords."'";
-
+ 	//$query = "Select * from users, code_postal where users.user_code_postal_id = code_postal.code_postal_id and code_postal.code_postal_departement_id ='".$keywords1."'";
  
-    // prepare query statement
+ 	// $query = "SELECT * from produit, users where produit.produit_user_id = users.user_id AND produit_categorie_id ='".$keywords1."' and user_code_postal_id ='".$keywords2."'";
+
+ 	$query = " select *
+ 				from produit
+ 				inner join users on produit.produit_user_id = users.user_id
+				inner join code_postal on users.user_code_postal_id = code_postal.code_postal_id
+				inner join categorie on produit.produit_categorie_id = categorie.categorie_id
+				where code_postal.code_postal_departement_id like '".$keywords1."'
+				and (categorie.categorie_id like '".$keywords2."'or categorie.categorie_pere like '".$keywords2."')";
+
+
+    	// prepare query statement
     $stmt = $this->conn->prepare($query);
 
      // sanitize
-	$keywords=htmlspecialchars(strip_tags($keywords));
- 	$keywords = "%{$keywords}%";
- 
+	$keywords1=htmlspecialchars(strip_tags($keywords1));
+ 	$keywords1 = "%{$keywords1}%";
     // bind
-    $stmt->bindParam(":keywords", $keywords);
+    $stmt->bindParam(":keywords1", $keywords1);
+
+    $keywords2=htmlspecialchars(strip_tags($keywords2));
+ 	$keywords2 = "%{$keywords2}%";
+    // bind
+    $stmt->bindParam(":keywords2", $keywords2);
  
    // execute the query
 			    if($stmt->execute()){

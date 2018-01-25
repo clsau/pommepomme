@@ -31,14 +31,13 @@
 
 
 </head>
-
 <!-- Body -->
-<body ng-app ="AppModule" ng-controller="resultSearch" >
+<body ng-app="AppModule" ng-controller="resultSearch" >
 
 <!-- header    MENU  -->
 
 <div class="container-fluid">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 0px">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -70,7 +69,9 @@
                      <li style="margin-top:15px;">  
                             <?php //Connection avec la BDD.
                             $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-                            $request = mysqli_query($mysqli, "SELECT * FROM departement");?>
+                            $request = mysqli_query($mysqli, "SELECT * FROM departement");
+                            $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+                            ?>
 
                             <form name = "SearchForm">
                                 <select name="cboDept" ng-model="item.cboDept" >
@@ -78,11 +79,18 @@
                                 <option name="departement" value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
                                 <?php }?>
                                 </select>
+
+
+                                <select name="categorie" ng-model="item.categorie" >
+                                <?php while($donnees = mysqli_fetch_array($request1)){?>
+                                <option name="categorie" value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
+                                <?php }?>
+                                </select>
                             <?php
                         mysqli_close($mysqli); //deconnection de mysql ?>
                         </li>
                         <li style="margin-top:15px;margin-left:10px;"> 
-                         <button type="button" ng-click="formsubmit(item.cboDept)" ng-disabled="SearchForm.$invalid" class="btn btn-primary">Rechercher des producteurs
+                         <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)" ng-disabled="SearchForm.$invalid" class="btn btn-primary">Recherche
                         </button>
                      </li>
                  </form>
@@ -91,10 +99,12 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
-
-
 </div>
 </body>
+
+
+
+
 
 <!-- Fin du header -->
 
@@ -105,34 +115,39 @@
 
 
 <!-- services section -->
-<section class="service-w3ls" id="services" style="margin-top:5px;">
-
-    <?php
-		$id = $_GET['cboDept'];
-		$mysqli = mysqli_connect("localhost", "root", "", "Pomme") or die ('Impossible de se connecter');
-		$Requete2 = mysqli_query($mysqli, "Select * from users, code_postal where users.user_code_postal_id = code_postal.code_postal_id and code_postal.code_postal_departement_id ='".$id."'");
-		
-	?>
+<section class="service-w3ls" id="services" style="margin-top:0px;">
 
 <!--Fin du header -->
 
-	<table>
+    <table>
     <tr>
+<<<<<<< HEAD
+        
+       <th>Nom</th>
+       <th>Prenom</th>
+       <th>CP</th>
+       <th>Commune</th>
+       <th>Produit</th>
+       <th>Prix</th>
+=======
 		
 		<th>Titre</th>
 		<th>Nom</th>
        <th>Prénom</th>
         <th>id code Postal</th>
+>>>>>>> 90ea0420bec29e62246cd8149cdf50426798d533
        
-	</tr> 
+    </tr> 
 
-	<tr ng-repeat="i in listeProducteurs" >
-       <td> {{i.Titre}} </td>
-	   <td> {{i.Nom}} </td>
-	   <td> {{i.Prenom}} </td>
-	   <td> {{i.CP}} </td>
-	</tr>
-	
+    <tr ng-repeat="i in listeProducteurs" >
+       <td> {{i.Nom}} </td>
+       <td> {{i.Prenom}} </td>
+       <td> {{i.CP}} </td>
+       <td> {{i.Commune}} </td>
+       <td> {{i.Produit}} </td>
+       <td> {{i.Prix}} </td>
+    </tr>
+    
     </table>
 
 </section>
