@@ -121,6 +121,7 @@
 
     <table>
     <tr>
+<<<<<<< HEAD
         
        <th>Nom</th>
        <th>Prenom</th>
@@ -128,6 +129,13 @@
        <th>Commune</th>
        <th>Produit</th>
        <th>Prix</th>
+=======
+		
+		<th>Titre</th>
+		<th>Nom</th>
+       <th>Prénom</th>
+        <th>id code Postal</th>
+>>>>>>> 90ea0420bec29e62246cd8149cdf50426798d533
        
     </tr> 
 

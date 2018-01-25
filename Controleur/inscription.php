@@ -21,12 +21,11 @@
     <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
     <link href="../Vue/css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
     <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
-    <link rel="stylesheet" href="../Vue/fonts/font-awesome.min.css"/><!-- Font awesome css file -->
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
     <!-- incorporation du framework angular, et des javascripts correspondants -->
-    <script src="../angular-1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="inscriptionCtlr.js"></script>
     <!-- incorporation du framework angular, et des javascripts correspondants -->
@@ -143,7 +142,7 @@
         </div>
         <div>
             <label>Description de votre entreprise :</label>
-            <textarea id="Description" ng-model="item.Description"></textarea>
+            <textarea id="Description" ng-model="item.description"></textarea>
         </div><br>
         <div>
             <center>

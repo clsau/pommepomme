@@ -1,5 +1,7 @@
-app.controller('IdentificationCtrl', function ($rootScope, $scope, $http) {
-    $scope.url = 'http://localhost/pommepomme/Controleur/identification_user.php';
+app.controller('IdentificationCtrl', function ($rootScope, $scope, $http, myPort) {
+    let chem1 = myPort;
+    let chem2 = "Controleur/identification_user.php";
+    $scope.url = chem1.concat(chem2);
     $scope.init = function () {
         $rootScope.item = {};
         $scope.item = {};
@@ -10,16 +12,20 @@ app.controller('IdentificationCtrl', function ($rootScope, $scope, $http) {
             "login": $scope.item.login,
             "mdp": $scope.item.pass
         };
+        let chem1 = myPort;
+        let chem2 = "Controleur/identification_user.php";
+        let url = chem1.concat(chem2);
         $http({
             method: 'POST',
-            url: 'http://localhost:63342/pommepomme/Controleur/identification_user.php',
+            url: url,
             dataType: 'json',
             data: data,
             headers: {'Content-Type': 'application/json; charset=UTF-8'}
         }).success(function (reponse) {
             $rootScope.user = reponse;
-            //alert($rootScope.user.user_prenom);
-            window.location.replace("http://localhost:63342/pommepomme/Controleur/index.php");
+            let chem1 = myPort;
+            let chem2 = "Controleur/index.php";
+            window.location.replace(chem1.concat(chem2));
 
         }).error(function (reponse) {
             alert(data);

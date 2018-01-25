@@ -13,10 +13,10 @@ $database = new database();
 $db = $database->getConnection();
  
 // initialize object
-$product = new user($db);
+$order = new user($db);
  
 // query products
-$stmt = $product->read();
+$stmt = $order->read();
 $num = $stmt->rowCount();
 
 

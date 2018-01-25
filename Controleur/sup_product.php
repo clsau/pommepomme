@@ -9,7 +9,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 
 // include database and object files
-include_once '../config/database.php';
+include_once 'config/database.php';
 include_once 'Models/prodModel.php';
 
 // get database connection
@@ -17,22 +17,16 @@ $database = new database();
 $db = $database->getConnection();
 
 $product = new prodModel($db);
-$Pseudo = $_SESSION["pseudo"];
 $data = json_decode(file_get_contents("php://input"));
+$id = $data->produit_id;
 
-// set ID property of user to be edited
-$product->produit_user_login = $_SESSION['pseudo'];
-if ($data->produit_id == "null")
-    $id = null;
-else {
-    $id = $data->produit_id;
-}
-
-if (is_null($product->read_products($id))) {
-    echo '"message": "Produit non zzvzrvzezrvz"';
+header('Content-Type: application/json');
+if ($product->delete_product($id)) {
+    $response = array('message' => 'true');
+    echo json_encode($response);
 } else {
-    header('Content-Type: application/json');
-    echo json_encode($product->read_products($id));
+    $response = array('message' => 'false');
+    echo json_encode($response);
 }
 
 ?>

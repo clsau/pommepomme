@@ -46,7 +46,6 @@ class userModel{
 			    // prepare query statement
 			    $stmt = $this->conn->prepare($query);
 			    // sanitize
-			    //$this->id_user=htmlspecialchars(strip_tags($this->id_user));
 			    $this->mdp=htmlspecialchars(strip_tags($this->mdp));
 			    $this->Tel=htmlspecialchars(strip_tags($this->Tel));
 			    $this->Mail=htmlspecialchars(strip_tags($this->Mail));
@@ -73,11 +72,10 @@ class userModel{
 			    
 
 			    // execute the query
-			    if($stmt->execute()){
-			         //true;
-			         return true;
-			    }			 
-			     return false ;
+            if ($stmt->execute())
+                return true;
+            print_r($stmt->errorInfo());
+            return false;
 			}
 		
 	    public function update_user(){		

@@ -1,5 +1,4 @@
-
-app.controller("resultSearch", function ($rootScope, $scope, $http) {
+app.controller("resultSearch", function ($rootScope, $scope) {
 
 		var listeProd = window.localStorage.getItem("listeProd");
 

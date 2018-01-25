@@ -15,13 +15,13 @@ commande_date_livraison date NOT NULL,
   
 commande_lieu varchar(255) DEFAULT NULL,
   
-commande_date_description varchar(500) NOT NULL,
+commande_description varchar(500) NOT NULL,
   
-commande_users_producteur int(11) NOT NULL,
+commande_producteur int(11) NOT NULL,
   
 commande_contenance int(2) NOT NULL,
   
-commande_users_client int(11) NOT NULL,
+commande_client int(11) NOT NULL,
   
 PRIMARY KEY (commande_id)
 ,

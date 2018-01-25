@@ -1,4 +1,4 @@
-app.controller('ModificationCtrl', function ($scope, $http) {
+app.controller('ModificationCtrl', function ($scope, $http, myPort) {
     $scope.item = {};
     $scope.myFunc = function () {
         alert($scope.test);
@@ -17,8 +17,10 @@ app.controller('ModificationCtrl', function ($scope, $http) {
             "Titre": $scope.item.titre,
             "Description": $scope.item.description
         };
-
-        $http.post('http://localhost:63342/pommepomme/controleur/update_user.php', data1).success(function (response) {
+        let chem1 = myPort;
+        let chem2 = "controleur/update_user.php";
+        let url = chem1.concat(chem2);
+        $http.post(url, data1).success(function (response) {
             if (response.message == "true") {
                 alert("Profil bien édité");
             }
