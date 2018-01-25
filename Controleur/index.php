@@ -46,7 +46,7 @@
                 <span class="icon-bar"></span>
                 </button>
             <div class="logo">
-                <img src="../Vue/images/logo_litte.png"/>
+                <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
             </div>
         </div>
 
