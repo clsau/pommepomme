@@ -30,10 +30,9 @@ $order->commande_description = $data->commande_description;
 $order->commande_producteur = $data->commande_producteur;
 $order->commande_contenance = $data->commande_contenance;
 
-$order->produit_prix = (date($order->produit_prix));
-$order->produit_stock = (int)$order->produit_stock;
-$order->produit_valeur_unite = (float)$order->produit_valeur_unite;
-$order->produit_categorie_id = (int)$order->produit_categorie_id;
+$order->commande_date_livraison = (date($order->commande_date_livraison));
+$order->commande_producteur = (int)$order->commande_producteur;
+$order->commande_contenance = (int)$order->commande_contenance;
 header('Content-Type: application/json');
 if ($order->create_product()) {
     $response = array('message' => 'true');

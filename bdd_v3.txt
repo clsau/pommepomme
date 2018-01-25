@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS ligne (
   
 ligne_id int(11) NOT NULL AUTO_INCREMENT,
   
-ligne_users_client_id int(11) NOT NULL,
+ligne_user_id int(11) NOT NULL,
   
 ligne_produit_id int(11) NOT NULL,
   
