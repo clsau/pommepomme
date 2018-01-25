@@ -1,4 +1,4 @@
-app.controller("formCtrl", ['$scope', '$http', function ($scope, $http, myPort) {
+app.controller("formCtrl", function ($scope, $http, myPort) {
     let chem1 = myPort;
     let chem2 = "Controleur/create_product.php";
     $scope.url = chem1.concat(chem2);
@@ -25,4 +25,4 @@ app.controller("formCtrl", ['$scope', '$http', function ($scope, $http, myPort) 
             }
         });
     }
-}]);
+});

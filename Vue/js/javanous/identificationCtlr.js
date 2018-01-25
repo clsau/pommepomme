@@ -1,4 +1,4 @@
-app.controller('IdentificationCtrl', function ($rootScope, $scope, $http) {
+app.controller('IdentificationCtrl', function ($rootScope, $scope, $http, myPort) {
     let chem1 = myPort;
     let chem2 = "Controleur/identification_user.php";
     $scope.url = chem1.concat(chem2);

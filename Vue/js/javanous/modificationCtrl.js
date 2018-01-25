@@ -1,4 +1,4 @@
-app.controller('ModificationCtrl', function ($scope, $http) {
+app.controller('ModificationCtrl', function ($scope, $http, myPort) {
     $scope.item = {};
     $scope.myFunc = function () {
         alert($scope.test);

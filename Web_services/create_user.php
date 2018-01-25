@@ -22,7 +22,6 @@ $user = new userModel($db);
 $data = json_decode(file_get_contents("php://input"));
  
 // set ID property of user to be edited
-//$user->id_user = $data->id_user;
 $user->login = $data->login;
 $user->mdp = $data->mdp;
 $user->type = $data->type;

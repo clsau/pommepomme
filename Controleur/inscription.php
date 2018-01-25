@@ -143,7 +143,7 @@
         </div>
         <div>
             <label>Description de votre entreprise :</label>
-            <textarea id="Description" ng-model="item.Description"></textarea>
+            <textarea id="Description" ng-model="item.description"></textarea>
         </div><br>
         <div>
             <center>
