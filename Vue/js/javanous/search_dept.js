@@ -1,23 +1,24 @@
-
-
-app.controller("formSearchCtrl", function ($rootScope, $scope, $http) {
+app.controller("formSearchCtrl", function ($rootScope, $scope, $http, myPort) {
 
 
     $scope.formsubmit = function (value) {
+        let chem1 = myPort;
+        let chem2 = "Controleur/search.php";
+        $scope.url = chem1.concat(chem2);
+        window.localStorage.setItem("listeProd","") ;
 
-        $scope.url = 'http://localhost:8888/pommepomme/Controleur/search.php';
-        window.localStorage.setItem("listeProd","") ; 
-
-    	var sent = {
-         	"cboDept": value
-    	};
+        //let sent = {
+        //	"cboDept": value
+        //};
         $scope.url += "?cboDept="+value;
 
 	 	$http.get($scope.url).success(function (data) {
             if (data.length > 0 ) {
                 window.localStorage.setItem("listeProd", JSON.stringify(data));
                 var p = window.localStorage.getItem("listeProd");
-                window.location.replace("http://localhost:8888/pommepomme/Controleur/resultat_recherche.php");
+                let chem1 = myPort;
+                let chem2 = "Controleur/resultat_recherche.php";
+                window.location.replace(chem1.concat(chem2));
             }
             else {
                 alert("Pas de producteur trouvé dans ce département");

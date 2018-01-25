@@ -78,6 +78,14 @@
                                     </button>
                                 </form>
                             </td>
+                            <td>
+                                <form name="updateProductForm" class="form-horizontal well form-search">
+                                    <button id={{i.produit_id}} type="submit" data-ng-click="sup($event)"
+                                            ng-disabled="updateProductForm.$invalid"
+                                            class="btn btn-primary">Supprimer
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                         </tbody>
                     </table>

@@ -1,7 +1,7 @@
-//var app = angular.module('formCreateProduct', []);
-
-app.controller("formCtrl", ['$scope', '$http', function ($scope, $http) {
-    $scope.url = 'http://localhost:63342/pommepomme/Controleur/create_product.php';
+app.controller("formCtrl", ['$scope', '$http', function ($scope, $http, myPort) {
+    let chem1 = myPort;
+    let chem2 = "Controleur/create_product.php";
+    $scope.url = chem1.concat(chem2);
     $scope.formsubmit = function (isValid) {
         let sent = {
                 "produit_nom": $scope.produit_nom,
@@ -16,7 +16,9 @@ app.controller("formCtrl", ['$scope', '$http', function ($scope, $http) {
         $http.post($scope.url, sent).success(function (response) {
             if (response.message == "true") {
                 alert("Produit bien ajouté");
-                window.location.replace("http://localhost:8888/pommepomme/Vue/display_products.html");
+                let chem1 = myPort;
+                let chem2 = "Vue/display_products.html";
+                window.location.replace(chem1.concat(chem2));
             }
             else {
                 alert("produit non ajouté. Vérifiez votre saisie");

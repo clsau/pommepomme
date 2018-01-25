@@ -1,6 +1,8 @@
-app.controller("formDisplayCtrl", function ($scope, $http, $window) {
+app.controller("formDisplayCtrl", function ($scope, $http, $window, myPort) {
     $scope.displayProduct = function () {
-        $scope.url = 'http://localhost:63342/pommepomme/Controleur/display_product.php';
+        let chem1 = myPort;
+        let chem2 = "Controleur/display_product.php";
+        $scope.url = chem1.concat(chem2);
         let sent = {"produit_id": "null"};
         $http.post($scope.url, sent).success(function (data) {
             $scope.show = false;
@@ -8,7 +10,9 @@ app.controller("formDisplayCtrl", function ($scope, $http, $window) {
         });
     };
     $scope.update = function () {
-        $scope.url = 'http://localhost:63342/pommepomme/Controleur/display_product.php';
+        let chem1 = myPort;
+        let chem2 = "Controleur/display_product.php";
+        $scope.url = chem1.concat(chem2);
         let sent = {
             "produit_id": event.target.id
         };
@@ -28,9 +32,23 @@ app.controller("formDisplayCtrl", function ($scope, $http, $window) {
             $window.scrollTo(0, 0);
         });
     };
+    $scope.sup = function () {
+        let chem1 = myPort;
+        let chem2 = "Controleur/sup_product.php";
+        $scope.url = chem1.concat(chem2);
+        if (confirm('Êtes vous sûr(e) de vouloir supprimer ce produit ?')) {
+            let sent = {"produit_id": event.target.id};
+            $http.post($scope.url, sent).success(function (data) {
+                alert("Produit supprimé !");
+                $scope.displayProduct();
+            });
+        }
+    };
 
     $scope.validate = function () {
-        $scope.url = 'http://localhost:63342/pommepomme/Controleur/update_product.php';
+        let chem1 = myPort;
+        let chem2 = "Controleur/update_product.php";
+        $scope.url = chem1.concat(chem2);
         let sent = {
             "produit_nom": $scope.produit_nom,
             "produit_description": $scope.produit_description,

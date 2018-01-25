@@ -110,7 +110,7 @@ mysqli_close($mysqli); //deconnection de mysql
 		<th>Titre</th>
 		<th>Nom</th>
        <th>Prénom</th>
-       <th>Code Postale</th>
+        <th>id code Postal</th>
        
 	</tr> 
 
