@@ -1,8 +1,7 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" ng-app="displayProduct">
+<html lang="en">
+<!-- Head -->
 <head>
     <title>Fruit land an Agriculture Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,15 +13,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
     <link href="../Vue/css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
     <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
-    <!--  <link rel="stylesheet" href="../Vue/fonts/font-awesome.min.css"/><!-- Font awesome css file -->
+    <link rel="stylesheet" href="../Vue/css/font-awesome.min.css"/><!-- Font awesome css file -->
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
-    <script src="../Vue/js/javanous/display_product.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
     <!--web font-->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+    <link href="../Vue/fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
           rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
+    <link href="../Vue/fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
           rel="stylesheet">
     <!--//web font-->
 
@@ -32,77 +30,73 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 
 <!-- header    MENU  -->
-<div class="header-bottom">
-    <div class="container-fluid">
-        <nav class="navbar navbar-default">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+
+<div class="container-fluid">
+    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
                 </button>
-                <div class="logo">
-                    <img src="../Vue/images/logo_litte.png"/>
-                </div>
+            <div class="logo">
+                <img src="../Vue/images/logo_litte.png"/>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-                <nav>
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.php">ACCUEIL</a></li>
-
-
-                        <li>
-                            <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
-                        </li>
-                        <li>
-                            <a href="../Vue/identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                        </li>
-                        <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                        </li>
-                        <li>
-                            <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
-
-        <div class="head-search">
-            <form action="#" method="post">
-                <div class="formborder">
-                    <input type="text" placeholder="Search..." name="Search..." required="">
-                    <input type="submit" value="">
-                </div>
-            </form>
         </div>
 
-    </div>
+        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+            <nav>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                    </li>
+                    <li>
+                        <a href="../Vue/identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                    </li>
+                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                    </li>
+                    <li>
+                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                    </li>
+                     <li style="margin-top:15px;">  
+                            <?php //Connection avec la BDD.
+$mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+$request = mysqli_query($mysqli, "SELECT * FROM departement");?>
+<form method="GET" action="recherche.php">
+<select name="cboDept">
+<?php while($donnees = mysqli_fetch_array($request)){?>
+  <option name="departement" value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
+<?php }?>
+</select>
+<?php
+mysqli_close($mysqli); //deconnection de mysql
+?>
+                        </li>
+                        <li style="margin-top:15px;margin-left:10px;">  <input type='submit' name='recherche' value='Rechercher' align="center" ></li></form>
+                        </ul>
+            </nav>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
 </div>
+</body>
+
+
 <!-- //header A REDUIRE  -->
 
 
-<!-- BASE DE FOND DU MENU -->
-<section class="service-w3ls" id="services">
-    <h1></h1>
-</section>
+<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
 
-<!--/about   A SUPRIMER LE ABOUT-->
-<div class="about" id="about">
-    <div class="container">
+<!--//about-->
 
-        <h3>Votre profil</h3>
 
-    </div>
-    <div class="clearfix"></div>
-</div>
-</div>
+<!-- services section -->
+<section class="service-w3ls" id="services" style="margin-top:5px;">
+   </div>
 <!--//about-->
 <?php //Connection avec la BDD.
 $mysqli = mysqli_connect("localhost", "root", "", "pomme");
@@ -112,24 +106,24 @@ $donnees = mysqli_fetch_array($Requete);
 $Requete2 = mysqli_query($mysqli, "SELECT * FROM users, code_postal  WHERE user_login = '" . $Pseudo . "' AND users.user_code_postal_id = code_postal.code_postal_id");
 $donnees2 = mysqli_fetch_array($Requete2);
 ?>
-<table border="3">
+%<table border="3" align="center" width="75%" style="background-color: white">
     <tr>
         <td>
-            <table>
-                <tr>
-                    <th id="Titre"><?php
+            <table align="center">
+                <tr align="center" >
+                    <th id="Titre" valign="top"><?php
                         if ($donnees['user_type'] == 1)
                             echo $donnees['user_titre']; ?></th>
-                </tr>
-                <tr>
+                </tr >
+                <tr align="center">
                     <td id="Description"><?php
                         if ($donnees['user_type'] == 1)
                             echo $donnees['user_description']; ?></td>
                 </tr>
             </table>
         </td>
-        <td>
-            <table border="3">
+        <td align="right" width="20%">
+            <table border="3"  style="background-color: white">
                 <tr>
                     <td>Login</td>
                     <td id="login"><?php echo $donnees['user_login']; ?></td>
@@ -178,59 +172,57 @@ $donnees2 = mysqli_fetch_array($Requete2);
     </div>
 </form>
 </div>
+</section>
 
-
-<?php
-mysqli_close($mysqli); //deconnection de mysql
-?>
-
-
-
+<div style="margin-top:0px;background-color: #A1D067;">
+</div>
 
 
 <!-- footer -->
 <div class="footer">
-    <div class="container">
+    <div class="container" style="margin-top:5px;">
         <div class="col-md-6 footernav">
             <div class="agileits-social">
                 <ul>
-
-
-                    <li><a href="#home" class="scroll">ACCUEIL</a></li>
-                    <li><a href="#about" class="scroll">INSCRIPTION</a></li>
-                    <li><a href="#services" class="scroll">IDENTIFICATION</a></li>
-
+                    <a href="inscription.php"
+                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                </ul>
+                <ul>
+                    <a href="../Vue/identification.html"
+                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                </ul>
+                <ul><a href="affichage_prod.php"
+                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                </ul>
+                <ul>
+                    <a href="deconnexion.php"
+                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
                 </ul>
             </div>
         </div>
-        <div class="col-md-6 copyright">
-            <p>© 2017 Fruit Land. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+        <div class="col-md-6 footernav">
+            <div class="agileits-social">
+                <ul><a href="#home" class="scroll">MENTIONS LEGALES</a></ul>
+            </div>
+        </div>
+        <div class="col-md-6 footernav">
+            <div class="agileits-social">
+                <ul><a href="#home" class="scroll">CONTACTS</a></ul>
+            </div>
         </div>
     </div>
 </div>
 <!-- //footer -->
 <!--//////////////////////////           FIN -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- bootstrap-pop-up -->
 <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Fruit land</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div>
                 <div class="modal-body">
@@ -260,17 +252,21 @@ mysqli_close($mysqli); //deconnection de mysql
     $(window).load(function () {
         $('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: false}).addClass('ff')
     })
-</script><script type="text/javascript">
+</script>
+<script type="text/javascript">
 
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-36251023-1']);
     _gaq.push(['_setDomainName', 'jqueryscript.net']);
     _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
     })();
 
 </script>
@@ -280,14 +276,14 @@ mysqli_close($mysqli); //deconnection de mysql
 <link href="../Vue/css/owl.carousel.css" rel="stylesheet">
 <script src="../Vue/js/owl.carousel.js"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#owl-demo").owlCarousel({
-            items : 1,
-            lazyLoad : true,
-            autoPlay : true,
-            navigation : false,
-            navigationText :  false,
-            pagination : true,
+            items: 1,
+            lazyLoad: true,
+            autoPlay: true,
+            navigation: false,
+            navigationText: false,
+            pagination: true,
         });
     });
 </script>
@@ -309,22 +305,22 @@ mysqli_close($mysqli); //deconnection de mysql
 
 <!-- scrolling script -->
 <script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
             event.preventDefault();
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
         });
     });
 </script>
 <!-- //scrolling script -->
 
 <!-- Stars scrolling script -->
-<script src="../Vue/js/SmoothScroll.min.js"></script>
-<script type="text/javascript" src="../Vue/js/move-top.js"></script>
-<script type="text/javascript" src="../Vue/js/easing.js"></script>
+<script src="js/SmoothScroll.min.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
 <!-- here stars scrolling icon -->
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         /*
             var defaults = {
             containerID: 'toTop', // fading element id
@@ -334,12 +330,13 @@ mysqli_close($mysqli); //deconnection de mysql
             };
         */
 
-        $().UItoTop({ easingType: 'easeOutQuart' });
+        $().UItoTop({easingType: 'easeOutQuart'});
 
     });
 </script>
 <!-- //here ends scrolling icon -->
 <!-- //Ends scrolling script -->
+
 </body>
 <!-- //Body -->
 </html>
