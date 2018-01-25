@@ -10,7 +10,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // include database and object files
 include_once '../config/database.php';
-include_once 'Models/prodModel.php';
+include_once 'Models/orderModel.php';
 
 // get database connection
 $database = new database();

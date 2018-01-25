@@ -72,11 +72,10 @@ class userModel{
 			    
 
 			    // execute the query
-			    if($stmt->execute()){
-			         //true;
-			         return true;
-			    }			 
-			     return false ;
+            if ($stmt->execute())
+                return true;
+            print_r($stmt->errorInfo());
+            return false;
 			}
 		
 	    public function update_user(){		

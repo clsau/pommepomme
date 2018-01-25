@@ -10,18 +10,10 @@
 
     <!-- default css files -->
     <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
-    <link href="../Vue/css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
     <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
     <link rel="stylesheet" href="../Vue/css/font-awesome.min.css"/><!-- Font awesome css file -->
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
-
-    <!--web font-->
-    <link href="../Vue/fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
-          rel="stylesheet">
-    <link href="../Vue/fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
-          rel="stylesheet">
-    <!--//web font-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../Config/app.js"></script>
@@ -233,13 +225,6 @@
 <script type="text/javascript" src="../Vue/js/bootstrap.js"></script>
 <!-- //Default-JavaScript-File -->
 
-<!-- Banner Slider js script file-->
-<script src="../Vue/js/JiSlider.js"></script>
-<script>
-    $(window).load(function () {
-        $('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: false}).addClass('ff')
-    })
-</script>
 <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -289,40 +274,6 @@
     $('.example1').wmuSlider();
 </script>
 <!-- //clients js file -->
-
-<!-- scrolling script -->
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-            event.preventDefault();
-            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
-        });
-    });
-</script>
-<!-- //scrolling script -->
-
-<!-- Stars scrolling script -->
-<script src="../Vue/js/SmoothScroll.min.js"></script>
-<script type="text/javascript" src="../Vue/js/move-top.js"></script>
-<script type="text/javascript" src="../Vue/js/easing.js"></script>
-<!-- here stars scrolling icon -->
-<script type="text/javascript">
-    $(document).ready(function () {
-        /*
-            var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-            };
-        */
-
-        $().UItoTop({easingType: 'easeOutQuart'});
-
-    });
-</script>
-<!-- //here ends scrolling icon -->
-<!-- //Ends scrolling script -->
 
 </body>
 <!-- //Body -->

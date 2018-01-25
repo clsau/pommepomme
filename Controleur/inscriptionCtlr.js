@@ -47,15 +47,16 @@ app.controller('InscriptionCtrl', function ($scope, $http, myPort) {
         let chem1 = myPort;
         let chem2 = "Controleur/create_user.php";
         $scope.url = chem1.concat(chem2);
-        $http.post($scope.url, data1).then(function (response) {
-            if (response)
-                $scope.msg = "Inscription réussie avec succès...";
-            alert($scope.msg);
-        }, function (response) {
-            $scope.msg = "Erreur survenue lors de l'inscription...";
-            $scope.statusval = response.status;
-            $scope.statustext = response.statusText;
-            alert($scope.msg);
+        $http.post($scope.url, data1).success(function (response) {
+            if (response.message == "true") {
+                alert("Inscription réussie");
+                let chem1 = myPort;
+                let chem2 = "Controleur/index.php";
+                window.location.replace(chem1.concat(chem2));
+            }
+            else {
+                alert("Problème d'inscription");
+            }
         });
     };
 

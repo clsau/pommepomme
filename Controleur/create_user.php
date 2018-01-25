@@ -38,7 +38,7 @@ $user->Description = $data->Description;
 
 // create the user
 header('Content-Type: application/json');
-if ($product->create_product()) {
+if ($user->create_user()) {
     $response = array('message' => 'true');
     echo json_encode($response);
 } else {
