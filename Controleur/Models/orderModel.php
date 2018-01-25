@@ -1,6 +1,6 @@
 <?php
 
-class prodModel
+class orderModel
 {
     public $commande_id;
     public $commande_statut;

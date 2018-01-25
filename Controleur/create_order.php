@@ -16,30 +16,26 @@ include_once 'Models/orderModel.php';
 $database = new database();
 $db = $database->getConnection();
 
-$product = new prodModel($db);
+$order = new orderModel($db);
 $Pseudo = $_SESSION["pseudo"];
 $data = json_decode(file_get_contents("php://input"));
 
 //$data = json_decode($json,TRUE);
 
 // set ID property of user to be edited
-$product->produit_user_login = $_SESSION['pseudo'];
-$product->produit_nom = $data->produit_nom;
-$product->produit_description = $data->produit_description;
-$product->produit_photo = $data->produit_photo;
-$product->produit_prix = $data->produit_prix;
-$product->produit_stock = $data->produit_stock;
-$product->produit_unite = $data->produit_unite;
-$product->produit_valeur_unite = $data->produit_valeur_unite;
-$product->produit_categorie_id = $data->produit_categorie_id;
+$order->commande_statut = $data->commande_statut;
+$order->commande_date_livraison = $data->commande_date_livraison;
+$order->commande_lieu = $data->commande_lieu;
+$order->commande_description = $data->commande_description;
+$order->commande_producteur = $data->commande_producteur;
+$order->commande_contenance = $data->commande_contenance;
 
-
-$product->produit_prix = (float)$product->produit_prix;
-$product->produit_stock = (int)$product->produit_stock;
-$product->produit_valeur_unite = (float)$product->produit_valeur_unite;
-$product->produit_categorie_id = (int)$product->produit_categorie_id;
+$order->produit_prix = (date($order->produit_prix));
+$order->produit_stock = (int)$order->produit_stock;
+$order->produit_valeur_unite = (float)$order->produit_valeur_unite;
+$order->produit_categorie_id = (int)$order->produit_categorie_id;
 header('Content-Type: application/json');
-if ($product->create_product()) {
+if ($order->create_product()) {
     $response = array('message' => 'true');
     echo json_encode($response);
 } else {
