@@ -8,7 +8,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
  
  
 // include database and object files
-include_once '../config/database.php';
+include_once '../Config/database.php';
 include_once 'Models/userModel.php';
 
 // get database connection
@@ -42,11 +42,11 @@ $user->Id_CP = (int)$user->Id_CP;
 // update the product
 header('Content-Type: application/json');
 if ($user->update_user()) {
-    $response = array('message' => 'true');
-    echo json_encode($response);
+    //$response = array('message' => 'true');
+    echo json_encode("true");
 } else {
-    $response = array('message' => 'false');
-    echo json_encode($response);
+    //$response = array('message' => 'false');
+    echo json_encode("false");
 }
  ?>
 

@@ -18,11 +18,14 @@ app.controller('ModificationCtrl', function ($scope, $http, myPort) {
             "Description": $scope.item.description
         };
         let chem1 = myPort;
-        let chem2 = "controleur/update_user.php";
+        let chem2 = "Controleur/update_user.php";
         let url = chem1.concat(chem2);
         $http.post(url, data1).success(function (response) {
             if (response.message == "true") {
                 alert("Profil bien édité");
+                let chem1 = myPort;
+                let chem2 = "Controleur/affichage_prod.php";
+                window.location.replace(chem1.concat(chem2));
             }
             else {
                 alert("Profil non modifié. Vérifiez votre saisie");

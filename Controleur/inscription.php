@@ -25,6 +25,7 @@
     <!-- default css files -->
 
     <!-- incorporation du framework angular, et des javascripts correspondants -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="inscriptionCtlr.js"></script>
@@ -43,21 +44,28 @@
 <!-- BODY -->
 <body ng-app="AppModule" ng-controller="InscriptionCtrl">
 
-<!-- Barre de MENU du haut -->
-
-    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
-       
+<!-- header    MENU  -->
+<div class="container-fluid">
+    <nav class="navbar navbar-default" style=" height: 50px color:#000000">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <div class="logo" id="LeLogo">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" style="background-color:orange" >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            <div class="logo">
                 <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
             </div>
         </div>
 
         <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-            <nav>
-                <ul class="nav navbar-nav">
+            <nav >
+                <ul class="nav navbar-nav" >
                     <li>
-                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                        <a href="index.php"><?php if (!isset($_SESSION['pseudo'])) echo "Home"; ?></a>
                     </li>
                     <li>
                         <a href="../Vue/identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
@@ -67,25 +75,16 @@
                     <li>
                         <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
                     </li>
-                    <li style="margin-top:15px;">
-                            <select name="departement" size="1">
-                            <option value="departement" selected>Departement</option>
-                            <option value="33">Gironde - 33</option>
-                            <option value="17">Charente-Maritime - 17</option>
-                            <option value="16">Charente -16</option>
-                            <option value="40">Landes - 40</option>
-                        </select>
-                    </li>
-                    <li style="margin-top:15px;margin-left:10px;"><input type='submit'
-                                                                         value='Rechercher des producteurs'
-                                                                         align="center">
-                    </li>
+                 </form>
                 </ul>
             </nav>
         </div>
+        <!-- /.navbar-collapse -->
     </nav>
+</div>
+</body>
 
-<!-- barre de MENU du haut  -->
+<!-- //header A REDUIRE  -->
 
 
 <!-- services section -->
@@ -97,53 +96,53 @@
 <div class="inscriptionForm">
     <form>
         <div>
-            <label>login :</label>
-            <input type="text" id="login" ng-model="item.login" required/>
+            <label>Login :</label>
+            <input type="text" id="login" ng-model="item.login" required/><br/><br/>
         </div>
          <div>
             <label>Mot de passe :</label>
-            <input type="password" id="mdp" ng-model="item.pass" required/>
+            <input type="password" id="mdp" ng-model="item.pass" required/><br/><br/>
         <div>
             <label>Nom :</label>
-            <input type="text" id="nom" ng-model="item.nom" required/>
+            <input type="text" id="nom" ng-model="item.nom" required/><br/><br/>
         </div>
         <div>
             <label>Prénom :</label>
-            <input type="text" id="prenom" ng-model="item.prenom" required/>
+            <input type="text" id="prenom" ng-model="item.prenom" required/><br/><br/>
         </div>
         <div>
             <label>Adresse mail :</label>
-            <input type="email" id="mail" ng-model="item.mail" required/>
+            <input type="email" id="mail" ng-model="item.mail" required/><br/><br/>
         </div>
         <div>
             <label>Confirmer l'adresse mail :</label>
-            <input type="email" id="mailconf" ng-model="item.mailconf" required/>
+            <input type="email" id="mailconf" ng-model="item.mailconf" required/><br/><br/>
             <div ng-if="!item.verif" style="color:red; font-size="10px;">verifier la saisie de votre mail</div>
         </div>
         <div>
             <label>Adresse postale :</label>
-            <input type="text" id="adresse" ng-model="item.adresse" required/>
+            <input type="text" id="adresse" ng-model="item.adresse" required/><br/><br/>
         </div>
         <div>
             <label>Code postal :</label>
-            <input type="number" id="CP" ng-model="item.cp" required maxlength="5"/>
+            <input type="number" id="CP" ng-model="item.cp" required maxlength="5"/><br/><br/>
         </div>
         <div>
             <label>Ville :</label>
-            <input type="text" id="Ville" ng-model="item.ville" required/>
+            <input type="text" id="Ville" ng-model="item.ville" required/><br/><br/>
         </div>
         <div>
             <label>Numéro de téléphone :</label>
-            <input type="tel" id="Tel" ng-model="item.tel" required/>
+            <input type="tel" id="Tel" ng-model="item.tel" required/><br/><br/>
         </div>
         <div>
             <label>Titre de votre profil producteur :</label>
-            <input type="text" id="Titre" ng-model="item.titre" />
+            <input type="text" id="Titre" ng-model="item.titre" /><br/><br/>
         </div>
         <div>
             <label>Description de votre entreprise :</label>
-            <textarea id="Description" ng-model="item.description"></textarea>
-        </div><br>
+            <textarea id="Description" ng-model="item.description"></textarea><br/><br/>
+        </div>
         <div>
             <center>
             <button  ng-click="save()">Inscription</button>

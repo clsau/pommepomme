@@ -1498,10 +1498,10 @@ button.btn1:hover i.fa.fa-paper-plane-o{
 }
 @media screen and (max-width: 767px){
 	.navbar-default .navbar-toggle .icon-bar {
-		background-color: #fff;
+		background-color: #000000;
 	}
 	.navbar-default .navbar-toggle {
-		border-color: #fff;
+		border-color: #000000;
 	}
 	.navbar-toggle {
 		border-radius: 0px;
