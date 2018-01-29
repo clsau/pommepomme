@@ -17,13 +17,6 @@
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
-    <!--web font-->
-    <link href="../Vue/fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
-          rel="stylesheet">
-    <link href="../Vue/fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
-          rel="stylesheet">
-    <!--//web font-->
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="../Vue/js/javanous/display_search.js"></script>
@@ -37,16 +30,16 @@
 <!-- header    MENU  -->
 
 <div class="container-fluid">
-    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 0px">
+    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 0">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
+                    data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-                </button>
+            </button>
             <div class="logo">
                 <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
             </div>
@@ -66,34 +59,37 @@
                     <li>
                         <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
                     </li>
-                     <li style="margin-top:15px;">  
-                            <?php //Connection avec la BDD.
-                            $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-                            $request = mysqli_query($mysqli, "SELECT * FROM departement");
-                            $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
-                            ?>
+                    <li style="margin-top:15px;">
+                        <?php //Connection avec la BDD.
+                        $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                        $request = mysqli_query($mysqli, "SELECT * FROM departement");
+                        $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+                        ?>
 
-                            <form name = "SearchForm">
-                                <select name="cboDept" ng-model="item.cboDept" >
+                        <form name="SearchForm">
+                            <select name="cboDept" ng-model="item.cboDept">
                                 <?php while($donnees = mysqli_fetch_array($request)){?>
-                                <option name="departement" value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
+                                    <option name="departement"
+                                            value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
                                 <?php }?>
-                                </select>
+                            </select>
 
 
-                                <select name="categorie" ng-model="item.categorie" >
+                            <select name="categorie" ng-model="item.categorie">
                                 <?php while($donnees = mysqli_fetch_array($request1)){?>
-                                <option name="categorie" value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
+                                    <option name="categorie"
+                                            value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
                                 <?php }?>
-                                </select>
+                            </select>
                             <?php
-                        mysqli_close($mysqli); //deconnection de mysql ?>
-                        </li>
-                        <li style="margin-top:15px;margin-left:10px;"> 
-                         <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)" ng-disabled="SearchForm.$invalid" class="btn btn-primary">Recherche
+                            mysqli_close($mysqli); //deconnection de mysql ?>
+                    </li>
+                    <li style="margin-top:15px;margin-left:10px;">
+                        <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)"
+                                ng-disabled="SearchForm.$invalid" class="btn btn-primary">Recherche
                         </button>
-                     </li>
-                 </form>
+                    </li>
+                    </form>
                 </ul>
             </nav>
         </div>
@@ -102,52 +98,45 @@
 </div>
 </body>
 
+<section class="service-w3ls" id="services" style="margin-top:0;">
 
-
-
-
-<!-- Fin du header -->
-
-<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
-
-<!--//about-->
-
-
-<!-- services section -->
-<section class="service-w3ls" id="services" style="margin-top:0px;">
-
-<!--Fin du header -->
+    <!--Fin du header -->
 
     <table>
-    <tr>
-<<<<<<< HEAD
-        
-       <th>Nom</th>
-       <th>Prenom</th>
-       <th>CP</th>
-       <th>Commune</th>
-       <th>Produit</th>
-       <th>Prix</th>
-=======
-		
-		<th>Titre</th>
-		<th>Nom</th>
-       <th>Prénom</th>
-        <th>id code Postal</th>
->>>>>>> 90ea0420bec29e62246cd8149cdf50426798d533
-       
-    </tr> 
-
-    <tr ng-repeat="i in listeProducteurs" >
-       <td> {{i.Nom}} </td>
-       <td> {{i.Prenom}} </td>
-       <td> {{i.CP}} </td>
-       <td> {{i.Commune}} </td>
-       <td> {{i.Produit}} </td>
-       <td> {{i.Prix}} </td>
-    </tr>
-    
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>CP</th>
+            <th>Commune</th>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="i in listeProducteurs">
+            <td> {{i.Nom}}</td>
+            <td> {{i.Prenom}}</td>
+            <td> {{i.CP}}</td>
+            <td> {{i.Commune}}</td>
+            <td> {{i.Produit}}</td>
+            <td> {{i.Prix}}</td>
+            <td>
+                <form name="updateProductForm" class="form-horizontal well form-search">
+                    <button id={{i.produit_id}} type="submit" data-ng-click="update($event)"
+                            ng-disabled="updateProductForm.$invalid"
+                            class="btn btn-primary">Commander
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form name="updateProductForm" class="form-horizontal well form-search">
+                    <button id={{i.produit_user_id}} type="submit" data-ng-click="sup($event)"
+                            ng-disabled="updateProductForm.$invalid"
+                            class="btn btn-primary">Voir le profil
+                    </button>
+                </form>
+            </td>
+        </tr>
     </table>
 
 </section>
