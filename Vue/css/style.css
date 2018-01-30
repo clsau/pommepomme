@@ -556,6 +556,7 @@ ul.agile_forms li {
 /*-- about --*/
 .about, .service-w3ls, .team, .subscribe, .clients {
     padding: 7em 0;
+
 }
 
 h2.heading, h3.heading {
@@ -589,9 +590,9 @@ h2.heading, h3.heading {
 }
 
 section.service-w3ls {
-    background: #7ad1fe url(../images/services.jpg) no-repeat 0 0;
-    background-size: cover;
-    flex: 1 1 auto;
+    background: url(../images/services.jpg) no-repeat;
+    width: 100%;
+    background-size: 100% 100%;
 }
 
 .ch-grid {
@@ -986,8 +987,12 @@ ul.top-links li a i.fa:hover {
 }
 
 .footer {
-    padding: 1.5em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
     background: #212121;
+    padding-top: 15px;
 }
 
 .footernav {
