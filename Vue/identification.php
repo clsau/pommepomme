@@ -100,9 +100,8 @@
             <label>Mot de passe :</label>
             <input type="password" name="mdp" ng-model="item.pass"/>
         </div>
-        <div style="margin-left:35%; margin-top:10px;">
-            <!--<input href="../traitements/traitement/create_user.php" type="submit" name="connexion" value="Connexion"/> -->
-            <input type="button" name="connexion" ng-click="connexion()" value="Connexion"/>
+        <div align="center" style=" margin-top:10px;">
+            <input type="button" class="btn btn-primary" name="connexion" ng-click="connexion()" value="Connexion"/>
         </div>
     </form>
 </section>
@@ -110,19 +109,18 @@
     <div class="container" style="margin-top:1px;">
         <div class="col-md-6 footernav">
             <div class="agileits-social">
-                <ul><a href="../Controleur/index.php" class="scroll">ACCUEIL</a></ul>
-                <ul><a href="../Controleur/inscription.php" class="scroll">INSCRIPTION</a></ul>
-                <ul><a href="identification.html" class="scroll">IDENTIFICATION</a></ul>
+                <ul><a href="../Controleur/index.php" class="scroll">Accueil</a></ul>
+                <ul><a href="../Controleur/inscription.php" class="scroll">S'inscrire</a></ul>
             </div>
         </div>
         <div class="col-md-6 footernav">
             <div class="agileits-social">
-                <ul><a href="#home" class="scroll">MENTIONS LEGALES</a></ul>
+                <ul><a href="../Controleur/index.php" class="scroll">Mentions légales</a></ul>
             </div>
         </div>
         <div class="col-md-6 footernav">
             <div class="agileits-social">
-                <ul><a href="#home" class="scroll">CONTACTS</a></ul>
+                <ul><a href="../Controleur/index.php" class="scroll">Contact</a></ul>
             </div>
         </div>
     </div>

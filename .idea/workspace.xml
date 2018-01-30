@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1061fb84-9a20-4696-97f9-7ac57acf29b7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Controleur/inscription.php" afterPath="$PROJECT_DIR$/Controleur/inscription.php" />
+      <change beforePath="$PROJECT_DIR$/Vue/css/bootstrap.css" afterPath="$PROJECT_DIR$/Vue/css/bootstrap.css" />
       <change beforePath="$PROJECT_DIR$/Vue/css/style.css" afterPath="$PROJECT_DIR$/Vue/css/style.css" />
       <change beforePath="$PROJECT_DIR$/Vue/identification.php" afterPath="$PROJECT_DIR$/Vue/identification.php" />
-      <change beforePath="$PROJECT_DIR$/Vue/images/services.jpg" afterPath="$PROJECT_DIR$/Vue/images/services.jpg" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,7 +31,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4549356">
+    <splitter split-orientation="horizontal" split-proportion="0.3102391">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
@@ -49,22 +50,20 @@
           <file leaf-file-name="identification.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Vue/identification.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="365">
-                  <caret line="91" column="21" lean-forward="true" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+                <state relative-caret-position="1394">
+                  <caret line="103" column="50" lean-forward="false" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
                   <folding>
                     <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#li#2;n#ul#0;n#nav#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#style#0;n#div#0;n#form#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#form#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <marker date="1517320178982" expanded="true" signature="2749:2774" ph="SELECT * FRO... departement" />
-                    <marker date="1517320178982" expanded="true" signature="2837:2860" ph="SELECT * FRO... categorie" />
+                    <marker date="1517322176071" expanded="true" signature="2749:2774" ph="SELECT * FRO... departement" />
+                    <marker date="1517322176071" expanded="true" signature="2837:2860" ph="SELECT * FRO... categorie" />
                   </folding>
                 </state>
               </provider>
@@ -84,11 +83,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Vue/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="279">
-                  <caret line="994" column="19" lean-forward="false" selection-start-line="994" selection-start-column="19" selection-end-line="994" selection-end-column="19" />
+                <state relative-caret-position="160">
+                  <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -97,8 +96,18 @@
           <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Vue/css/bootstrap.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="177">
-                  <caret line="2929" column="24" lean-forward="false" selection-start-line="2929" selection-start-column="20" selection-end-line="2929" selection-end-column="24" />
+                <state relative-caret-position="243">
+                  <caret line="3894" column="16" lean-forward="false" selection-start-line="3894" selection-start-column="16" selection-end-line="3894" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="inscription.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Controleur/inscription.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="425">
+                  <caret line="70" column="34" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -148,9 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>services</find>
-      <find>jpg</find>
-      <find>png</find>
       <find>login</find>
       <find>..</find>
       <find>logo</find>
@@ -170,14 +176,17 @@
       <find>w3ls</find>
       <find>rech</find>
       <find>service-w3ls</find>
-      <find>footer</find>
       <find>flex</find>
       <find>adve</find>
       <find>flui</find>
       <find>adv</find>
-      <find>body</find>
       <find>service</find>
       <find>foot</find>
+      <find>body</find>
+      <find>form</find>
+      <find>footer</find>
+      <find>btn-pri</find>
+      <find>btn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -221,7 +230,6 @@
         <option value="$PROJECT_DIR$/Controleur/inscriptionCtlr.js" />
         <option value="$PROJECT_DIR$/objetModels/userModel.php" />
         <option value="$PROJECT_DIR$/Controleur/create_user.php" />
-        <option value="$PROJECT_DIR$/Controleur/inscription.php" />
         <option value="$PROJECT_DIR$/Controleur/create_product.php" />
         <option value="$PROJECT_DIR$/Vue/create_product.html" />
         <option value="$PROJECT_DIR$/Vue/display_products.html" />
@@ -241,12 +249,13 @@
         <option value="$PROJECT_DIR$/Vue/identification.html" />
         <option value="$PROJECT_DIR$/Controleur/index.php" />
         <option value="$PROJECT_DIR$/Config/app.js" />
-        <option value="$PROJECT_DIR$/Vue/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/Vue/css/simpleLightbox.css" />
         <option value="$PROJECT_DIR$/Vue/css/JiSlider.css" />
         <option value="$PROJECT_DIR$/Vue/css/font-awesome.min.css" />
-        <option value="$PROJECT_DIR$/Vue/identification.php" />
         <option value="$PROJECT_DIR$/Vue/css/style.css" />
+        <option value="$PROJECT_DIR$/Vue/identification.php" />
+        <option value="$PROJECT_DIR$/Vue/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/Controleur/inscription.php" />
       </list>
     </option>
   </component>
@@ -419,42 +428,7 @@
             <path>
               <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
               <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="Config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="Modèle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="Vue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="Vue" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="Vue" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="Vue" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="Vue" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="javanous" type="462c0819:PsiDirectoryNode" />
+              <item name="Controleur" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -538,7 +512,7 @@
       <workItem from="1516867454758" duration="21097000" />
       <workItem from="1516953795499" duration="12927000" />
       <workItem from="1517213089717" duration="10500000" />
-      <workItem from="1517300088391" duration="14182000" />
+      <workItem from="1517300088391" duration="17617000" />
     </task>
     <task id="LOCAL-00001" summary="connexion">
       <created>1516028320313</created>
@@ -785,11 +759,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517306265893</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="css">
+      <created>1517320199220</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1517320199220</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196315000" />
+    <option name="totallyTimeSpent" value="199750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -889,7 +870,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/recherche/userModel.php" />
     <entry file="file://$PROJECT_DIR$/recherche/index.php" />
     <entry file="file://$PROJECT_DIR$/recherche/resultat_recherche.php" />
     <entry file="file://$PROJECT_DIR$/recherche/search_dept.js" />
@@ -1016,13 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
           <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="96" lean-forward="false" selection-start-line="27" selection-start-column="96" selection-end-line="27" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -1217,45 +1190,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="2929" column="24" lean-forward="false" selection-start-line="2929" selection-start-column="20" selection-end-line="2929" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vue/images/services.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="604" column="16" lean-forward="false" selection-start-line="604" selection-start-column="16" selection-end-line="604" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Vue/identification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="91" column="21" lean-forward="true" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+        <state relative-caret-position="1394">
+          <caret line="103" column="50" lean-forward="false" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#2;n#ul#0;n#nav#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#form#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#form#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1517320178982" expanded="true" signature="2749:2774" ph="SELECT * FRO... departement" />
-            <marker date="1517320178982" expanded="true" signature="2837:2860" ph="SELECT * FRO... categorie" />
+            <marker date="1517322176071" expanded="true" signature="2749:2774" ph="SELECT * FRO... departement" />
+            <marker date="1517322176071" expanded="true" signature="2837:2860" ph="SELECT * FRO... categorie" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vue/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="994" column="19" lean-forward="false" selection-start-line="994" selection-start-column="19" selection-end-line="994" selection-end-column="19" />
+        <state relative-caret-position="160">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="3894" column="16" lean-forward="false" selection-start-line="3894" selection-start-column="16" selection-end-line="3894" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/inscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="70" column="34" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
           <folding />
         </state>
       </provider>
