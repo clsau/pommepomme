@@ -5,8 +5,7 @@
     <title>Livrer-les-tous</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="keywords" content="Fruit land a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <meta name="keywords" content="Livraison de produits agricoles participative"/>
 
     <!-- default css files -->
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
@@ -30,47 +29,67 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <!-- Body -->
-<body ng-app="AppModule" ng-controller="IdentificationCtrl">
+<body style="
+  display: flex;
+  flex-flow: column;" ng-app="AppModule" ng-controller="IdentificationCtrl">
 <!-- header    MENU  -->
 
 <div class="container-fluid">
-    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
+    <nav class="navbar navbar-default" style="color:#000000; height: 100px">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" style="background-color: #c4e3f3">Menu
+            </button>
             <div class="logo" id="LeLogo">
                 <a href="../Controleur/index.php"><img src="images/logo_litte.png" alt="LOGO"/></a>
             </div>
         </div>
 
-        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse nav-wil" ng-controller="formSearchCtrl" id="bs-example-navbar-collapse-1">
             <nav>
                 <ul class="nav navbar-nav">
-                    <li><a href="../Controleur/inscription.php">INSCRIPTION</a></li>
-                    <li style="margin-top:15px;"><select name="departement" size="1">
-                        <option value="departement" selected>Departement</option>
-                        <option value="33">Gironde - 33</option>
-                        <option value="17">Charente-Maritime - 17</option>
-                        <option value="16">Charente -16</option>
-                        <option value="40">Landes - 40</option>
-                    </select>
+                    <li>
+                        <a href="../Controleur/inscription.php">S'inscrire</a>
                     </li>
-                    <li style="margin-top:15px;margin-left:10px;"><input type='submit'
-                                                                         value='Rechercher des producteurs'
-                                                                         align="center"></li>
+                    <li style="margin-top:15px;">
+                        <?php //Connection avec la BDD.
+                        $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                        $request = mysqli_query($mysqli, "SELECT * FROM departement");
+                        $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+                        ?>
+
+                        <form name="SearchForm">
+                            <select name="cboDept" ng-model="item.cboDept">
+                                <option value="" selected> Département</option>
+                                <?php while ($donnees = mysqli_fetch_array($request)) { ?>
+
+                                    <option name="departement"
+                                            value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <select name="categorie" ng-model="item.categorie" hint="Produit">
+                                <option value="" selected> Produit</option>
+                                <?php while ($donnees = mysqli_fetch_array($request1)) { ?>
+                                    <option name="categorie"
+                                            value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <?php
+                            mysqli_close($mysqli); //deconnection de mysql ?>
+                    </li>
+                    <li style="margin-top:15px;margin-left:10px;">
+                        <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)"
+                                ng-disabled="SearchForm.$invalid" class="btn btn-primary">Recherche
+                        </button>
+                    </li>
+                    </form>
                 </ul>
             </nav>
         </div>
         <!-- /.navbar-collapse -->
     </nav>
 </div>
-
-</body>
-<!-- //header A REDUIRE  -->
-
-
-<!--////////////////////////////////////////////  ////////////////////////////////////////////  ////////////////////////////////////-->
-
 
 <!-- services section -->
 <section class="service-w3ls" id="services" style="margin-top:5px;">
@@ -88,7 +107,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--<input href="../traitements/traitement/create_user.php" type="submit" name="connexion" value="Connexion"/> -->
             <input type="button" name="connexion" ng-click="connexion()" value="Connexion"/>
         </div>
-
     </form>
 </section>
 

@@ -18,10 +18,7 @@ $user = new userModel($db);
 $data = json_decode(file_get_contents("php://input"));
 // get keywords
 $keywords1=isset($_GET["cboDept"]) ? $_GET["cboDept"] : "";
-<<<<<<< HEAD
 $keywords2=isset($_GET["categorie"]) ? $_GET["categorie"] : "";
-=======
->>>>>>> 1aa486998db8312bb0f64327930a9e8689422521
 
 $keywords2=isset($_GET["categorie"]) ? $_GET["categorie"] : "";
 // query products
