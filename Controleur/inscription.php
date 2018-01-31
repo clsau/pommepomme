@@ -52,9 +52,6 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" style="background-color:orange" >
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
                 </button>
             <div class="logo">
                 <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
@@ -65,15 +62,7 @@
             <nav >
                 <ul class="nav navbar-nav" >
                     <li>
-                        <a href="index.php"><?php if (!isset($_SESSION['pseudo'])) echo "Home"; ?></a>
-                    </li>
-                    <li>
-                        <a href="../Vue/identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                    </li>
-                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                    </li>
-                    <li>
-                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                        <a href="../Vue/identification.php">Se connecter</a>
                     </li>
                  </form>
                 </ul>
@@ -167,7 +156,7 @@
                        class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                 </ul>
                 <ul>
-                    <a href="../Vue/identification.html"
+                    <a href="../Vue/identification.php"
                        class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
                 </ul>
                 <ul><a href="affichage_prod.php"

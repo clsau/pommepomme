@@ -28,11 +28,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" style="background-color:orange" >
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                    data-target="#bs-example-navbar-collapse-1" style="background-color: #c4e3f3">Menu
             </button>
             <div class="logo">
                 <h1><a class ="navbar-brand" href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a></h1>
@@ -46,7 +42,7 @@
                         <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                     </li>
                     <li>
-                        <a href="../Vue/identification.html"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                        <a href="../Vue/identification.php"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
                     </li>
                     <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
                     </li>
@@ -56,6 +52,7 @@
                      <li style="margin-top:15px;">  
                             <?php //Connection avec la BDD.
                             $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                            mysqli_set_charset($mysqli, "utf8");
                             $request = mysqli_query($mysqli, "SELECT * FROM departement");
                             $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
                             ?>
@@ -725,7 +722,7 @@
                        class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
                 </ul>
                 <ul>
-                    <a href="../Vue/identification.html"
+                    <a href="../Vue/identification.php"
                        class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
                 </ul>
                 <ul><a href="affichage_prod.php"
@@ -739,12 +736,12 @@
         </div>
         <div class="col-md-6 footernav">
             <div class="agileits-social">
-                <ul><a href="#home" class="scroll">MENTIONS LEGALES</a></ul>
+                <ul><a href="index.php" class="scroll">Mentions légales</a></ul>
             </div>
         </div>
         <div class="col-md-6 footernav">
             <div class="agileits-social">
-                <ul><a href="#home" class="scroll">CONTACTS</a></ul>
+                <ul><a href="index.php" class="scroll">Contact</a></ul>
             </div>
         </div>
     </div>
