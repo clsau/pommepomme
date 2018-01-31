@@ -9,11 +9,8 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 
 // include database and object files
-<<<<<<< HEAD
+
 include_once '../Config/database.php';
-=======
-include_once '../config/database.php';
->>>>>>> 1aa486998db8312bb0f64327930a9e8689422521
 include_once 'Models/prodModel.php';
 
 // get database connection
