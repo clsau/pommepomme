@@ -18,10 +18,6 @@ $user = new userModel($db);
 $data = json_decode(file_get_contents("php://input"));
 // get keywords
 $keywords1=isset($_GET["cboDept"]) ? $_GET["cboDept"] : "";
-<<<<<<< HEAD
-$keywords2=isset($_GET["categorie"]) ? $_GET["categorie"] : "";
-=======
->>>>>>> 1aa486998db8312bb0f64327930a9e8689422521
 
 $keywords2=isset($_GET["categorie"]) ? $_GET["categorie"] : "";
 // query products
@@ -50,9 +46,13 @@ if (empty($stmt)) {
             'Commune' => $row['code_postal_commune'],
             'Titre' => $row['user_titre'],
             'Produit' => $row['produit_nom'],
+            'produit_description' => $row['produit_description'],
+            'produit_photo' => $row['produit_photo'],
             'Prix' => $row['produit_prix'],
+            'unite' => $row['produit_unite'],
             'produit_id' => $row['produit_id'],
             'produit_user_id' => $row['produit_user_id']
+
         );
 
         array_push($user_arr, $user_item);

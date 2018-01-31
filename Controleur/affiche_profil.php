@@ -24,10 +24,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           rel="stylesheet">
     <!--//web font-->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="../Config/app.js"></script>
+    <script src="../Vue/js/javanous/affiche_profilCtrl.js"></script>
+
+
 </head>
 
 <!-- Body -->
-<body>
+<body ng-app="AppModule" ng-controller="SearchProfile">
 
 <!-- header    MENU  -->
 
@@ -88,7 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </body>
 <section class="service-w3ls" id="services" style="margin-top:5px;">
     <?php
-    $id_profil = $_GET['profil'];
+    $id_profil = $_GET['produit_user_id'];
     // echo($id_profil);
     $mysqli = mysqli_connect("localhost", "root", "", "pomme");
     $Requete2 = mysqli_query($mysqli, "SELECT * FROM users,code_postal WHERE user_id='" . $id_profil . "' AND users.user_code_postal_id = code_postal.code_postal_id ");
@@ -182,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             echo $donnees3['produit_unite']; ?></td>
 
                         <td>
-                            <button type="button">Commander</button>
+                            <button type="button" class="btn btn-primary">Commander</button>
                         </td>
                     </tr>
                 <?php } ?>
