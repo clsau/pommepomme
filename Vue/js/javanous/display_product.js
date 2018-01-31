@@ -22,7 +22,6 @@ app.controller("formDisplayCtrl", function ($scope, $http, $window, myPort) {
             $scope.produit_description = $scope.modif[0].produit_description;
             $scope.produit_photo = $scope.modif[0].produit_photo;
             $scope.produit_prix = $scope.modif[0].produit_prix;
-
             $scope.produit_stock = $scope.modif[0].produit_stock;
             $scope.produit_valeur_unite = $scope.modif[0].produit_valeur_unite;
             $scope.produit_unite = $scope.modif[0].produit_unite;

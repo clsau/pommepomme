@@ -103,7 +103,6 @@
     <!--Fin du header -->
 
     <table>
-<<<<<<< HEAD
     <tr>
         
        <th>Nom</th>
@@ -124,8 +123,6 @@
        <td> {{i.Produit}} </td>
        <td> {{i.Prix}} </td>
     </tr>
-    
-=======
         <tr>
             <th>Nom</th>
             <th>Prenom</th>

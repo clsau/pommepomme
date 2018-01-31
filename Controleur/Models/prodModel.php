@@ -72,7 +72,7 @@ class prodModel
 
         // execute the query
         if ($stmt->execute())
-            return true;
+            return $this->conn->query("SELECT LAST_INSERT_ID()")->fetchColumn();
         print_r($stmt->errorInfo());
         return false;
     }
@@ -146,6 +146,33 @@ class prodModel
         }
         return false;
     }
+
+    public function add_picture()
+    {
+        $query = "UPDATE
+			                " . $this->table_name . "
+			            SET
+			                produit_photo = :produit_photo
+			            WHERE
+			                produit_id = :produit_id ";
+
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+        // sanitize
+
+        $this->produit_photo = htmlspecialchars(strip_tags($this->produit_photo));
+        $this->produit_id = htmlspecialchars(strip_tags($this->produit_id));
+        // bind new values
+
+        $stmt->bindParam(':produit_photo', $this->produit_photo);
+        $stmt->bindParam(':produit_id', $this->produit_id);
+        // execute the query
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
 
     public function read_products($id)
     {
