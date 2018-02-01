@@ -109,7 +109,6 @@
             <th>Description du produit</th>
             <th>Nom</th>
             <th>Prenom</th>
-            p
             <th>CP</th>
             <th>Commune</th>
             <th>Prix</th>
@@ -118,7 +117,7 @@
             <th></th>
         </tr>
         <tr ng-repeat="i in listeProducteurs">
-            <td> {{i.produit_photo}}</td>
+            <td><img src="../images_prod/uploads/{{i.produit_photo}}"/></td>
             <td> {{i.Produit}}</td>
             <td> {{i.produit_description}}</td>
             <td> {{i.Nom}}</td>
@@ -129,19 +128,16 @@
             <td> {{i.unite}}</td>
             <td>
                 <?php if (isset($_SESSION['pseudo'])) { ?>
-                    <!--<button id={{i.produit_id}} type="button" data-ng-click="commande($event)"
-                            class="btn btn-primary"> Commander
-                    </button>-->
                     <form>
                         <button id={{i.produit_id}} type="submit" data-ng-click="commande($event)"
                                 class="btn btn-primary">Commander
                         </button>
                     </form>
-                <? } else { ?>
+                <?php } else { ?>
                     <a href="../Vue/identification.html">
                         <input type="button" value="Se connecter pour Commander" class="btn btn-primary">
                     </a>
-                <? } ?>
+                <?php } ?>
 
             </td>
             <td>
@@ -190,9 +186,5 @@
         </div>
     </div>
 </div>
-<!-- //footer -->
-<!--//////////////////////////           FIN -->
-
 </body>
-<!-- //Body -->
 </html>

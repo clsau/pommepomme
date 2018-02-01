@@ -5,11 +5,11 @@ app.controller("formSearchCtrl", function ($rootScope, $scope, $http, myPort) {
     $scope.formsubmit = function (value1, value2) {
 
 
-        if (value1 == "Département") {
+        if (value1 == null) {
             value1 = "%";
         }
 
-        if (value2 == "Produit") {
+        if (value2 == null) {
             value2="%";
         }
 

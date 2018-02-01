@@ -96,6 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     $id_profil = $_GET['produit_user_id'];
     // echo($id_profil);
     $mysqli = mysqli_connect("localhost", "root", "", "pomme");
+    mysqli_set_charset($mysqli, "utf8");
     $Requete2 = mysqli_query($mysqli, "SELECT * FROM users,code_postal WHERE user_id='" . $id_profil . "' AND users.user_code_postal_id = code_postal.code_postal_id ");
     $donnees2 = mysqli_fetch_array($Requete2);
     $Requete3 = mysqli_query($mysqli, "SELECT * FROM produit WHERE produit_user_id='" . $id_profil . "'  ");
@@ -158,6 +159,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <table style="background-color: #455A64">
                 <tr>
+                    <td>Photo</td>
                     <td>Nom</td>
                     <td>Decription</td>
                     <td>Prix</td>
@@ -169,6 +171,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <?php while ($donnees3 = mysqli_fetch_array($Requete3)) { ?>
 
                     <tr>
+                        <td><img src="../images_prod/uploads/<?php echo $donnees3['produit_photo']; ?>"/></td>
 
                         <td id="Produit" valign="top"><?php
                             echo $donnees3['produit_nom']; ?></td>
