@@ -13,9 +13,17 @@
     <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
     <link rel="stylesheet" href="../Vue/css/font-awesome.min.css"/><!-- Font awesome css file -->
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../Vue/css/bootstrap.min.css">
     <!-- default css files -->
 
+    <!-- Icon pages web -->
+    <link rel="shortcut icon" href="../Vue/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../Vue/images/favicon.ico" type="image/x-icon">
+    <!-- Icon pages web -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../Vue/js/bootstrap.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="../Vue/js/javanous/search_dept.js"></script>
 </head>
@@ -23,74 +31,7 @@
 <!-- Body -->
 <body ng-app="AppModule" >
 <!-- header    MENU  -->
-<div class="container-fluid">
-    <nav class="navbar navbar-default" style=" height: 50px color:#000000">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" style="background-color: #c4e3f3">Menu
-            </button>
-            <div class="logo">
-                <h1><a class ="navbar-brand" href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a></h1>
-            </div>
-        </div>
-
-        <div class="collapse navbar-collapse nav-wil" ng-controller="formSearchCtrl" id="bs-example-navbar-collapse-1">
-            <nav >
-                <ul class="nav navbar-nav" >
-                    <li>
-                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
-                    </li>
-                    <li>
-                        <a href="../Vue/identification.php"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                    </li>
-                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                    </li>
-                    <li>
-                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
-                    </li>
-                     <li style="margin-top:15px;">  
-                            <?php //Connection avec la BDD.
-                            $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-                            mysqli_set_charset($mysqli, "utf8");
-                            $request = mysqli_query($mysqli, "SELECT * FROM departement");
-                            $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
-                            ?>
-
-                            <form name = "SearchForm">
-                                <select name="cboDept" ng-model="item.cboDept">
-                                <option value="" selected> Département</option>
-                                <?php while($donnees = mysqli_fetch_array($request)){?>
-
-                                <option name="departement" value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
-                                <?php }?>
-
-                                </select>
-
-
-                                <select name="categorie" ng-model="item.categorie" hint="Produit" >
-                                <option value="" selected> Produit</option>
-                                <?php while($donnees = mysqli_fetch_array($request1)){?>
-                                <option name="categorie" value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
-                                <?php }?>
-                                </select>
-                            <?php
-                        mysqli_close($mysqli); //deconnection de mysql ?>
-                        </li>
-                        <li style="margin-top:15px;margin-left:10px;"> 
-                         <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)" ng-disabled="SearchForm.$invalid" class="btn btn-primary">Recherche
-                        </button>
-                     </li>
-                 </form>
-                </ul>
-            </nav>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-</div>
-</body>
-
-
+<?php include('header.html'); ?>
 <!-- //header A REDUIRE  -->
 
 
@@ -713,39 +654,7 @@
 
 
 <!-- footer -->
-<div class="footer">
-    <div class="container" style="margin-top:5px;">
-        <div class="col-md-6 footernav">
-            <div class="agileits-social">
-                <ul>
-                    <a href="inscription.php"
-                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
-                </ul>
-                <ul>
-                    <a href="../Vue/identification.php"
-                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                </ul>
-                <ul><a href="affichage_prod.php"
-                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                </ul>
-                <ul>
-                    <a href="deconnexion.php"
-                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-6 footernav">
-            <div class="agileits-social">
-                <ul><a href="index.php" class="scroll">Mentions légales</a></ul>
-            </div>
-        </div>
-        <div class="col-md-6 footernav">
-            <div class="agileits-social">
-                <ul><a href="index.php" class="scroll">Contact</a></ul>
-            </div>
-        </div>
-    </div>
-</div>
+<?php include('footer.html'); ?>
 <!-- //footer -->
 <!--//////////////////////////           FIN -->
 

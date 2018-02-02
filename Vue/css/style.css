@@ -40,17 +40,16 @@ p {
     margin: 0;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-}
-
 label {
     display: block;
     width: 250px;
     float: left;
     margin: 0;
     color: #FFFFFF;
+}
+
+.logo {
+    width: 75%;
 }
 
 img {
@@ -75,7 +74,7 @@ th, td {
     text-align: center;
     border: 1px solid white;
     padding: 8px;
-    color: #FFFFFF;
+    color: #000;
 }
 
 .inscriptionForm {
@@ -169,26 +168,6 @@ th, td {
     font-size: 1.3em;
     line-height: 37px;
     font-weight: bold;
-}
-
-.logo {
-    width: 50px;
-    height: 50px;
-    margin-top: 1em;
-    margin-left: 200px;
-}
-
-.logo a i {
-    padding: 0 6px;
-}
-
-.logo p {
-    display: block;
-    color: #ececec;
-    line-height: 9px;
-    text-align: center;
-    letter-spacing: 5px;
-    font-size: 12px;
 }
 
 .formInscription div {
@@ -987,7 +966,6 @@ ul.top-links li a i.fa:hover {
 }
 
 .footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
     height: 10%;
@@ -1062,7 +1040,7 @@ ul.top-links li a i.fa:hover {
     color: #fff;
     letter-spacing: 1px;
     border: none;
-    background: #212121;
+    background: #b38a8a;
 }
 
 .nav-tabs {
@@ -1327,10 +1305,20 @@ button.btn1:hover i.fa.fa-paper-plane-o {
     filter: alpha(opacity=0);
 }
 
+.container_profil {
+    margin-top: -25px;
+    padding-top: 50px;
+    width: 100%;
+    height: 623px;
+    background: url(../images/services.jpg) no-repeat;
+    background-size: 100% 100%;
+
+}
+
 /*-- //to-top --*/
 @media screen and (max-width: 1920px) {
     .nav-tabs > li:nth-child(1) {
-        margin-left: 53.5em;
+        margin-left: 46.5em;
     }
 
     .navbar-nav {
@@ -1408,7 +1396,7 @@ button.btn1:hover i.fa.fa-paper-plane-o {
     }
 
     .nav-tabs > li:nth-child(1) {
-        margin-left: 32.5em;
+        margin-left: 34.5em;
     }
 }
 
@@ -2023,85 +2011,4 @@ button.btn1:hover i.fa.fa-paper-plane-o {
     }
 }
 
-/* Bouton inscription */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 10000px;
-    height: 50px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-    display: none;
-}
-
-/* The slider */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 25px;
-    width: 25px;
-    left: 20px;
-    bottom: 10px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #2196F3;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(800px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-.on {
-    display: none;
-}
-
-.on, .off {
-    color: white;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    font-size: 10px;
-    font-family: Verdana, sans-serif;
-}
-
-input:checked + .slider .on {
-    display: block;
-}
-
-input:checked + .slider .off {
-    display: none;
-}
+/* responsive design */
