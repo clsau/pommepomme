@@ -23,11 +23,12 @@
 
 </head>
 
-<body ng-app="AppModule" ng-controller="CommandeCtrl">
+<body ng-app="AppModule" ng-controller="commandeCtrl">
 
 <!-- header    MENU  -->
 
 <div class="container-fluid">
+
     <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 0">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -43,7 +44,7 @@
             </div>
         </div>
 
-        <div class="collapse navbar-collapse nav-wil" ng-controller="formSearchCtrl" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
             <nav>
                 <ul class="nav navbar-nav">
                     <li>
@@ -59,9 +60,9 @@
                     </li>
                     <li style="margin-top:15px;">
                         <?php //Connection avec la BDD.
-                        $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-                        $request = mysqli_query($mysqli, "SELECT * FROM departement");
-                        $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+                            $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                            $request = mysqli_query($mysqli, "SELECT * FROM departement");
+                            $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
                         ?>
 
                         <form name="SearchForm">
@@ -80,7 +81,7 @@
                                 <?php } ?>
                             </select>
                             <?php
-                            mysqli_close($mysqli); //deconnection de mysql ?>
+                                mysqli_close($mysqli); //deconnection de mysql ?>
                     </li>
                     <li style="margin-top:15px;margin-left:10px;">
                         <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)"
@@ -93,22 +94,26 @@
         </div>
         <!-- /.navbar-collapse -->
     </nav>
+
 </div>
 
 
 <section class="service-w3ls" id="services" style="margin-top:0;">
 
     <?php
-    $id_produit = $_GET['produit_id'];
-    $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-    $Requete = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
-    $Requete2 = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
-    $Requete3 = mysqli_query($mysqli, "SELECT P1.* FROM produit P1, produit P2 WHERE P1.produit_id != '" . $id_produit . "' AND P2.produit_id = '" . $id_produit . "'  AND P2.produit_user_id = P1.produit_user_id");
+
+        $id_produit = $_GET["produit_id"];
+        $_SESSION['id_produit'] = $id_produit;
+        $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+        $Requete = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
+        $Requete2 = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
+        $Requete3 = mysqli_query($mysqli, "SELECT P1.* FROM produit P1, produit P2 WHERE P1.produit_id != '" . $id_produit . "' AND P2.produit_id = '" . $id_produit . "'  AND P2.produit_user_id = P1.produit_user_id");
     ?>
 
     <!--Fin du header -->
 
     <div class="container">
+
         <h1>
             <?php while ($donnees2 = mysqli_fetch_array($Requete2)) {
                 echo "Commande chez le producteur  ";
@@ -118,12 +123,18 @@
                 echo " ( ";
                 echo $donnees2['user_titre'];
                 echo " ) ";
+                $_SESSION['producteur_id'] = $donnees2['user_id'];
             } ?>
         </h1>
-        <br></br>
+        <br>
     </div>
 
-    <table ng-controller="CommandeCtrl">
+    <input type="hidden" ng-model="id_produit" value="<?php echo $id_produit; ?>">
+    <input type="hidden" ng-model="producteur_id" value="<?php echo $_SESSION['producteur_id']; ?>">
+    <input type="hidden" ng-model="user_id" value="<?php echo $_SESSION['user_id'] ?>">
+
+
+    <table>
         <tr>
             <th>Photo</th>
             <th>Nom Produit</th>
@@ -137,21 +148,21 @@
             <tr>
 
                 <td id="photo"><?php
-                    echo $donnees['produit_photo']; ?></td>
+                        echo $donnees['produit_photo']; ?></td>
 
                 <td id="Produit" valign="top"><?php
-                    echo $donnees['produit_nom']; ?></td>
+                        echo $donnees['produit_nom']; ?></td>
 
                 <td id="Prix" valign="top"><?php
-                    echo $donnees['produit_prix']; ?></td>
+                        echo $donnees['produit_prix']; ?></td>
 
                 <td id="Unite" valign="top"><?php
-                    echo $donnees['produit_valeur_unite'];
-                    echo " ";
-                    echo $donnees['produit_unite']; ?></td>
+                        echo $donnees['produit_valeur_unite'];
+                        echo " ";
+                        echo $donnees['produit_unite']; ?></td>
 
-                <td id="Qantite" valign="top" style="color:black;">
-                    <select>
+                <td id="quantiteligne" valign="top" style="color:black;">
+                    <select ng-model="quantite">
                         <option value=1>1</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -179,14 +190,14 @@
     </table>
 
     <div class="container">
-        <br></br>
+        <br>
         <h3>
             Voulez-vous également commander d'autres produits du même producteur ?
         </h3>
-        <br></br>
+        <br>
     </div>
 
-    <table ng-controller="CommandeCtrl">
+    <table>
         <tr>
             <th>Photo</th>
             <th>Nom Produit</th>
@@ -200,25 +211,26 @@
 
             <tr>
 
-                <td id="photo"><?php
-                    echo $donnees3['produit_photo']; ?></td>
+                <td id="photo"><img style="width:75px;height:75px;" src="../images_prod/uploads/<?php
+                        echo $donnees3['produit_photo']; ?>"></td>
 
                 <td id="Produit" valign="top"><?php
-                    echo $donnees3['produit_nom']; ?></td>
+                        echo $donnees3['produit_nom']; ?></td>
 
                 <td id="Produit" valign="top"><?php
-                    echo $donnees3['produit_description']; ?></td>
+                        echo $donnees3['produit_description']; ?></td>
 
                 <td id="Prix" valign="top"><?php
-                    echo $donnees3['produit_prix']; ?></td>
+                        echo $donnees3['produit_prix']; ?></td>
 
                 <td id="Unite" valign="top"><?php
-                    echo $donnees3['produit_valeur_unite'];
-                    echo " ";
-                    echo $donnees3['produit_unite']; ?></td>
+                        echo $donnees3['produit_valeur_unite'];
+                        echo " ";
+                        echo $donnees3['produit_unite']; ?></td>
 
-                <td id="Qantite" valign="top" style="color:black;">
+                <td id="Quantite" valign="top" style="color:black;">
                     <select>
+                        <option value=0>0</option>
                         <option value=1>1</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -246,14 +258,38 @@
     </table>
 
 
-    <div style="align:center; background-color: rgba(127,241,190,0.28); margin:auto; width: 70%; margin-top: 30px" ;
-    ">
+    <div align="center" style="background-color: rgba(127,241,190,0.28); margin:auto; width: 70%; margin-top: 30px">
     <form style="margin:auto; width: 30%;">
         <label for="choix_livraison">Proposer la livraison</label>
         <input type="checkbox" id="choix_livraison" name="choix_livraison" value="choix_livraison" checked>
-
     </form>
-    </div>
+
+
+        <form name="createOrderForm">
+            <fieldset>
+                <div>
+                    <label for="datelivraison">Date de livraison</label>
+                    <input type="date" id="datelivraison" ng-model="commande_date_livraison"/><br/><br/>
+                </div>
+                <div>
+                    <label for="lieulivraison">Lieu de livraison :</label>
+                    <input type="text" id="lieulivraison" ng-model="commande_lieu_livraison"/><br/><br/>
+                </div>
+                <div>
+                    <label for="commande_description">Description :</label>
+                    <input type="text" id="commande_description" ng-model="commande_description"/><br/><br/>
+                </div>
+                <div>
+                    <label for="contenance">Capacité de livraison :</label>
+                    <input type="text" id="contenance" ng-model="commande_contenance"/><br/><br/> <br/>
+                </div>
+                <div style="margin-left:50%; margin-top:30px">
+                    <button type="submit" ng-click="createOrder()" class="btn btn-primary">Valider
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+
 
 </section>
 
