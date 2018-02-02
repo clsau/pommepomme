@@ -1,0 +1,50 @@
+<!-- header    MENU  -->
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="index.php"><img class="logo" src="../Vue/images/logoPomme.png" alt="LOGO"/></a>
+    </div>
+    <ul class="nav navbar-nav" ng-controller="formSearchCtrl" id="bs-example-navbar-collapse-1">
+        <li>
+            <?php //Connection avec la BDD.
+                $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                mysqli_set_charset($mysqli, "utf8");
+                $request = mysqli_query($mysqli, "SELECT * FROM departement");
+                $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+            ?>
+            <nav class="navbar navbar-light bg-light">
+                <form name = "SearchForm" class="form-inline">
+                    <select class="form-control" name="cboDept" ng-model="item.cboDept">
+                        <option value="" selected> Choisir votre département ...</option>
+                        <?php while($donnees = mysqli_fetch_array($request)){?>
+                            <option name="departement" value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
+                        <?php }?>
+                    </select>
+
+                    <select class="form-control" name="categorie" ng-model="item.categorie" hint="Produit" >
+                        <option value="" selected>Choisir votre catégorie de produit ...</option>
+                        <?php while($donnees = mysqli_fetch_array($request1)){?>
+                            <option name="categorie" value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
+                        <?php }?>
+                    </select>
+                    <button type="button" class="btn btn-link" onfocus="this.blur();" ng-click="formsubmit(item.cboDept,item.categorie)" ng-disabled="SearchForm.$invalid">
+                        Rechercher
+                    </button>
+                </form>
+            </nav>
+            <?php
+                mysqli_close($mysqli); //deconnection de mysql
+            ?>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <?php if (!isset($_SESSION['pseudo'])){?>
+      <li><a href="inscription.php"><span class="glyphicon glyphicon-user"></span><?php echo " S'inscrire"; ?></a></li>
+      <li><a href="../Vue/identification.php"><span class="glyphicon glyphicon-log-in"></span><?php echo " Se connecter"; ?></a></li>
+      <?php } else {?>
+      <li><a href="affichage_prod.php"><span class="glyphicon glyphicon-user"></span><?php echo " Profil"; ?></a></li>
+      <li><a href="deconnexion.php"><span class="glyphicon glyphicon-log-out"></span><?php echo "Se déconnecter"; ?></a></li>
+      <?php }?>
+    </ul>
+  </div>
+</nav> 
