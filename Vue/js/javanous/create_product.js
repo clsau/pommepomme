@@ -26,7 +26,7 @@ app.controller("formCtrl", function ($scope, $http, myPort) {
                 } else {
 
                     let chem1 = myPort;
-                    let chem2 = "Vue/display_products.html";
+                    let chem2 = "Vue/display_products.php";
                     window.location.replace(chem1.concat(chem2));
                 }
             }

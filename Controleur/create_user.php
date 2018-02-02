@@ -22,7 +22,13 @@ $user = new userModel($db);
 $data = json_decode(file_get_contents("php://input"));
  
 // set ID property of user to be edited
-//$user->id_user = $data->id_user;
+    if ($data->type == 1) {
+        $user->Titre = $data->Titre;
+        $user->Description = $data->Description;
+    } else {
+        $user->Titre = null;
+        $user->Description = null;
+    }
 $user->login = $data->login;
 $user->mdp = $data->mdp;
 $user->type = $data->type;
@@ -32,11 +38,9 @@ $user->Tel = $data->Tel;
 $user->Mail = $data->Mail;
 $user->Adresse = $data->Adresse;
 $user->Id_CP = $data->Id_CP;
-$user->Titre = $data->Titre;
-$user->Description = $data->Description;
 
 
-// create the user
+    // create the user
 header('Content-Type: application/json');
 if ($user->create_user()) {
     $response = array('message' => 'true');

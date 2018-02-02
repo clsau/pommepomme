@@ -50,21 +50,21 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" style="background-color:orange" >
+                    data-target="#bs-example-navbar-collapse-1" style="background-color:orange">
                 <span class="sr-only">Toggle navigation</span>
-                </button>
+            </button>
             <div class="logo">
                 <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
             </div>
         </div>
 
         <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-            <nav >
-                <ul class="nav navbar-nav" >
+            <nav>
+                <ul class="nav navbar-nav">
                     <li>
                         <a href="../Vue/identification.php">Se connecter</a>
                     </li>
-                 </form>
+                    </form>
                 </ul>
             </nav>
         </div>
@@ -78,67 +78,83 @@
 
 <!-- services section -->
 
-<section class="service-w3ls" id="services" style="margin-top:5px;" ng-init="init()" >
+<section class="service-w3ls" id="services" style="margin-top:5px;" ng-init="init()">
 
     <h3 class="heading"> Inscription </h3>
-
-<div class="inscriptionForm">
-    <form>
-        <div>
-            <label>Login :</label>
-            <input type="text" id="login" ng-model="item.login" required/><br/><br/>
-        </div>
-         <div>
-            <label>Mot de passe :</label>
-            <input type="password" id="mdp" ng-model="item.pass" required/><br/><br/>
-        <div>
-            <label>Nom :</label>
-            <input type="text" id="nom" ng-model="item.nom" required/><br/><br/>
-        </div>
-        <div>
-            <label>Prénom :</label>
-            <input type="text" id="prenom" ng-model="item.prenom" required/><br/><br/>
-        </div>
-        <div>
-            <label>Adresse mail :</label>
-            <input type="email" id="mail" ng-model="item.mail" required/><br/><br/>
-        </div>
-        <div>
-            <label>Confirmer l'adresse mail :</label>
-            <input type="email" id="mailconf" ng-model="item.mailconf" required/><br/><br/>
-            <div ng-if="!item.verif" style="color:red; font-size="10px;">verifier la saisie de votre mail</div>
-        </div>
-        <div>
-            <label>Adresse postale :</label>
-            <input type="text" id="adresse" ng-model="item.adresse" required/><br/><br/>
-        </div>
-        <div>
-            <label>Code postal :</label>
-            <input type="number" id="CP" ng-model="item.cp" required maxlength="5"/><br/><br/>
-        </div>
-        <div>
-            <label>Ville :</label>
-            <input type="text" id="Ville" ng-model="item.ville" required/><br/><br/>
-        </div>
-        <div>
-            <label>Numéro de téléphone :</label>
-            <input type="tel" id="Tel" ng-model="item.tel" required/><br/><br/>
-        </div>
-        <div>
-            <label>Titre de votre profil producteur :</label>
-            <input type="text" id="Titre" ng-model="item.titre" /><br/><br/>
-        </div>
-        <div>
-            <label>Description de votre entreprise :</label>
-            <textarea id="Description" ng-model="item.description"></textarea><br/><br/>
-        </div>
-        <div>
-            <center>
-            <button  ng-click="save()">Inscription</button>
-            </center>
-        </div>
-    </form>
-</div>
+    <script type="text/javascript">
+        function yesnoCheck() {
+            if (document.getElementById('prodCheck').checked) {
+                document.getElementById('ifYes').style.display = 'block';
+            }
+            else document.getElementById('ifYes').style.display = 'none';
+        }
+    </script>
+    <div class="inscriptionForm">
+        <form>
+            <div>
+                <label class="switch">
+                    <input class="switch-input" type="checkbox" id="prodCheck" onclick="yesnoCheck();">
+                    <span class="slider round"><span class="on">Producteur</span>
+                        <span class="off">Utilisateur</span></span>
+                </label>
+            </div>
+            <br/><br/><br/><br/>
+            <div>
+                <label>Login :</label>
+                <input type="text" id="login" ng-model="item.login" required/><br/><br/>
+            </div>
+            <div>
+                <label>Mot de passe :</label>
+                <input type="password" id="mdp" ng-model="item.pass" required/><br/><br/>
+            </div>
+            <div>
+                <label>Nom :</label>
+                <input type="text" id="nom" ng-model="item.nom" required/><br/><br/>
+            </div>
+            <div>
+                <label>Prénom :</label>
+                <input type="text" id="prenom" ng-model="item.prenom" required/><br/><br/>
+            </div>
+            <div>
+                <label>Adresse mail :</label>
+                <input type="email" id="mail" ng-model="item.mail" required/><br/><br/>
+            </div>
+            <div>
+                <label>Confirmer l'adresse mail :</label>
+                <input type="email" id="mailconf" ng-model="item.mailconf" required/><br/><br/>
+                <div ng-if="!item.verif" style="color:red; font-size=10px;">verifier la saisie de votre mail</div>
+            </div>
+            <div>
+                <label>Adresse postale :</label>
+                <input type="text" id="adresse" ng-model="item.adresse" required/><br/><br/>
+            </div>
+            <div>
+                <label>Code postal :</label>
+                <input type="number" id="CP" ng-model="item.cp" required maxlength="5"/><br/><br/>
+            </div>
+            <div>
+                <label>Ville :</label>
+                <input type="text" id="Ville" ng-model="item.ville" required/><br/><br/>
+            </div>
+            <div>
+                <label>Numéro de téléphone :</label>
+                <input type="tel" id="Tel" ng-model="item.tel" required/><br/><br/>
+            </div>
+            <div style="display:none" id='ifYes'>
+                <div>
+                    <label>Titre de votre profil producteur :</label>
+                    <input type="text" ng-model="item.titre"/><br/><br/>
+                </div>
+                <div>
+                    <label>Description de votre entreprise :</label>
+                    <textarea ng-model="item.description"></textarea><br/><br/>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button ng-click="save()">Inscription</button>
+            </div>
+        </form>
+    </div>
 
 
 </section>

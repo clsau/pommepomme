@@ -26,24 +26,39 @@ app.controller('InscriptionCtrl', function ($scope, $http, myPort) {
 
     };
 
-
     $scope.save = function () {
-
-        var data1 = {
-            "login": $scope.item.login,
-            "mdp": $scope.item.pass,
-            "type": 1,//$scope.item.type,
-            "Nom": $scope.item.nom,
-            "Prenom": $scope.item.prenom,
-            "Tel": $scope.item.tel,
-            "Ville": $scope.item.ville,
-            "Mail": $scope.item.mail,
-            "Adresse": $scope.item.adresse,
-            "Id_CP": $scope.item.cp,
-            "Titre": $scope.item.titre,
-            "Description": $scope.item.description
-        };
-
+        if (document.getElementsByClassName("switch-input")[0].checked ? 'yes' : 'no' == "yes") {
+            $type = 1;
+            var data1 = {
+                "login": $scope.item.login,
+                "mdp": $scope.item.pass,
+                "type": $type,
+                "Nom": $scope.item.nom,
+                "Prenom": $scope.item.prenom,
+                "Tel": $scope.item.tel,
+                "Ville": $scope.item.ville,
+                "Mail": $scope.item.mail,
+                "Adresse": $scope.item.adresse,
+                "Id_CP": $scope.item.cp,
+                "Titre": $scope.item.titre,
+                "Description": $scope.item.description
+            };
+        }
+        else {
+            $type = 0;
+            var data1 = {
+                "login": $scope.item.login,
+                "mdp": $scope.item.pass,
+                "type": $type,
+                "Nom": $scope.item.nom,
+                "Prenom": $scope.item.prenom,
+                "Tel": $scope.item.tel,
+                "Ville": $scope.item.ville,
+                "Mail": $scope.item.mail,
+                "Adresse": $scope.item.adresse,
+                "Id_CP": $scope.item.cp,
+            };
+        }
         let chem1 = myPort;
         let chem2 = "Controleur/create_user.php";
         $scope.url = chem1.concat(chem2);

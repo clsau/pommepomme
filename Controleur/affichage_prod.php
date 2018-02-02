@@ -161,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <input type="submit" name="modifier" value="modifier"/>
         </div>
     </form>
-    <form action="../Vue/display_products.html" method="post">
+    <form action="../Vue/display_products.php" method="post">
         <div align="center">
             <input type="submit" name="DisplayProduct" value="Gérer ses  produits"/>
         </div>

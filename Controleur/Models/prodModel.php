@@ -79,19 +79,17 @@ class prodModel
 
     public function delete_product($id)
     {
-        $query = 'DELETE FROM
+        $this->produit_user_id = null;
+        $query = 'UPDATE 
 			                ' . $this->table_name . '
-			            WHERE
-			                produit_id =:produit_id;';
+			       SET produit_user_id = 0
+			       WHERE produit_id =:produit_id;';
 
         $stmt = $this->conn->prepare($query);
         // sanitize
         $this->produit_id = htmlspecialchars(strip_tags($id));
 
-
-        // bind new values
         $stmt->bindParam(':produit_id', $this->produit_id);
-
         // execute the query
         if ($stmt->execute())
             return true;

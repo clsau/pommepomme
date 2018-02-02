@@ -29,7 +29,7 @@ $product = new prodModel($db);
 $product->produit_id = $_SESSION['idprod'];
 $product->produit_photo = $var;
 if ($product->add_picture()) {
-    header('Location: ../Vue/display_products.html');
+    header('Location: ../Vue/display_products.php');
     exit;
 }
 ?>

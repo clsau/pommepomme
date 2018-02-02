@@ -13,7 +13,7 @@
 <div ng-app="AppModule" ng-controller="formDisplayCtrl" class="container">
     <h2 class="text-center text-primary">Gestion des produits
         <form class="form-horizontal well form-search" action="../Controleur/affichage_prod.php" method="post"><input
-                class="btn btn-primary" type="submit" name="Accueil" value="Retour"/></form>
+                    class="btn btn-primary" type="submit" name="Accueil" value="Retour"/></form>
     </h2>
 
     <hr>
@@ -79,6 +79,19 @@
                                 <button id={{i.produit_id}} type="submit" data-ng-click="update($event)"
                                         ng-disabled="updateProductForm.$invalid"
                                         class="btn btn-primary">Modifier
+                                </button>
+                            </form>
+                        </td>
+                        <script type="text/javascript">
+                            function addid(clicked_id) {
+                                <?php $_SESSION[['idprod']] = clicked_id; ?>
+                            }
+                        </script>
+                        <td>
+                            <form action="../Vue/add_picture.html" name="updateProductForm"
+                                  class="form-horizontal well form-search">
+                                <button id={{i.produit_id}} onclick="addid(this.id)" type="submit"
+                                        class="btn btn-primary">Modifier l'image associée
                                 </button>
                             </form>
                         </td>
