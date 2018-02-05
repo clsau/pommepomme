@@ -15,7 +15,7 @@ app.controller("commandeCtrl", function ($scope, $http, myPort) {
 
         $http.post($scope.url, sent).success(function (response) {
 
-            /*if (response.message == "true") {
+            if (response.message == "true") {
 
                 let chem3 = "Controleur/orderLineModel.php";
                 $scope.url1 = chem1.concat(chem3);
@@ -33,8 +33,8 @@ app.controller("commandeCtrl", function ($scope, $http, myPort) {
                 });
             }
             else {
-                alert("Commande non ajouté. Vérifiez votre saisie");
-            }*/
+                alert("Commande non ajoutée. Vérifiez votre saisie");
+            }
         });
     }
 });
