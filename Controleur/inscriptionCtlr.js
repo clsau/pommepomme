@@ -18,15 +18,16 @@ app.controller('InscriptionCtrl', function ($scope, $http, myPort) {
         alert($scope.test);
     };
 
+
     $scope.test = "Initialisation ...";
 
 
     $scope.init = function () {
         $scope.item.verif = true;
-
     };
 
     $scope.save = function () {
+		 var codePostal_id = document.getElementById('Ville').value;
         if (document.getElementsByClassName("switch-input")[0].checked ? 'yes' : 'no' == "yes") {
             $type = 1;
             var data1 = {
@@ -36,10 +37,9 @@ app.controller('InscriptionCtrl', function ($scope, $http, myPort) {
                 "Nom": $scope.item.nom,
                 "Prenom": $scope.item.prenom,
                 "Tel": $scope.item.tel,
-                "Ville": $scope.item.ville,
                 "Mail": $scope.item.mail,
                 "Adresse": $scope.item.adresse,
-                "Id_CP": $scope.item.cp,
+                "Id_CP": codePostal_id,
                 "Titre": $scope.item.titre,
                 "Description": $scope.item.description
             };
@@ -53,26 +53,28 @@ app.controller('InscriptionCtrl', function ($scope, $http, myPort) {
                 "Nom": $scope.item.nom,
                 "Prenom": $scope.item.prenom,
                 "Tel": $scope.item.tel,
-                "Ville": $scope.item.ville,
                 "Mail": $scope.item.mail,
                 "Adresse": $scope.item.adresse,
-                "Id_CP": $scope.item.cp,
+                "Id_CP": codePostal_id,
             };
         }
         let chem1 = myPort;
         let chem2 = "Controleur/create_user.php";
         $scope.url = chem1.concat(chem2);
         $http.post($scope.url, data1).success(function (response) {
-            if (response.message == "true") {
+            if (response == "true") {
                 alert("Inscription réussie");
                 let chem1 = myPort;
                 let chem2 = "Controleur/index.php";
                 window.location.replace(chem1.concat(chem2));
             }
-            else {
+			else {
+			if (response.message == "double"){ // else if message == "double" 
+				alert ("pseudo déjà utilisé");
+			} else
                 alert("Problème d'inscription");
-            }
+			
+			}
         });
     };
-
 });

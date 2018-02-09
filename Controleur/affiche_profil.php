@@ -94,14 +94,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <section class="service-w3ls" id="services" style="margin-top:5px;">
     <?php
     $id_profil = $_GET['produit_user_id'];
-    // echo($id_profil);
+	$_SESSION['profil']=$id_profil;
     $mysqli = mysqli_connect("localhost", "root", "", "pomme");
     mysqli_set_charset($mysqli, "utf8");
     $Requete2 = mysqli_query($mysqli, "SELECT * FROM users,code_postal WHERE user_id='" . $id_profil . "' AND users.user_code_postal_id = code_postal.code_postal_id ");
     $donnees2 = mysqli_fetch_array($Requete2);
     $Requete3 = mysqli_query($mysqli, "SELECT * FROM produit WHERE produit_user_id='" . $id_profil . "'  ");
-    //$donnees3 = mysqli_fetch_array($Requete3);?>
-
+    //$donnees3 = mysqli_fetch_array($Requete3);
+		if (isset($_SESSION['msg'])){
+			if ($_SESSION['msg']!=NULL){
+	?>	
+	<h2 style='text-align : center;'><?php echo $_SESSION['msg']; $_SESSION['msg']=NULL; ?></h2>
+	<?php
+		} }
+	?> 
+	<br>
+	
     <table border="3" align="center" width="75%" style="background-color: #546E7A">
         <tr>
             <td>
@@ -152,6 +160,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <td>Ville</td>
                         <td id="Ville"><?php echo $donnees2['code_postal_commune']; ?></td>
                     </tr>
+					                    <tr>
+						
+						<td COLSPAN=2>
+						<form action="insert_favoris.php">
+								<input class="btn btn-primary" type="submit" name="Favoris" value="Favoris" />
+						</form>
+						
+  			
+                    </tr>
+						</td>	
+					
                 </table>
             </td>
         </tr>
@@ -190,11 +209,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             echo $donnees3['produit_unite']; ?></td>
 
                         <td>
-                            <button type="button" class="btn btn-primary">Commander</button>
+                            <button type="button" class="btn btn-primary ">Commander</button>
+
                         </td>
                     </tr>
                 <?php } ?>
-
             </table>
 
         </tr>

@@ -13,25 +13,89 @@
     <link href="../Vue/css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
     <link rel="stylesheet" href="../Vue/css/font-awesome.min.css"/><!-- Font awesome css file -->
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../Vue/css/bootstrap.min.css">
     <!-- default css files -->
 
-    <!-- Icon pages web -->
-    <link rel="shortcut icon" href="../Vue/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../Vue/images/favicon.ico" type="image/x-icon">
-    <!-- Icon pages web -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../Vue/js/bootstrap.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="../Vue/js/javanous/search_dept.js"></script>
+    <script src="../Vue/js/javanous/add_line_to_order.js"></script>
 </head>
 
 <!-- Body -->
-<body ng-app="AppModule" >
+<body ng-app="AppModule">
 <!-- header    MENU  -->
-<?php include('header.html'); ?>
+<div class="container-fluid">
+    <nav class="navbar navbar-default" style=" height: 50px color:#000000">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" style="background-color: #c4e3f3">Menu
+            </button>
+            <div class="logo">
+                <h1><a class="navbar-brand" href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
+                </h1>
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse nav-wil" ng-controller="formSearchCtrl" id="bs-example-navbar-collapse-1">
+            <nav>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                    </li>
+                    <li>
+                        <a href="../Vue/identification.php"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                    </li>
+                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                    </li>
+                    <li>
+                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                    </li>
+                    <li style="margin-top:15px;">
+                        <?php //Connection avec la BDD.
+                            $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                            mysqli_set_charset($mysqli, "utf8");
+                            $request = mysqli_query($mysqli, "SELECT * FROM departement");
+                            $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+                        ?>
+
+                        <form name="SearchForm">
+                            <select name="cboDept" ng-model="item.cboDept">
+                                <option value="" selected> Département</option>
+                                <?php while ($donnees = mysqli_fetch_array($request)) { ?>
+
+                                    <option name="departement"
+                                            value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
+                                <?php } ?>
+
+                            </select>
+
+
+                            <select name="categorie" ng-model="item.categorie" hint="Produit">
+                                <option value="" selected> Produit</option>
+                                <?php while ($donnees = mysqli_fetch_array($request1)) { ?>
+                                    <option name="categorie"
+                                            value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
+                                <?php } ?>
+                            </select>
+                            <?php
+                                mysqli_close($mysqli); //deconnection de mysql ?>
+                    </li>
+                    <li style="margin-top:15px;margin-left:10px;">
+                        <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)"
+                                ng-disabled="SearchForm.$invalid" class="btn btn-primary">Recherche
+                        </button>
+                    </li>
+                    </form>
+                </ul>
+            </nav>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+</div>
+</body>
+
+
 <!-- //header A REDUIRE  -->
 
 
@@ -44,11 +108,17 @@
     <div class="container">
         <h2 class="heading">On met en relation producteurs et consommateurs</h2>
         <div class="col-md-7 aboutleft">
-            <p>Ce site web vous donne la possibilité en tant que producteur de proposer des produits divers et variés à destination de consommateurs de tout horizon. En effet, notre mission est de permettre aux gens d'avoir accès à des produits frais  et proches de sa zone géographique.
-        Nos consommateurs les plus intrépides se chargeront de l'acheminement de vos commandes jusqu'à chez vous dans une démarche collaborative.
-        En tant que consommateur, vous pourrez visualiser les produits de votre département et effectuer des commandes. Pour ceux qui ne veulent pas se déplacer, vous pourrez demander à un consommateur dont la commande est identique de transporter quelques produits.
-        Avec ce site participez à l'essor de l'activité des producteurs francais, consommez des produits de qualité et LIVREZ LES TOUS !!! </p>
-            
+            <p>Ce site web vous donne la possibilité en tant que producteur de proposer des produits divers et variés à
+                destination de consommateurs de tout horizon. En effet, notre mission est de permettre aux gens d'avoir
+                accès à des produits frais et proches de sa zone géographique.
+                Nos consommateurs les plus intrépides se chargeront de l'acheminement de vos commandes jusqu'à chez vous
+                dans une démarche collaborative.
+                En tant que consommateur, vous pourrez visualiser les produits de votre département et effectuer des
+                commandes. Pour ceux qui ne veulent pas se déplacer, vous pourrez demander à un consommateur dont la
+                commande est identique de transporter quelques produits.
+                Avec ce site participez à l'essor de l'activité des producteurs francais, consommez des produits de
+                qualité et LIVREZ LES TOUS !!! </p>
+
         </div>
         <div class="col-md-5 aboutright">
             <div class="sreen-gallery-cursual">
@@ -78,162 +148,198 @@
                 </div>
             </div>
         </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!--//about-->
 
-        
+        <div class="col-md-12" style="margin:100px;">
+            <h2 class="heading">Prochaines livraisons</h2>
+            <div id="annonceCommande" name="annonceCommande" style="overflow:scroll;">
+                <?php //Connection avec la BDD.
+                    $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                    mysqli_set_charset($mysqli, "utf8");
+                    $request = mysqli_query($mysqli, "SELECT * FROM commande WHERE commande_statut = 'Ouverte' ORDER BY commande_date_livraison");
+                    //$request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+                ?>
 
-<!-- services section -->
-<section class="service-w3ls" id="services" >
+                <table ng-controller="goToAddLineCtrl">
+                    <tr>
+                        <th>Date de livraison</th>
+                        <th>Capacité de livraison</th>
+                        <th>Lieu de livraison</th>
+                        <th>Informations complémentaires</th>
+                    </tr>
+                    <?php while ($donnees = mysqli_fetch_array($request)) {
+                        $today = date("Y-m-d H:i:s");
+                        mysqli_set_charset($mysqli, "utf8");
+                        if ($donnees['commande_date_livraison'] > $today) { ?>
+                            <tr>
+                                <td><?php echo $donnees['commande_date_livraison']; ?></td>
+                                <td><?php $_SESSION['contenance' . $donnees['commande_id']] = $donnees['commande_contenance'];
+                                        echo $donnees['commande_contenance']; ?></td>
+                                <td><?php echo $donnees['commande_lieu']; ?></td>
+                                <td><?php echo $donnees['commande_description']; ?></td>
+                                <?php if (isset($_SESSION['user_id'])) { ?>
+                                    <td>
+                                        <button type="submit" id="<?php echo $donnees['commande_id']; ?>"
+                                                data-ng-click="go_to_add($e)" class="btn btn-primary">Se faire livrer
+                                        </button>
+                                    </td>
+                                <?php } else { ?>
+                                    <td>Connectez vous pour profiter de cette livraison</td>
+                                <?php } ?>
 
-    <div class="container"> 
-        <h3 class="heading"> Pourquoi aller sur livrer-les-tous ? </h3>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
-            <div class="ch-grid slideanim">
-                <div>
-                    <div class="ch-item ch-img-1">
-                        <div class="ch-info">
-                            <h3>Conserver vos produits</h3>
-                        </div>
-                    </div>
-                </div>
+                            </tr>
+                        <?php }
+                    } ?>
+                </table>
+
+
+                <?php mysqli_close($mysqli); //deconnection de mysql ?>
+                <!--</div>-->
             </div>
-            <h5 class="slideanim"> Voir les producteurs près de chez vous </h5>
 
 
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
-            <div class="ch-grid slideanim">
-                <div>
-                    <div class="ch-item ch-img-2">
-                        <div class="ch-info">
-                            <h3>Affordable prices</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h5 class="slideanim"> Acheter directement chez le producteur </h5>
-
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
-            <div class="ch-grid slideanim">
-                <div>
-                    <div class="ch-item ch-img-3">
-                        <div class="ch-info">
-                            <h3>Seasonal Fruits</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h5 class="slideanim"> Manger des produits de qualité </h5>
-
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
-            <div class="ch-grid slideanim">
-                <div>
-                    <div class="ch-item ch-img-4">
-                        <div class="ch-info">
-                            <h3>Unseasonal Fruits</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h5 class="slideanim"> Soutenir l'agriculture locale </h5>
             <div class="clearfix"></div>
         </div>
+
+
     </div>
-</section>
+    <!--//about-->
 
-<div style="margin-top:0px;background-color: #A1D067;">
-</div>
 
-<!--team-->
-<div class="team" id="team">
-    <div class="w3agile-spldishes">
+    <!-- services section -->
+    <section class="service-w3ls" id="services">
+
         <div class="container">
-        <h3 class="heading">Nos producteurs</h3>
-            <div class="spldishes-agileinfo">
-                <div class="spldishes-grids">
-                        <div class="col-md-3 item g1">
-                            <img src="../Vue/images/t1.jpg" title="Our Farmers" alt=""/>
-                            <div class="agile-dish-caption">
-                                <ul class="top-links">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
+            <h3 class="heading"> Pourquoi aller sur livrer-les-tous ? </h3>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
+                <div class="ch-grid slideanim">
+                    <div>
+                        <div class="ch-item ch-img-1">
+                            <div class="ch-info">
+                                <h3>Conserver vos produits</h3>
                             </div>
-                            <h4>Clarisse Sauvage</h4>
-                            <p>Asaisonneuse de thé</p>
                         </div>
-                        <div class="col-md-3 item g1">
-                            <img src="../Vue/images/t2.jpg" title="Our Farmers" alt=""/>
-                            <div class="agile-dish-caption">
-                                <ul class="top-links">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
+                    </div>
+                </div>
+                <h5 class="slideanim"> Voir les producteurs près de chez vous </h5>
+
+
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
+                <div class="ch-grid slideanim">
+                    <div>
+                        <div class="ch-item ch-img-2">
+                            <div class="ch-info">
+                                <h3>Affordable prices</h3>
                             </div>
-                                <h4>Inna Diall</h4>
-                                <p>Eleveuse de poules</p>
                         </div>
-                        <div class="col-md-3 item g1">
-                            <img src="../Vue/images/t3.jpg" title="Our Farmers" alt=""/>
-                            <div class="agile-dish-caption">
-                                <ul class="top-links">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
+                    </div>
+                </div>
+                <h5 class="slideanim"> Acheter directement chez le producteur </h5>
+
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
+                <div class="ch-grid slideanim">
+                    <div>
+                        <div class="ch-item ch-img-3">
+                            <div class="ch-info">
+                                <h3>Seasonal Fruits</h3>
                             </div>
-                                <h4>Wael Azema</h4>
-                                <p>Producteur de patates</p>
                         </div>
-                        <div class="col-md-3 item g1">
-                            <img src="../Vue/images/t4.jpg" title="Our Farmers" alt=""/>
-                            <div class="agile-dish-caption">
-                                <ul class="top-links">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                </ul>
+                    </div>
+                </div>
+                <h5 class="slideanim"> Manger des produits de qualité </h5>
+
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 serv-w3layouts">
+                <div class="ch-grid slideanim">
+                    <div>
+                        <div class="ch-item ch-img-4">
+                            <div class="ch-info">
+                                <h3>Unseasonal Fruits</h3>
                             </div>
-                                <h4>Benoit Primault</h4>
-                                <p>Chasseur Cueilleur</p>
                         </div>
-                    <div class="clearfix"> </div>
-                </div> 
-            </div>  
-            <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <h5 class="slideanim"> Soutenir l'agriculture locale </h5>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <div style="margin-top:0px;background-color: #A1D067;">
+    </div>
+
+    <!--team-->
+    <div class="team" id="team">
+        <div class="w3agile-spldishes">
+            <div class="container">
+                <h3 class="heading">Nos producteurs</h3>
+                <div class="spldishes-agileinfo">
+                    <?php //Connection avec la BDD.
+                        $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                        mysqli_set_charset($mysqli, "utf8");
+                        $request = mysqli_query($mysqli, "SELECT * FROM `users` WHERE `user_type`=1 ORDER BY user_id ASC LIMIT 4 ");
+
+                    ?>
+
+                    <div class="spldishes-grids">
+                        <?php $i = 1;
+                            while ($donnees = mysqli_fetch_array($request)) { ?>
+
+
+                                <div class="col-md-3 item g1">
+                                    <a href="../Controleur/affiche_profil.php?produit_user_id=<?php echo $donnees['user_id']; ?>">
+                                        <img src="../Vue/images/t<?php echo $i++; ?>.jpg" title="Our Farmers"
+                                             alt=""/></a>
+                                    <div class="agile-dish-caption">
+                                        <ul class="top-links">
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <h4><?php echo $donnees['user_nom'] . " " . $donnees['user_prenom']; ?>
+                                    </h4>
+                                    <p><?php echo $donnees['user_description']; ?></p>
+                                </div>
+                            <?php }
+                            mysqli_close($mysqli); ?>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
         </div>
     </div>
-</div>
-<!--//team-->
+    <!--//team-->
 
-<!-- gallery -->    
-<div id="gallery" class="gallery">
-    <h3 class="heading">Galerie de produits</h3>
+    <!-- gallery -->
+    <div id="gallery" class="gallery">
+        <h3 class="heading">Galerie de produits</h3>
         <div class="w3ls_banner_bottom_grids">
             <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
                 <ul id="myTab" class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#banana" id="banana-tab" role="tab" data-toggle="tab" aria-controls="banana" aria-expanded="true">Bananes</a></li>
-                    <li role="presentation"><a href="#apple" role="tab" id="apple-tab" data-toggle="tab" aria-controls="apple">Pommes</a></li>
-                    <li role="presentation"><a href="#lemon" role="tab" id="lemon-tab" data-toggle="tab" aria-controls="lemon">Citron</a></li>
-                    <li role="presentation"><a href="#Strawberry" role="tab" id="Strawberry-tab" data-toggle="tab" aria-controls="Strawberry">Fraises</a></li>
+                    <li role="presentation" class="active"><a href="#banana" id="banana-tab" role="tab"
+                                                              data-toggle="tab"
+                                                              aria-controls="banana" aria-expanded="true">Bananes</a>
+                    </li>
+                    <li role="presentation"><a href="#apple" role="tab" id="apple-tab" data-toggle="tab"
+                                               aria-controls="apple">Pommes</a></li>
+                    <li role="presentation"><a href="#lemon" role="tab" id="lemon-tab" data-toggle="tab"
+                                               aria-controls="lemon">Citron</a></li>
+                    <li role="presentation"><a href="#Strawberry" role="tab" id="Strawberry-tab" data-toggle="tab"
+                                               aria-controls="Strawberry">Fraises</a></li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="banana" aria-labelledby="banana-tab">
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g1.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g1.jpg">
                                 <div class="w3layouts_team_grid">
-                                    <img src="../Vue/images/g1.jpg" alt=" " class="img-responsive" />
+                                    <img src="../Vue/images/g1.jpg" alt=" " class="img-responsive"/>
                                     <div class="w3layouts_team_grid_pos">
                                         <div class="wthree_text">
                                             <h4>Bannanes girondinnes </h4>
@@ -244,9 +350,10 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g2.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g2.jpg">
                                 <div class="w3layouts_team_grid">
-                                    <img src="../Vue/images/g2.jpg" alt=" " class="img-responsive" />
+                                    <img src="../Vue/images/g2.jpg" alt=" " class="img-responsive"/>
                                     <div class="w3layouts_team_grid_pos">
                                         <div class="wthree_text">
                                             <h4>Bananes du périgord</h4>
@@ -257,9 +364,10 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g3.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g3.jpg">
                                 <div class="w3layouts_team_grid">
-                                    <img src="../Vue/images/g3.jpg" alt=" " class="img-responsive" />
+                                    <img src="../Vue/images/g3.jpg" alt=" " class="img-responsive"/>
                                     <div class="w3layouts_team_grid_pos">
                                         <div class="wthree_text">
                                             <h4>Bananes de cuisine</h4>
@@ -270,9 +378,10 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g4.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g4.jpg">
                                 <div class="w3layouts_team_grid">
-                                    <img src="../Vue/images/g4.jpg" alt=" " class="img-responsive" />
+                                    <img src="../Vue/images/g4.jpg" alt=" " class="img-responsive"/>
                                     <div class="w3layouts_team_grid_pos">
                                         <div class="wthree_text">
                                             <h4>Bananes jaunes</h4>
@@ -283,9 +392,10 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g5.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g5.jpg">
                                 <div class="w3layouts_team_grid">
-                                    <img src="../Vue/images/g5.jpg" alt=" " class="img-responsive" />
+                                    <img src="../Vue/images/g5.jpg" alt=" " class="img-responsive"/>
                                     <div class="w3layouts_team_grid_pos">
                                         <div class="wthree_text">
                                             <h4>Bananes verte</h4>
@@ -296,9 +406,10 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g6.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g6.jpg">
                                 <div class="w3layouts_team_grid">
-                                    <img src="../Vue/images/g6.jpg" alt=" " class="img-responsive" />
+                                    <img src="../Vue/images/g6.jpg" alt=" " class="img-responsive"/>
                                     <div class="w3layouts_team_grid_pos">
                                         <div class="wthree_text">
                                             <h4>Bananes violette</h4>
@@ -309,9 +420,10 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g7.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g7.jpg">
                                 <div class="w3layouts_team_grid">
-                                    <img src="../Vue/images/g7.jpg" alt=" " class="img-responsive" />
+                                    <img src="../Vue/images/g7.jpg" alt=" " class="img-responsive"/>
                                     <div class="w3layouts_team_grid_pos">
                                         <div class="wthree_text">
                                             <h4>Banane fleur</h4>
@@ -322,9 +434,10 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g8.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g8.jpg">
                                 <div class="w3layouts_team_grid">
-                                    <img src="../Vue/images/g8.jpg" alt=" " class="img-responsive" />
+                                    <img src="../Vue/images/g8.jpg" alt=" " class="img-responsive"/>
                                     <div class="w3layouts_team_grid_pos">
                                         <div class="wthree_text">
                                             <h4>banane banale</h4>
@@ -334,11 +447,12 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="clearfix"> </div>
+                        <div class="clearfix"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="apple" aria-labelledby="apple-tab">
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g9.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g9.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g9.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -351,7 +465,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g10.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g10.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g10.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -364,7 +479,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g11.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g11.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g11.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -377,7 +493,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g12.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g12.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g12.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -390,7 +507,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g13.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g13.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g13.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -402,9 +520,10 @@
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g14.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g14.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g14.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -416,11 +535,12 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="clearfix"> </div>
+                        <div class="clearfix"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="lemon" aria-labelledby="lemon-tab">
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g15.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g15.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g15.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -433,7 +553,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g16.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g16.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g16.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -446,7 +567,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g17.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g17.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g17.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -459,7 +581,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g18.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g18.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g18.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -472,7 +595,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g19.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g19.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g19.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -485,7 +609,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g20.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g20.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g20.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -497,11 +622,12 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="clearfix"> </div>
+                        <div class="clearfix"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="Strawberry" aria-labelledby="Strawberry-tab">
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g21.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g21.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g21.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -514,7 +640,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g22.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g22.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g22.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -527,7 +654,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g23.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g23.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g23.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -540,7 +668,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g24.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g24.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g24.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -553,7 +682,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g25.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g25.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g25.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -566,7 +696,8 @@
                             </a>
                         </div>
                         <div class="col-md-3 w3layouts_gallery_grid">
-                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g26.jpg">
+                            <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est."
+                               href="images/g26.jpg">
                                 <div class="w3layouts_team_grid">
                                     <img src="../Vue/images/g26.jpg" alt=" " class="img-responsive">
                                     <div class="w3layouts_team_grid_pos">
@@ -578,167 +709,211 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="clearfix"> </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<!-- //gallery -->
+    <!-- //gallery -->
 
-<!-- clients-->
+    <!-- clients-->
     <div class="clients" id="clients">
         <div class="container">
             <h3 class="heading">Avis consommateurs</h3>
             <div class="wmuSlider example1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="wmuSliderWrapper">
-                        <article style="position: absolute; width: 100%; opacity: 0;"> 
-                            <div class="banner-wrap">
-                                <div class="col-md-6 client-grids">
-                                    <p>J'adore ce site !! Il est trop beau et tellement pratique. Utiliser AngularJS 1.4.5 comme technologie etait très osé mais s'est révélé être une très bonne idée. </p>
-                                    <div class="col-md-3 c-img">
-                                        <img src="../Vue/images/c1.jpg"  alt="" />                             
-                                    </div>
-                                    <div class="col-md-3 c-info">
-                                        <h4>Charlotte</h4>
-                                        <h5>Cliente à Bordeaux</h5>
-                                    </div>
-                                    <div class="clearfix"></div>
+                <div class="wmuSliderWrapper">
+                    <article style="position: absolute; width: 100%; opacity: 0;">
+                        <div class="banner-wrap">
+                            <div class="col-md-6 client-grids">
+                                <p>J'adore ce site !! Il est trop beau et tellement pratique. Utiliser AngularJS 1.4.5
+                                    comme
+                                    technologie etait très osé mais s'est révélé être une très bonne idée. </p>
+                                <div class="col-md-3 c-img">
+                                    <img src="../Vue/images/c1.jpg" alt=""/>
                                 </div>
-                                <div class="col-md-6 client-grids">
-                                    <p>Je n'aime pas les légumes mais avec ce site j'ai appris à adorer les brocolis. Je ne mange que ca maintenant, je déjeune avec des poireaux et choux de bruxelles TOUS LES MATINS !</p>
-                                    <div class="col-md-3 c-img">
-                                        <img src="../Vue/images/c2.jpg"  alt="" />                             
-                                    </div>
-                                    <div class="col-md-3 c-info">
-                                        <h4>Aurore</h4>
-                                        <h5>Cliente addicte</h5>
-                                    </div>
-                                    <div class="clearfix"></div>
+                                <div class="col-md-3 c-info">
+                                    <h4>Charlotte</h4>
+                                    <h5>Cliente à Bordeaux</h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                        </article>
-                        <article style="position: absolute; width: 100%; opacity: 0;"> 
-                            <div class="banner-wrap">
-                                <div class="col-md-6 client-grids">
-                                    <p>J'avais déja l'habitude d'aller chercher des huitres sur le bassin d'Arcachon. Maintenant, dès que j'en achète, j'en ramène à plusieurs personnes sur Bordeaux. Grâce à ce système collaboratif, j'ai jusqu'à 10 euros de réduction sur ma commande</p>
-                                    <div class="col-md-3 c-img">
-                                        <img src="../Vue/images/c3.jpg"  alt="" />                             
-                                    </div>
-                                    <div class="col-md-3 c-info">
-                                        <h4>Isaaquette</h4>
-                                        <h5>Consommatrice intrépide</h5>
-                                    </div>
-                                    <div class="clearfix"></div>
+                            <div class="col-md-6 client-grids">
+                                <p>Je n'aime pas les légumes mais avec ce site j'ai appris à adorer les brocolis. Je ne
+                                    mange que ca maintenant, je déjeune avec des poireaux et choux de bruxelles TOUS LES
+                                    MATINS !</p>
+                                <div class="col-md-3 c-img">
+                                    <img src="../Vue/images/c2.jpg" alt=""/>
                                 </div>
-                                <div class="col-md-6 client-grids">
-                                    <p>Je fais régulièrement des commandes de pommes sur ce site. Elles sont de très bonne qualité et je sais d'où elles viennent. Avec le système collaboratif, les autres clients me les livrent directement !!! </p>
-                                    <div class="col-md-3 c-img">
-                                        <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAyuAAAAJDQ2OTNiYWQ4LTIwYzQtNGQ1NS1iMTU0LTQyMWY4M2I2MDlhNw.jpg"  alt="" />                             
-                                    </div>
-                                    <div class="col-md-3 c-info">
-                                        <h4>Ti-Diane-Du-33</h4>
-                                        <h5>Fan de la petite Sirène</h5>
-                                    </div>
-                                    <div class="clearfix"></div>
+                                <div class="col-md-3 c-info">
+                                    <h4>Aurore</h4>
+                                    <h5>Cliente addicte</h5>
                                 </div>
-                                    <div class="clearfix"></div>
+                                <div class="clearfix"></div>
                             </div>
-                        </article>
+                            <div class="clearfix"></div>
+                        </div>
+                    </article>
+                    <article style="position: absolute; width: 100%; opacity: 0;">
+                        <div class="banner-wrap">
+                            <div class="col-md-6 client-grids">
+                                <p>J'avais déja l'habitude d'aller chercher des huitres sur le bassin d'Arcachon.
+                                    Maintenant, dès que j'en achète, j'en ramène à plusieurs personnes sur Bordeaux.
+                                    Grâce à
+                                    ce système collaboratif, j'ai jusqu'à 10 euros de réduction sur ma commande</p>
+                                <div class="col-md-3 c-img">
+                                    <img src="../Vue/images/c3.jpg" alt=""/>
+                                </div>
+                                <div class="col-md-3 c-info">
+                                    <h4>Isaaquette</h4>
+                                    <h5>Consommatrice intrépide</h5>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-md-6 client-grids">
+                                <p>Je fais régulièrement des commandes de pommes sur ce site. Elles sont de très bonne
+                                    qualité et je sais d'où elles viennent. Avec le système collaboratif, les autres
+                                    clients
+                                    me les livrent directement !!! </p>
+                                <div class="col-md-3 c-img">
+                                    <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAyuAAAAJDQ2OTNiYWQ4LTIwYzQtNGQ1NS1iMTU0LTQyMWY4M2I2MDlhNw.jpg"
+                                         alt=""/>
+                                </div>
+                                <div class="col-md-3 c-info">
+                                    <h4>Ti-Diane-Du-33</h4>
+                                    <h5>Fan de la petite Sirène</h5>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//clients-->
+
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container" style="margin-top:5px;">
+            <div class="col-md-6 footernav">
+                <div class="agileits-social">
+                    <ul>
+                        <a href="inscription.php"
+                           class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                    </ul>
+                    <ul>
+                        <a href="../Vue/identification.php"
+                           class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                    </ul>
+                    <ul><a href="affichage_prod.php"
+                           class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                    </ul>
+                    <ul>
+                        <a href="deconnexion.php"
+                           class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 footernav">
+                <div class="agileits-social">
+                    <ul><a href="index.php" class="scroll">Mentions légales</a></ul>
+                </div>
+            </div>
+            <div class="col-md-6 footernav">
+                <div class="agileits-social">
+                    <ul><a href="index.php" class="scroll">Contact</a></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!--//////////////////////////           FIN -->
+
+    <!-- bootstrap-pop-up -->
+    <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Fruit land</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div>
+                    <div class="modal-body">
+                        <img src="../Vue/images/banana.png" alt=" " class="img-responsive"/>
+                        <p>Ut enim ad minima veniam, quis nostrum
+                            exercitationem ullam corporis suscipit laboriosam,
+                            nisi ut aliquid ex ea commodi consequatur? Quis autem
+                            vel eum iure reprehenderit qui in ea voluptate velit
+                            e.
+                            <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+                                esse quam nihil molestiae consequatur.</i></p>
                     </div>
                 </div>
-        </div>
-    </div>
-<!--//clients-->
-
-
-<!-- footer -->
-<?php include('footer.html'); ?>
-<!-- //footer -->
-<!--//////////////////////////           FIN -->
-
-<!-- bootstrap-pop-up -->
-<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Fruit land</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div>
-                <div class="modal-body">
-                    <img src="../Vue/images/banana.png" alt=" " class="img-responsive"/>
-                    <p>Ut enim ad minima veniam, quis nostrum
-                        exercitationem ullam corporis suscipit laboriosam,
-                        nisi ut aliquid ex ea commodi consequatur? Quis autem
-                        vel eum iure reprehenderit qui in ea voluptate velit
-                        e.
-                        <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-                            esse quam nihil molestiae consequatur.</i></p>
-                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- //bootstrap-pop-up -->
+    <!-- //bootstrap-pop-up -->
 
-<!-- Default-JavaScript-File -->
-<script type="text/javascript" src="../Vue/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="../Vue/js/bootstrap.js"></script>
-<!-- //Default-JavaScript-File -->
+    <!-- Default-JavaScript-File -->
+    <script type="text/javascript" src="../Vue/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../Vue/js/bootstrap.js"></script>
+    <!-- //Default-JavaScript-File -->
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
 
-    (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
 
-</script>
-<!-- //Banner Slider js script file-->
+    </script>
+    <!-- //Banner Slider js script file-->
 
-<!-- required-js-files-->
-<link href="../Vue/css/owl.carousel.css" rel="stylesheet">
-<script src="../Vue/js/owl.carousel.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#owl-demo").owlCarousel({
-            items: 1,
-            lazyLoad: true,
-            autoPlay: true,
-            navigation: false,
-            navigationText: false,
-            pagination: true,
+    <!-- required-js-files-->
+    <link href="../Vue/css/owl.carousel.css" rel="stylesheet">
+    <script src="../Vue/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 1,
+                lazyLoad: true,
+                autoPlay: true,
+                navigation: false,
+                navigationText: false,
+                pagination: true,
+            });
         });
-    });
-</script>
-<!--//required-js-files-->
+    </script>
+    <!--//required-js-files-->
 
-<!-- Light box js-file-->
-<script src="../Vue/js/simpleLightbox.js"></script>
-<script>
-    $('.w3layouts_gallery_grid a').simpleLightbox();
-</script>
-<!-- //Light box js-file-->
+    <!-- Light box js-file-->
+    <script src="../Vue/js/simpleLightbox.js"></script>
+    <script>
+        $('.w3layouts_gallery_grid a').simpleLightbox();
+    </script>
+    <!-- //Light box js-file-->
 
-<!-- clients js file-->
-<script src="../Vue/js/jquery.wmuSlider.js"></script>
-<script>
-    $('.example1').wmuSlider();
-</script>
-<!-- //clients js file -->
+    <!-- clients js file-->
+    <script src="../Vue/js/jquery.wmuSlider.js"></script>
+    <script>
+        $('.example1').wmuSlider();
+    </script>
+    <!-- //clients js file -->
 
-</body>
+</div>
 <!-- //Body -->
 </html>

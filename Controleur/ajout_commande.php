@@ -23,14 +23,23 @@
 //$data = json_decode($json,TRUE);
 
 // set ID property of user to be edited
-    $commande->commande_producteur = $_SESSION['producteur_id'];
-    $commande->commande_lieu = $data->commande_lieu_livraison;
-    $commande->commande_contenance = $data->commande_contenance;
-    $commande->commande_description = $data->commande_description;
-    $commande->commande_statut = $data->commande_statut;
-    $commande->commande_date_livraison = $data->commande_date_livraison;
-    $commande->commande_client = $_SESSION['id_produit'];
-
+    if ($data->commande_contenance == 0) {
+        $commande->commande_producteur = $_SESSION['producteur_id'];
+        $commande->commande_lieu = null;
+        $commande->commande_contenance = null;
+        $commande->commande_description = null;
+        $commande->commande_statut = $data->commande_statut;
+        $commande->commande_date_livraison = $data->commande_date_livraison;
+        $commande->commande_client = $_SESSION['user_id'];
+    } else {
+        $commande->commande_producteur = $_SESSION['producteur_id'];
+        $commande->commande_lieu = $data->commande_lieu_livraison;
+        $commande->commande_contenance = $data->commande_contenance;
+        $commande->commande_description = $data->commande_description;
+        $commande->commande_statut = $data->commande_statut;
+        $commande->commande_date_livraison = $data->commande_date_livraison;
+        $commande->commande_client = $_SESSION['user_id'];
+    }
     $commande->commande_contenance = (int)$commande->commande_contenance;
     $commande->commande_producteur = (int)$commande->commande_producteur;
     $commande->commande_client = (int)$commande->commande_client;
@@ -39,9 +48,10 @@
     header('Content-Type: application/json');
     $id_cmd = $commande->create_order();
     if ($id_cmd == false || $id_cmd == null) {
-        $res = false;
-        echo json_encode($res);
+        $response = array('message' => 'false');
+        echo json_encode($response);
     } else {
-        echo json_encode($id_cmd);
+        $response = array('message' => 'true', 'id' => $id_cmd, 'produit' => $_SESSION['id_produit']);
+        echo json_encode($response);
     }
 ?>
