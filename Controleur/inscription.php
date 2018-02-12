@@ -27,8 +27,27 @@
     <!-- incorporation du framework angular, et des javascripts correspondants -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../Vue/js/bootstrap.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="inscriptionCtlr.js"></script>
+    <script src="../Vue/js/javanous/search_dept.js"></script>
+		<script type="text/javascript">
+      function rechercher(){
+        var codePostal = document.getElementById('CP').value;
+        $.ajax({
+          type: "POST",
+          url: "some.php",
+          data: {codePostal: codePostal}, // je passe la variable JS
+          success: function(msg){ // je récupère la réponse dans la variable msg
+            $('#Ville').empty();
+            $('#Ville').append(msg);
+          }
+        });
+      }
+	   
+	  
+    </script>
     <!-- incorporation du framework angular, et des javascripts correspondants -->
 
     <!--web font-->
@@ -44,37 +63,7 @@
 <!-- BODY -->
 <body ng-app="AppModule" ng-controller="InscriptionCtrl">
 
-<!-- header    MENU  -->
-<div class="container-fluid">
-    <nav class="navbar navbar-default" style=" height: 50px color:#000000">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" style="background-color:orange">
-                <span class="sr-only">Toggle navigation</span>
-            </button>
-            <div class="logo">
-                <a href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
-            </div>
-        </div>
-
-        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-            <nav>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="../Vue/identification.php">Se connecter</a>
-                    </li>
-                    </form>
-                </ul>
-            </nav>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-</div>
-</body>
-
-<!-- //header A REDUIRE  -->
-
+<?php include('header.html'); ?>
 
 <!-- services section -->
 
@@ -91,6 +80,7 @@
     </script>
     <div class="inscriptionForm">
         <form>
+
             <div>
                 <label class="switch">
                     <input class="switch-input" type="checkbox" id="prodCheck" onclick="yesnoCheck();">
@@ -128,14 +118,26 @@
                 <label>Adresse postale :</label>
                 <input type="text" id="adresse" ng-model="item.adresse" required/><br/><br/>
             </div>
-            <div>
-                <label>Code postal :</label>
-                <input type="number" id="CP" ng-model="item.cp" required maxlength="5"/><br/><br/>
-            </div>
-            <div>
-                <label>Ville :</label>
-                <input type="text" id="Ville" ng-model="item.ville" required/><br/><br/>
-            </div>
+			<div class="wrap-input100 validate-input" data-validate = "Entrez votre code postal">
+			                <label>Code Postal</label>
+
+                            <input class="input100" type="text" id="CP" required maxlength="5" placeholder="Code Postal" onkeyup="rechercher()"><br/><br/>
+                            <span class="focus-input100"></span>
+                            <p id="text"></p>
+                        </div>
+						        
+
+             <div class="wrap-input100 validate-input" id="ville" data-validate = "Entrez votre ville">
+						                <label>Ville</label>
+
+                            <select style="width:162px" class="input100" type="text" id="Ville" required>
+							
+                            </select><br/><br/>
+
+                        </div>   
+
+         
+
             <div>
                 <label>Numéro de téléphone :</label>
                 <input type="tel" id="Tel" ng-model="item.tel" required/><br/><br/>
@@ -198,7 +200,13 @@
 </div>
 <!-- //footer -->
 <!--//////////////////////////           FIN -->
-
+<script type="text/javascript" language="JavaScript">
+    function ChargerRequete () {
+        var dept = document.getElementById("ListeDept").value;
+        text = "<\?php $request = mysqli_query($mysqli, \"SELECT * FROM code_postal where code_postal_departement_id = "+ dept +" order by `code_postal_commune`\"); <\?php "
+        document.getElementById("calqueVille").innerHTML = text;
+    };
+</script>
 
 </body>
 <!-- //Body -->

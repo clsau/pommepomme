@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="AppModule">
 <head>
@@ -8,6 +9,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="js/javanous/display_product.js"></script>
+    <script type="text/javascript">
+        function addid(clicked_id) {
+            document.cookie = "cookieName=" + clicked_id;
+            window.location.replace("../Vue/add_picture.php");
+        }
+    </script>
 </head>
 <body>
 <div ng-app="AppModule" ng-controller="formDisplayCtrl" class="container">
@@ -76,28 +83,24 @@
                     <tr>
                         <td>
                             <form name="updateProductForm" class="form-horizontal well form-search">
-                                <button id={{i.produit_id}} type="submit" data-ng-click="update($event)"
+                                <button id={{i.produit_id}} type="submit" data-ng-click="update($e)"
                                         ng-disabled="updateProductForm.$invalid"
                                         class="btn btn-primary">Modifier
                                 </button>
                             </form>
                         </td>
-                        <script type="text/javascript">
-                            function addid(clicked_id) {
-                                <?php $_SESSION[['idprod']] = clicked_id; ?>
-                            }
-                        </script>
+
                         <td>
-                            <form action="../Vue/add_picture.html" name="updateProductForm"
+                            <form name="updateProductForm"
                                   class="form-horizontal well form-search">
                                 <button id={{i.produit_id}} onclick="addid(this.id)" type="submit"
-                                        class="btn btn-primary">Modifier l'image associée
+                                        class="btn btn-primary">Modifier l'image
                                 </button>
                             </form>
                         </td>
                         <td>
                             <form name="updateProductForm" class="form-horizontal well form-search">
-                                <button id={{i.produit_id}} type="submit" data-ng-click="sup($event)"
+                                <button id={{i.produit_id}} type="submit" data-ng-click="sup($e)"
                                         ng-disabled="updateProductForm.$invalid"
                                         class="btn btn-primary">Supprimer
                                 </button>

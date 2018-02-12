@@ -16,32 +16,35 @@
     $database = new database();
     $db = $database->getConnection();
 
-    $commande = new orderModel($db);
+    $line = new orderLineModel($db);
 
     $data = json_decode(file_get_contents("php://input"));
 
 //$data = json_decode($json,TRUE);
 
 // set ID property of user to be edited
-    $commande->produ = $_SESSION['producteur_id'];
-    $commande->commande_lieu = $data->commande_lieu_livraison;
-    $commande->commande_contenance = $data->commande_contenance;
-    $commande->commande_description = $data->commande_description;
-    $commande->commande_statut = $data->commande_statut;
-    $commande->commande_date_livraison = $data->commande_date_livraison;
-    $commande->commande_client = $_SESSION['id_produit'];
-
-    $commande->commande_contenance = (int)$commande->commande_contenance;
-    $commande->commande_producteur = (int)$commande->commande_producteur;
-    $commande->commande_client = (int)$commande->commande_client;
+    $line->ligne_user_id = $_SESSION['user_id'];
+    $line->ligne_produit_id = $data->ligne_id_produit;
+    $line->ligne_quantite = $data->ligne_quantite;
+    $line->ligne_commande_id = $data->ligne_commande_id;
+    $line->ligne_quantite = (int)$line->ligne_quantite;
+    $line->ligne_commande_id = (int)$line->ligne_commande_id;
+    $line->ligne_user_id = (int)$line->ligne_user_id;
+    $line->ligne_produit_id = (int)$line->ligne_produit_id;
+    $line->ligne_prix = (float)$line->ligne_prix;
 
 
     header('Content-Type: application/json');
-    $id_cmd = $commande->create_order();
-    if ($id_cmd == false || $id_cmd == null) {
-        $res = false;
-        echo json_encode($res);
+    $response = $line->create_line();
+    if (is_null($response)) {
+        echo false;
     } else {
-        echo json_encode($id_cmd);
+        if ($response == "plein") {
+            $response = array('message' => 'plein');
+            echo json_encode($response);
+        } else {
+            $response = array('message' => 'place');
+            echo json_encode($response);
+        }
     }
 ?>

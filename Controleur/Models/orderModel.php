@@ -58,7 +58,6 @@
 
             // execute the query
             if ($stmt->execute()) {
-                echo "insert ok";
                 return $this->conn->query("SELECT LAST_INSERT_ID()")->fetchColumn();
 
             } else {

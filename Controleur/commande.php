@@ -20,6 +20,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../Config/app.js"></script>
     <script src="../Vue/js/javanous/commandeCtrl.js"></script>
+    <script type="text/javascript">
+        function yesnoCheck() {
+            if (document.getElementById('delivChecked').checked) {
+                document.getElementById('ifYes').style.display = 'block';
+                document.getElementById('ifNo').style.display = 'none';
+            }
+            else {
+                document.getElementById('ifYes').style.display = 'none';
+                document.getElementById('ifNo').style.display = 'block';
+            }
+        }
+    </script>
 
 </head>
 
@@ -100,11 +112,13 @@
 
 <section class="service-w3ls" id="services" style="margin-top:0;">
 
+
     <?php
 
         $id_produit = $_GET["produit_id"];
         $_SESSION['id_produit'] = $id_produit;
         $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+        $mysqli->set_charset("utf8");
         $Requete = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
         $Requete2 = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
         $Requete3 = mysqli_query($mysqli, "SELECT P1.* FROM produit P1, produit P2 WHERE P1.produit_id != '" . $id_produit . "' AND P2.produit_id = '" . $id_produit . "'  AND P2.produit_user_id = P1.produit_user_id");
@@ -139,16 +153,16 @@
             <th>Photo</th>
             <th>Nom Produit</th>
             <th>Prix</th>
-            <th>Unite</th>
-            <th>Quantite Choisie</th>
+            <th>Unité</th>
+            <th>Quantité Choisie</th>
         </tr>
 
         <?php while ($donnees = mysqli_fetch_array($Requete)) { ?>
 
             <tr>
 
-                <td id="photo"><?php
-                        echo $donnees['produit_photo']; ?></td>
+                <td id="photo"><img style="width:75px;height:75px;" src="../images_prod/uploads/<?php
+                        echo $donnees['produit_photo']; ?>"></td>
 
                 <td id="Produit" valign="top"><?php
                         echo $donnees['produit_nom']; ?></td>
@@ -163,7 +177,7 @@
 
                 <td id="quantiteligne" valign="top" style="color:black;">
                     <select ng-model="quantite">
-                        <option value=1>1</option>
+                        <option selected="selected">1</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
                         <option value=4>4</option>
@@ -188,11 +202,55 @@
             </tr>
         <?php } ?>
     </table>
+    <div align="center" style="background-color: rgba(127,241,190,0.28); margin:auto; width: 70%; margin-top: 30px">
+        <form style="margin-top: 5px; width: 30%;">
+            <label class="switch" style="margin-top: 25px;">
+                <input class="switch-input" type="checkbox" id="delivChecked" onclick="yesnoCheck();">
+                <span class="slider round">
+                    <span class="on">Je livre</span>
+                    <span class="off">Je ne livre pas</span>
+                </span>
+            </label>
+        </form>
+        <br><br><br><br><br><br>
 
+
+        <form name="createOrderForm">
+            <fieldset>
+                <div id="ifNo">
+                    <label for="daterecup">Date de récupération</label>
+                    <input type="date" id="datelivraison" ng-model="commande_date_recup"/><br/><br/>
+                </div>
+                <div id="ifYes" style="display:none">
+                    <div>
+                        <label for="datelivraison">Date de livraison</label>
+                        <input type="date" id="datelivraison" ng-model="commande_date_livraison"/><br/><br/>
+                    </div>
+                    <div>
+                        <label for="lieulivraison">Lieu de livraison :</label>
+                        <input type="text" id="lieulivraison" ng-model="commande_lieu_livraison"/><br/><br/>
+                    </div>
+                    <div>
+                        <label for="commande_description">Informations relatives à votre livraison (lieu, heure...)
+                            :</label>
+                        <input type="text" id="commande_description" ng-model="commande_description"/><br/><br/>
+                    </div>
+                    <div>
+                        <label for="contenance">Capacité de livraison :</label>
+                        <input type="number" ng-model="commande_contenance"/><br/><br/> <br/>
+                    </div>
+                </div>
+                <div style="margin-left:50%; margin-top:30px">
+                    <button type="submit" ng-click="createOrder()" class="btn btn-primary">Valider
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
     <div class="container">
         <br>
         <h3>
-            Voulez-vous également commander d'autres produits du même producteur ?
+            Les autres produits de ce producteur...
         </h3>
         <br>
     </div>
@@ -203,8 +261,7 @@
             <th>Nom Produit</th>
             <th>Description produit</th>
             <th>Prix</th>
-            <th>Unite</th>
-            <th>Quantite Choisie</th>
+            <th>Unité</th>
         </tr>
 
         <?php while ($donnees3 = mysqli_fetch_array($Requete3)) { ?>
@@ -228,67 +285,9 @@
                         echo " ";
                         echo $donnees3['produit_unite']; ?></td>
 
-                <td id="Quantite" valign="top" style="color:black;">
-                    <select>
-                        <option value=0>0</option>
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                        <option value=5>5</option>
-                        <option value=6>6</option>
-                        <option value=7>7</option>
-                        <option value=8>8</option>
-                        <option value=9>9</option>
-                        <option value=10>10</option>
-                        <option value=11>12</option>
-                        <option value=13>13</option>
-                        <option value=14>14</option>
-                        <option value=15>15</option>
-                        <option value=16>16</option>
-                        <option value=17>17</option>
-                        <option value=18>18</option>
-                        <option value=19>19</option>
-                        <option value=20>20</option>
-                    </select>
-                </td>
-
             </tr>
         <?php } ?>
     </table>
-
-
-    <div align="center" style="background-color: rgba(127,241,190,0.28); margin:auto; width: 70%; margin-top: 30px">
-    <form style="margin:auto; width: 30%;">
-        <label for="choix_livraison">Proposer la livraison</label>
-        <input type="checkbox" id="choix_livraison" name="choix_livraison" value="choix_livraison" checked>
-    </form>
-
-
-        <form name="createOrderForm">
-            <fieldset>
-                <div>
-                    <label for="datelivraison">Date de livraison</label>
-                    <input type="date" id="datelivraison" ng-model="commande_date_livraison"/><br/><br/>
-                </div>
-                <div>
-                    <label for="lieulivraison">Lieu de livraison :</label>
-                    <input type="text" id="lieulivraison" ng-model="commande_lieu_livraison"/><br/><br/>
-                </div>
-                <div>
-                    <label for="commande_description">Description :</label>
-                    <input type="text" id="commande_description" ng-model="commande_description"/><br/><br/>
-                </div>
-                <div>
-                    <label for="contenance">Capacité de livraison :</label>
-                    <input type="text" id="contenance" ng-model="commande_contenance"/><br/><br/> <br/>
-                </div>
-                <div style="margin-left:50%; margin-top:30px">
-                    <button type="submit" ng-click="createOrder()" class="btn btn-primary">Valider
-                    </button>
-                </div>
-            </fieldset>
-        </form>
 
 
 </section>

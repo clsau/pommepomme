@@ -68,6 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <?php
                             mysqli_close($mysqli); //deconnection de mysql
                             ?>
+							
                     </li>
                     <li style="margin-top:15px;margin-left:10px;"><input type='submit' name='recherche'
                                                                          value='Rechercher' align="center"></li>
@@ -107,16 +108,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <table align="center">
                     <tr align="center">
                         <th id="Titre" valign="top"><?php
+						$_SESSION['titre']=$donnees['user_titre'];
                             if ($donnees['user_type'] == 1)
                                 echo $donnees['user_titre']; ?></th>
                     </tr>
                     <tr align="center">
                         <td id="Description"><?php
+						$_SESSION['description']=$donnees['user_description'];
                             if ($donnees['user_type'] == 1)
                                 echo $donnees['user_description']; ?></td>
                     </tr>
                 </table>
             </td>
+			<input id="user_id"   type="hidden" value='.$donnees['user_id']'></td>
             <td align="right" width="20%">
                 <table border="3" style="background-color: #455A64">
                     <tr>
@@ -133,22 +137,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </tr>
                     <tr>
                         <td>Téléphone</td>
+						<?php $_SESSION['tel']=$donnees['user_tel']; ?>
                         <td id="Tel">0<?php echo $donnees['user_tel']; ?></td>
                     </tr>
                     <tr>
                         <td>Mail</td>
+						<?php $_SESSION['mail']=$donnees['user_mail']; ?>
                         <td id="mail"><?php echo $donnees['user_mail']; ?></td>
                     </tr>
                     <tr>
                         <td>Adresse</td>
-                        <td id="adresse"><?php echo $donnees['user_adresse']; ?></td>
+						<?php $_SESSION['adresse']=$donnees['user_adresse']; ?>
+                        <td id="adresse"><?php echo $_SESSION['adresse']; ?></td>
                     </tr>
                     <tr>
                         <td>Code postal</td>
-                        <td id="CP"><?php echo $donnees2['code_postal_code']; ?></td>
+						<?php $_SESSION['cp']=$donnees2['code_postal_id']; ?>
+                        <td id="CP"><?php echo $_SESSION['cp']; ?></td>
                     </tr>
                     <tr>
                         <td>Ville</td>
+						
                         <td id="Ville"><?php echo $donnees2['code_postal_commune']; ?></td>
                     </tr>
                 </table>
@@ -156,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </tr>
     </table>
     <br>
-    <form action="../Vue/modification.html" method="post">
+    <form action="modification.php" method="post">
         <div align="center">
             <input type="submit" name="modifier" value="modifier"/>
         </div>
@@ -164,6 +173,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <form action="../Vue/display_products.php" method="post">
         <div align="center">
             <input type="submit" name="DisplayProduct" value="Gérer ses  produits"/>
+        </div>
+    </form>
+	    <form action="../Vue/display_order_lines.html" method="post">
+        <div align="center">
+            <input type="submit" name="DisplayProduct" value="voir mes commandes"/>
+        </div>
+
+    </form>	
+	
+	    </form>
+    <form action="favoris.php" method="post">
+        <div align="center">
+            <input type="submit" name="" value="Favoris"/>
         </div>
     </form>
 </section>

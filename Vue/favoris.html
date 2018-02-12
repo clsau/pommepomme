@@ -26,201 +26,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../Config/app.js"></script>
-    <script src="../Vue/js/javanous/affiche_profilCtrl.js"></script>
-
+    <script src="./js/javanous/favoris.js"></script>
 
 </head>
 
-<!-- Body -->
-<body ng-app="AppModule" ng-controller="SearchProfile">
-
-<!-- header    MENU  -->
-
-<div class="container-fluid">
-    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="logo">
-                <img src="../Vue/images/logo_litte.png"/>
-            </div>
-        </div>
-
-        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-            <nav>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
-                    </li>
-                    <li>
-                        <a href="../Vue/identification.php"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                    </li>
-                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                    </li>
-                    <li>
-                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
-                    </li>
-                    <li style="margin-top:15px;">
-                        <?php //Connection avec la BDD.
-                        $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-                        $request = mysqli_query($mysqli, "SELECT * FROM departement"); ?>
-                        <form method="GET" action="recherche.php">
-                            <select name="cboDept">
-                                <?php while ($donnees = mysqli_fetch_array($request)) { ?>
-                                    <option name="departement"
-                                            value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
-                                <?php } ?>
-                            </select>
-                            <?php
-                            mysqli_close($mysqli); //deconnection de mysql
-                            ?>
-                    </li>
-                    <li style="margin-top:15px;margin-left:10px;"><input type='submit' name='recherche'
-                                                                         value='Rechercher' align="center"></li>
-                    </form>
-                </ul>
-            </nav>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-</div>
-</body>
+<body ng-app="AppModule" ng-controller="favorisCrl">
 <section class="service-w3ls" id="services" style="margin-top:5px;">
-    <?php
-    $id_profil = $_GET['produit_user_id'];
-	$_SESSION['profil']=$id_profil;
-    $mysqli = mysqli_connect("localhost", "root", "", "pomme");
-    mysqli_set_charset($mysqli, "utf8");
-    $Requete2 = mysqli_query($mysqli, "SELECT * FROM users,code_postal WHERE user_id='" . $id_profil . "' AND users.user_code_postal_id = code_postal.code_postal_id ");
-    $donnees2 = mysqli_fetch_array($Requete2);
-    $Requete3 = mysqli_query($mysqli, "SELECT * FROM produit WHERE produit_user_id='" . $id_profil . "'  ");
-    //$donnees3 = mysqli_fetch_array($Requete3);
-		if (isset($_SESSION['msg'])){
-			if ($_SESSION['msg']!=NULL){
-	?>	
-	<h2 style='text-align : center;'><?php echo $_SESSION['msg']; $_SESSION['msg']=NULL; ?></h2>
-	<?php
-		} }
-	?> 
+    
 	<br>
 	
-    <table border="3" align="center" width="75%" style="background-color: #546E7A">
+	<input ng-model="user_id" value="<?php echo $_SESSION['id']; ?>">
+	
+    <table border="3" align="center" width="75%" style="background-color: #546E7A" ng-init="affiche_favoris(user_id)">
+	<CAPTION>Favoris </CAPTION> 
         <tr>
-            <td>
-                <table align="center">
-                    <tr align="center">
-                        <th id="Titre" valign="top"><?php
-                            if ($donnees2['user_type'] == 1)
-                                echo $donnees2['user_titre']; ?></th>
-                    </tr>
-                    <tr align="center">
-                        <td id="Description"><?php
-                            if ($donnees2['user_type'] == 1)
-                                echo $donnees2['user_description']; ?></td>
-                    </tr>
-                </table>
-            </td>
-            <td align="right" width="20%">
-                <table border="3" style="background-color: #455A64">
-                    <tr>
-                        <td>Login</td>
-                        <td id="login"><?php echo $donnees2['user_login']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Nom</td>
-                        <td id="Nom"><?php echo $donnees2['user_nom']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Prenom</td>
-                        <td id="Prenom"><?php echo $donnees2['user_prenom']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Téléphone</td>
-                        <td id="Tel">0<?php echo $donnees2['user_tel']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Mail</td>
-                        <td id="mail">0<?php echo $donnees2['user_mail']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Adresse</td>
-                        <td id="adresse"><?php echo $donnees2['user_adresse']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Code postal</td>
-                        <td id="CP"><?php echo $donnees2['user_code_postal_id']; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Ville</td>
-                        <td id="Ville"><?php echo $donnees2['code_postal_commune']; ?></td>
-                    </tr>
-					                    <tr>
-						
-						<td COLSPAN=2>
-						<form action="insert_favoris.php">
-								<input class="btn btn-primary" type="submit" name="Favoris" value="Favoris" />
-						</form>
-						
-  			
-                    </tr>
-						</td>	
-					
-                </table>
-            </td>
-        </tr>
-        <tr>
-
-            <table style="background-color: #455A64">
-                <tr>
-                    <td>Photo</td>
-                    <td>Nom</td>
-                    <td>Decription</td>
-                    <td>Prix</td>
-                    <td>Stock</td>
-                    <td>Unité</td>
-                    <td></td>
-                </tr>
-
-                <?php while ($donnees3 = mysqli_fetch_array($Requete3)) { ?>
-
-                    <tr>
-                        <td><img src="../images_prod/uploads/<?php echo $donnees3['produit_photo']; ?>"/></td>
-
-                        <td id="Produit" valign="top"><?php
-                            echo $donnees3['produit_nom']; ?></td>
-
-                        <td id="Description"><?php
-                            echo $donnees3['produit_description']; ?></td>
-
-                        <td id="Prix" valign="top"><?php
-                            echo $donnees3['produit_prix']; ?></td>
-
-                        <td id="Stock" valign="top"><?php
-                            echo $donnees3['produit_stock']; ?></td>
-
-                        <td id="Unite" valign="top"><?php
-                            echo $donnees3['produit_valeur_unite'];
-                            echo $donnees3['produit_unite']; ?></td>
-
-                        <td>
-                            <button type="button" class="btn btn-primary ">Commander</button>
-
-                        </td>
-                    </tr>
-                <?php } ?>
-            </table>
-
-        </tr>
+           <TH> Nom du producteur </TH> 
+			<TH> Titre </TH> 
+			<TH> Ville </TH> 
+			<TH><?php echo $_SESSION['login']; ?></TH> 
+		</tr>
+		<TR ng-repeat="item in listeFavoris"> 
+			<TD> {{i.Nom}} {{item.Prenom}} </TD> 
+			<TD>{{i.Titre}}</TD> 
+			<TD>{{item.Commune}}</TD> 
+			<TD></TD> 
+		</TR> 
+        
     </table>
 </section>
 <!-- //header A REDUIRE  -->
-
 
 <!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 
