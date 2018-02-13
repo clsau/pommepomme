@@ -1,4 +1,5 @@
 <?php
+//page permettant de recuperer les données du formulaire d'dentification et de creer une sessions avec des paramettres
 session_start();
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

@@ -1,4 +1,6 @@
 <?php
+//<!-- traitement permettant l'ajout d'une commande -->
+
     session_start();
 
     header("Access-Control-Allow-Origin: *");

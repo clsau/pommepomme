@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+<!-- page d'affichage du formulaire permettant la commande -->
+
 <!DOCTYPE html>
 <html lang="fr">
 

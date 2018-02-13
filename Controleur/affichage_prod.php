@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<!-- Fichier d'affichage du profil de la personne connceter-->
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->

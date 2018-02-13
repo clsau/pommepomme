@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+<!-- fichier permetant l'affichage du profil d'un producteur et de ses produit cette page est accesible apres une recherche ou a partir des favoris  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->

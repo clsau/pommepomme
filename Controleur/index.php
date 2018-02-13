@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+<!--  pages d'acceuil avec presentations d site et tableau contenant les livraisons possible -> si connecté ceux du dept si favoris ceus des producteur fovoris -> si pas connecté tous-->
+
 <!DOCTYPE html>
 <html lang="fr">
 <!-- Head -->

@@ -1,3 +1,4 @@
+//controleur de la page commande permettant de recuperer les données des formulaires
 app.controller("commandeCtrl", function ($scope, $http, myPort) {
     let chem1 = myPort;
     let chem2 = "Controleur/ajout_commande.php";
