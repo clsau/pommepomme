@@ -1,3 +1,7 @@
+//Fichier permettant de gerer la difference des ports
+// changer le port ligne 10 selon le port de votre odinateur
+
+
 let app = angular.module('AppModule', ['portApp']);
 
 

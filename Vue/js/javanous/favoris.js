@@ -14,6 +14,7 @@ app.controller("favorisCrl", function ($rootScope, $scope, $http, myPort) {
 
         $http.get($scope.url).success(function (data) {
             if (data.length > 0) {
+
                 $scope.listeFavoris = data;
             }
             else {
@@ -22,7 +23,7 @@ app.controller("favorisCrl", function ($rootScope, $scope, $http, myPort) {
         });
     };
 
-    $scope.displayProfile = function () {
+	    $scope.displayProfile = function () {
 
         let value1 = event.target.id;
         let chem1 = myPort;

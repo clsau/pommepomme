@@ -1,4 +1,5 @@
 <?php
+// Classe database permettant la connextion à la base de donnée
 class database{
  
     // specify your own database credentials

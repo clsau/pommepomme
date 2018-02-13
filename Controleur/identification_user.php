@@ -1,4 +1,5 @@
 <?php
+//page permettant de recuperer les données du formulaire d'dentification et de creer une sessions avec des paramettres
 session_start();
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -47,5 +48,7 @@ $user_info = array(
 print_r(json_encode($user_info));
 $_SESSION['pseudo'] = $user->user_login;
     $_SESSION['user_id'] = $user->user_id;
+	    $_SESSION['id'] = $user->user_id;
+
 ?>
 

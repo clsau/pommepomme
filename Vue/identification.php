@@ -28,14 +28,15 @@
     <!--//web font-->
 
 </head>
+<?php include "../Controleur/header.html";?>
 
-<!-- Body -->
+
 <body ng-app="AppModule" ng-controller="IdentificationCtrl" style="height:100vh;">
-<!-- header    MENU  -->
+<!-- header    MENU 
 
 <div class="container-fluid" style="height= 20%;">
     <nav class="navbar navbar-default" style="color:#000000; height: 100px">
-        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Brand and toggle get grouped for better mobile display 
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" style="background-color: #c4e3f3">Menu
@@ -105,6 +106,9 @@
         </div>
     </form>
 </section>
+<?php include "../Controleur/footer.html";?>
+
+<!--
 <div class="footer" style="height= 0%;">
     <div class="container" style="margin-top:1px;">
         <div class="col-md-6 footernav">
@@ -125,5 +129,6 @@
         </div>
     </div>
 </div>
+-->
 </body>
 </html>

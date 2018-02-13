@@ -15,8 +15,6 @@
     $database = new database();
     $db = $database->getConnection();
 
-    //$pseudo = $_SESSION["Pseudo"];
-
     // prepare user object
     $user = new userModel($db);
     // get id of user to be edited

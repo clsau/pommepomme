@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<!-- Fichier d'affichage du profil de la personne connceter-->
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
@@ -22,11 +23,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Body -->
 <body>
 
-<!-- header    MENU  -->
+<!-- header    MENU  
 
 <div class="container-fluid">
     <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
-        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Brand and toggle get grouped for better mobile display 
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1">
@@ -77,6 +78,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </nav>
         </div>
         <!-- /.navbar-collapse -->
+		<?php include "header2.html";?>
+
     </nav>
 </div>
 </body>
@@ -198,7 +201,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </form>
 </section>
 
-<!-- footer -->
+<!-- footer 
 <div class="footer">
     <div class="container" style="margin-top:5px;">
         <div class="col-md-6 footernav">
@@ -231,7 +234,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- //footer -->
 <!--//////////////////////////           FIN -->
 

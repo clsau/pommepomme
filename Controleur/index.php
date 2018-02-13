@@ -1,6 +1,6 @@
-/* Clarisse parlera  */
-
 <?php session_start(); ?>
+<!--  pages d'accueil avec presentations d site et tableau contenant les livraisons possible -> si connecté ceux du dept si favoris ceus des producteur fovoris -> si pas connecté tous-->
+
 <!DOCTYPE html>
 <html lang="fr">
 <!-- Head -->
@@ -22,87 +22,7 @@
     <script src="../Vue/js/javanous/search_dept.js"></script>
     <script src="../Vue/js/javanous/add_line_to_order.js"></script>
 </head>
-
-<!-- Body -->
-<body ng-app="AppModule">
-<!-- header    MENU  -->
-<div class="container-fluid">
-    <nav class="navbar navbar-default" style=" height: 50px color:#000000">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" style="background-color: #c4e3f3">Menu
-            </button>
-            <div class="logo">
-                <h1><a class="navbar-brand" href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
-                </h1>
-            </div>
-        </div>
-
-        <div class="collapse navbar-collapse nav-wil" ng-controller="formSearchCtrl" id="bs-example-navbar-collapse-1">
-            <nav>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
-                    </li>
-                    <li>
-                        <a href="../Vue/identification.php"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                    </li>
-                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                    </li>
-                    <li>
-                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
-                    </li>
-                    <li style="margin-top:15px;">
-                        <?php //Connection avec la BDD.
-                            $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-                            mysqli_set_charset($mysqli, "utf8");
-                            $request = mysqli_query($mysqli, "SELECT * FROM departement");
-                            $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
-                        ?>
-
-                        <form name="SearchForm">
-                            <select name="cboDept" ng-model="item.cboDept">
-                                <option value="" selected> Département</option>
-                                <?php while ($donnees = mysqli_fetch_array($request)) { ?>
-
-                                    <option name="departement"
-                                            value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
-                                <?php } ?>
-
-                            </select>
-
-
-                            <select name="categorie" ng-model="item.categorie" hint="Produit">
-                                <option value="" selected> Produit</option>
-                                <?php while ($donnees = mysqli_fetch_array($request1)) { ?>
-                                    <option name="categorie"
-                                            value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
-                                <?php } ?>
-                            </select>
-                            <?php
-                                mysqli_close($mysqli); //deconnection de mysql ?>
-                    </li>
-                    <li style="margin-top:15px;margin-left:10px;">
-                        <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)"
-                                ng-disabled="SearchForm.$invalid" class="btn btn-primary">Recherche
-                        </button>
-                    </li>
-                    </form>
-                </ul>
-            </nav>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-</div>
-</body>
-
-
-<!-- //header A REDUIRE  -->
-
-
-<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-
+<?php include "header.html";?>
 
 <!--//about-->
 <!--/about-->
@@ -779,124 +699,86 @@
         </div>
         <!-- //gallery -->
 
-        <!-- clients-->
-        <div class="clients" id="clients">
-            <div class="container">
-                <h3 class="heading">Avis consommateurs</h3>
-                <div class="wmuSlider example1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="wmuSliderWrapper">
-                        <article style="position: absolute; width: 100%; opacity: 0;">
-                            <div class="banner-wrap">
-                                <div class="col-md-6 client-grids">
-                                    <p>J'adore ce site !! Il est trop beau et tellement pratique. Utiliser AngularJS
-                                        1.4.5
-                                        comme
-                                        technologie etait très osé mais s'est révélé être une très bonne idée. </p>
-                                    <div class="col-md-3 c-img">
-                                        <img src="../Vue/images/c1.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3 c-info">
-                                        <h4>Charlotte</h4>
-                                        <h5>Cliente à Bordeaux</h5>
-                                    </div>
-                                    <div class="clearfix"></div>
+    <!-- clients-->
+    <div class="clients" id="clients">
+        <div class="container">
+            <h3 class="heading">Avis consommateurs</h3>
+            <div class="wmuSlider example1 animated wow slideInUp" data-wow-delay=".5s">
+                <div class="wmuSliderWrapper">
+                    <article style="position: absolute; width: 100%; opacity: 0;">
+                        <div class="banner-wrap">
+                            <div class="col-md-6 client-grids">
+                                <p>J'adore ce site !! Il est trop beau et tellement pratique. Utiliser AngularJS 1.4.5
+                                    comme
+                                    technologie etait très osé mais s'est révélé être une très bonne idée. </p>
+                                <div class="col-md-3 c-img">
+                                    <img src="../Vue/images/c1.jpg" alt=""/>
                                 </div>
-                                <div class="col-md-6 client-grids">
-                                    <p>Je n'aime pas les légumes mais avec ce site j'ai appris à adorer les brocolis. Je
-                                        ne
-                                        mange que ca maintenant, je déjeune avec des poireaux et choux de bruxelles TOUS
-                                        LES
-                                        MATINS !</p>
-                                    <div class="col-md-3 c-img">
-                                        <img src="../Vue/images/c2.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3 c-info">
-                                        <h4>Aurore</h4>
-                                        <h5>Cliente addicte</h5>
-                                    </div>
-                                    <div class="clearfix"></div>
+                                <div class="col-md-3 c-info">
+                                    <h4>Charlotte</h4>
+                                    <h5>Cliente à Bordeaux</h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                        </article>
-                        <article style="position: absolute; width: 100%; opacity: 0;">
-                            <div class="banner-wrap">
-                                <div class="col-md-6 client-grids">
-                                    <p>J'avais déja l'habitude d'aller chercher des huitres sur le bassin d'Arcachon.
-                                        Maintenant, dès que j'en achète, j'en ramène à plusieurs personnes sur Bordeaux.
-                                        Grâce à
-                                        ce système collaboratif, j'ai jusqu'à 10 euros de réduction sur ma commande</p>
-                                    <div class="col-md-3 c-img">
-                                        <img src="../Vue/images/c3.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3 c-info">
-                                        <h4>Isaaquette</h4>
-                                        <h5>Consommatrice intrépide</h5>
-                                    </div>
-                                    <div class="clearfix"></div>
+                            <div class="col-md-6 client-grids">
+                                <p>Je n'aime pas les légumes mais avec ce site j'ai appris à adorer les brocolis. Je ne
+                                    mange que ca maintenant, je déjeune avec des poireaux et choux de bruxelles TOUS LES
+                                    MATINS !</p>
+                                <div class="col-md-3 c-img">
+                                    <img src="../Vue/images/c2.jpg" alt=""/>
                                 </div>
-                                <div class="col-md-6 client-grids">
-                                    <p>Je fais régulièrement des commandes de pommes sur ce site. Elles sont de très
-                                        bonne
-                                        qualité et je sais d'où elles viennent. Avec le système collaboratif, les autres
-                                        clients
-                                        me les livrent directement !!! </p>
-                                    <div class="col-md-3 c-img">
-                                        <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAyuAAAAJDQ2OTNiYWQ4LTIwYzQtNGQ1NS1iMTU0LTQyMWY4M2I2MDlhNw.jpg"
-                                             alt=""/>
-                                    </div>
-                                    <div class="col-md-3 c-info">
-                                        <h4>Ti-Diane-Du-33</h4>
-                                        <h5>Fan de la petite Sirène</h5>
-                                    </div>
-                                    <div class="clearfix"></div>
+                                <div class="col-md-3 c-info">
+                                    <h4>Aurore</h4>
+                                    <h5>Cliente addicte</h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                        </article>
-                    </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </article>
+                    <article style="position: absolute; width: 100%; opacity: 0;">
+                        <div class="banner-wrap">
+                            <div class="col-md-6 client-grids">
+                                <p>J'avais déja l'habitude d'aller chercher des huitres sur le bassin d'Arcachon.
+                                    Maintenant, dès que j'en achète, j'en ramène à plusieurs personnes sur Bordeaux.
+                                    Grâce à
+                                    ce système collaboratif, j'ai jusqu'à 10 euros de réduction sur ma commande</p>
+                                <div class="col-md-3 c-img">
+                                    <img src="../Vue/images/c3.jpg" alt=""/>
+                                </div>
+                                <div class="col-md-3 c-info">
+                                    <h4>Isaaquette</h4>
+                                    <h5>Consommatrice intrépide</h5>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-md-6 client-grids">
+                                <p>Je fais régulièrement des commandes de pommes sur ce site. Elles sont de très bonne
+                                    qualité et je sais d'où elles viennent. Avec le système collaboratif, les autres
+                                    clients
+                                    me les livrent directement !!! </p>
+                                <div class="col-md-3 c-img">
+                                    <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAyuAAAAJDQ2OTNiYWQ4LTIwYzQtNGQ1NS1iMTU0LTQyMWY4M2I2MDlhNw.jpg"
+                                         alt=""/>
+                                </div>
+                                <div class="col-md-3 c-info">
+                                    <h4>Ti-Diane-Du-33</h4>
+                                    <h5>Fan de la petite Sirène</h5>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
-        <!--//clients-->
+    </div>
+    <!--//clients-->
+<?php include "footer.html";?>
 
 
-        <!-- footer -->
-        <div class="footer">
-            <div class="container" style="margin-top:5px;">
-                <div class="col-md-6 footernav">
-                    <div class="agileits-social">
-                        <ul>
-                            <a href="inscription.php"
-                               class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
-                        </ul>
-                        <ul>
-                            <a href="../Vue/identification.php"
-                               class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                        </ul>
-                        <ul><a href="affichage_prod.php"
-                               class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                        </ul>
-                        <ul>
-                            <a href="deconnexion.php"
-                               class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 footernav">
-                    <div class="agileits-social">
-                        <ul><a href="index.php" class="scroll">Mentions légales</a></ul>
-                    </div>
-                </div>
-                <div class="col-md-6 footernav">
-                    <div class="agileits-social">
-                        <ul><a href="index.php" class="scroll">Contact</a></ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //footer -->
-        <!--//////////////////////////           FIN -->
+
 
         <!-- bootstrap-pop-up -->
         <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">

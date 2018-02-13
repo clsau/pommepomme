@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+<!-- fichier permetant l'affichage du profil d'un producteur et de ses produit cette page est accesible apres une recherche ou a partir des favoris  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head -->
@@ -30,15 +32,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 </head>
+<?php include "header2.html";?>
 
-<!-- Body -->
+ 
 <body ng-app="AppModule" ng-controller="SearchProfile">
 
-<!-- header    MENU  -->
-
+<!-- header    MENU  
 <div class="container-fluid">
     <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
-        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Brand and toggle get grouped for better mobile display 
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1">
@@ -87,10 +89,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
             </nav>
         </div>
-        <!-- /.navbar-collapse -->
+        <!-- /.navbar-collapse
     </nav>
 </div>
-</body>
+</body> -->
+
 <section class="service-w3ls" id="services" style="margin-top:5px;">
     <?php
     $id_profil = $_GET['produit_user_id'];
@@ -236,9 +239,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div style="margin-top:0;background-color: #A1D067;">
     </div>
+<?php include "footer.html";?>
 
 
-    <!-- footer -->
+    <!-- footer 
     <div class="footer">
         <div class="container" style="margin-top:5px;">
             <div class="col-md-6 footernav">
@@ -270,7 +274,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul><a href="#home" class="scroll">CONTACTS</a></ul>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 <!-- //footer -->

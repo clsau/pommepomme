@@ -1,4 +1,4 @@
-<?php
+<?php //permet de telecharger et enregitrer des photos
 session_start();
 
 header("Access-Control-Allow-Origin: *");

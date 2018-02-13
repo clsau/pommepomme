@@ -77,6 +77,10 @@
     $request = mysqli_query($mysqli, "SELECT * FROM departement");
     $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
 ?>
+                            $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                            $request = mysqli_query($mysqli, "SELECT * FROM departement");
+                            $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+                        ?>
 
                         <form name="SearchForm">
                             <select name="cboDept" ng-model="item.cboDept">
