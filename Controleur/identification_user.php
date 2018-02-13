@@ -47,5 +47,7 @@ $user_info = array(
 print_r(json_encode($user_info));
 $_SESSION['pseudo'] = $user->user_login;
     $_SESSION['user_id'] = $user->user_id;
+	    $_SESSION['id'] = $user->user_id;
+
 ?>
 

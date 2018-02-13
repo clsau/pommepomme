@@ -20,13 +20,13 @@
     <script src="../Vue/js/javanous/search_dept.js"></script>
     <script src="../Vue/js/javanous/add_line_to_order.js"></script>
 </head>
+<?php include "header.html";?>
 
-<!-- Body -->
+<!-- Body 
 <body ng-app="AppModule">
-<!-- header    MENU  -->
 <div class="container-fluid">
     <nav class="navbar navbar-default" style=" height: 50px color:#000000">
-        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Brand and toggle get grouped for better mobile display 
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" style="background-color: #c4e3f3">Menu
@@ -90,10 +90,9 @@
                 </ul>
             </nav>
         </div>
-        <!-- /.navbar-collapse -->
     </nav>
 </div>
-</body>
+</body>-->
 
 
 <!-- //header A REDUIRE  -->
@@ -793,9 +792,10 @@
         </div>
     </div>
     <!--//clients-->
+<?php include "footer.html";?>
 
 
-    <!-- footer -->
+    <!-- footer
     <div class="footer">
         <div class="container" style="margin-top:5px;">
             <div class="col-md-6 footernav">
@@ -828,7 +828,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- //footer -->
     <!--//////////////////////////           FIN -->
 

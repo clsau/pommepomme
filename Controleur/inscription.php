@@ -163,8 +163,9 @@
 
 <!-- services section -->
 
+<?php include "footer.html";?>
 
-<!-- footer -->
+<!-- footer 
 <div class="footer" style="margin-top:1px;">
     <div class="container" style="margin-top:1px;">
         <div class="col-md-6 footernav">
@@ -197,7 +198,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- //footer -->
 <!--//////////////////////////           FIN -->
 <script type="text/javascript" language="JavaScript">

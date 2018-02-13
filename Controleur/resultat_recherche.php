@@ -27,11 +27,11 @@
 <!-- Body -->
 <body ng-app="AppModule" ng-controller="resultSearch" >
 
-<!-- header    MENU  -->
+<!-- header    MENU 
 
 <div class="container-fluid">
     <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 0">
-        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Brand and toggle get grouped for better mobile display 
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1">
@@ -93,9 +93,11 @@
                 </ul>
             </nav>
         </div>
-        <!-- /.navbar-collapse -->
+        <!-- /.navbar-collapse 
     </nav>
 </div>
+-->
+<?php include "header.html";?>
 
 
 <section class="service-w3ls" id="services" style="margin-top:0;">
@@ -151,8 +153,9 @@
     </table>
 
 </section>
+<?php include "footer.html";?>
 
-<!-- footer -->
+<!-- footer 
 <div class="footer" style="margin-top:0px;">
     <div class="container" style="margin-top:100px;">
         <div class="col-md-6 footernav">
@@ -184,7 +187,7 @@
                 <ul><a href="#home" class="scroll">CONTACTS</a></ul>
             </div>
         </div>
-    </div>
-</div>
+    </div>>
+</div>-->
 </body>
 </html>
