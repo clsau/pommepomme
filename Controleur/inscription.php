@@ -32,21 +32,21 @@
     <script src="../Config/app.js"></script>
     <script src="inscriptionCtlr.js"></script>
     <script src="../Vue/js/javanous/search_dept.js"></script>
-		<script type="text/javascript">
-      function rechercher(){
-        var codePostal = document.getElementById('CP').value;
-        $.ajax({
-          type: "POST",
-          url: "some.php",
-          data: {codePostal: codePostal}, // je passe la variable JS
-          success: function(msg){ // je récupère la réponse dans la variable msg
-            $('#Ville').empty();
-            $('#Ville').append(msg);
-          }
-        });
-      }
-	   
-	  
+    <script type="text/javascript">
+        function rechercher() {
+            var codePostal = document.getElementById('CP').value;
+            $.ajax({
+                type: "POST",
+                url: "some.php",
+                data: {codePostal: codePostal}, // je passe la variable JS
+                success: function (msg) { // je récupère la réponse dans la variable msg
+                    $('#Ville').empty();
+                    $('#Ville').append(msg);
+                }
+            });
+        }
+
+
     </script>
     <!-- incorporation du framework angular, et des javascripts correspondants -->
 
@@ -118,25 +118,25 @@
                 <label>Adresse postale :</label>
                 <input type="text" id="adresse" ng-model="item.adresse" required/><br/><br/>
             </div>
-			<div class="wrap-input100 validate-input" data-validate = "Entrez votre code postal">
-			                <label>Code Postal</label>
+            <div class="wrap-input100 validate-input" data-validate="Entrez votre code postal">
+                <label>Code Postal</label>
 
-                            <input class="input100" type="text" id="CP" required maxlength="5" placeholder="Code Postal" onkeyup="rechercher()"><br/><br/>
-                            <span class="focus-input100"></span>
-                            <p id="text"></p>
-                        </div>
-						        
+                <input class="input100" type="text" id="CP" required maxlength="5" placeholder="Code Postal"
+                       onkeyup="rechercher()"><br/><br/>
+                <span class="focus-input100"></span>
+                <p id="text"></p>
+            </div>
 
-             <div class="wrap-input100 validate-input" id="ville" data-validate = "Entrez votre ville">
-						                <label>Ville</label>
 
-                            <select style="width:162px" class="input100" type="text" id="Ville" required>
-							
-                            </select><br/><br/>
+            <div class="wrap-input100 validate-input" id="ville" data-validate="Entrez votre ville">
+                <label>Ville</label>
 
-                        </div>   
+                <select style="width:162px" class="input100" type="text" id="Ville" required>
 
-         
+                </select><br/><br/>
+
+            </div>
+
 
             <div>
                 <label>Numéro de téléphone :</label>
@@ -201,11 +201,11 @@
 <!-- //footer -->
 <!--//////////////////////////           FIN -->
 <script type="text/javascript" language="JavaScript">
-    function ChargerRequete () {
+    function ChargerRequete() {
         var dept = document.getElementById("ListeDept").value;
-        text = "<\?php $request = mysqli_query($mysqli, \"SELECT * FROM code_postal where code_postal_departement_id = "+ dept +" order by `code_postal_commune`\"); <\?php "
+        text = "<\?php $request = mysqli_query($mysqli, \"SELECT * FROM code_postal where code_postal_departement_id = " + dept + " order by `code_postal_commune`\"); <\?php ";
         document.getElementById("calqueVille").innerHTML = text;
-    };
+    }
 </script>
 
 </body>

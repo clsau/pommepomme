@@ -36,7 +36,7 @@
 </head>
 
 <body ng-app="AppModule" ng-controller="addLineCtrl">
-<?php include "header.html";?>
+<?php include "header.html"; ?>
 
 <!-- header    MENU  
 
@@ -73,10 +73,10 @@
                     </li>
                     <li style="margin-top:15px;">
                         <?php //Connection avec la BDD.
-                            $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-                            $request = mysqli_query($mysqli, "SELECT * FROM departement");
-                            $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
-                        ?>
+    $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+    $request = mysqli_query($mysqli, "SELECT * FROM departement");
+    $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
+?>
 
                         <form name="SearchForm">
                             <select name="cboDept" ng-model="item.cboDept">
@@ -94,7 +94,7 @@
                                 <?php } ?>
                             </select>
                             <?php
-                                mysqli_close($mysqli); //deconnection de mysql ?>
+    mysqli_close($mysqli); //deconnection de mysql ?>
                     </li>
                     <li style="margin-top:15px;margin-left:10px;">
                         <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)"
@@ -106,7 +106,7 @@
             </nav>
         </div>
         <!-- /.navbar-collapse -->
-    </nav>
+</nav>
 
 </div>
 

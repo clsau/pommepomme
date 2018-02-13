@@ -27,7 +27,7 @@ app.controller('InscriptionCtrl', function ($scope, $http, myPort) {
     };
 
     $scope.save = function () {
-		 var codePostal_id = document.getElementById('Ville').value;
+        var codePostal_id = document.getElementById('Ville').value;
         if (document.getElementsByClassName("switch-input")[0].checked ? 'yes' : 'no' == "yes") {
             $type = 1;
             var data1 = {
@@ -68,13 +68,13 @@ app.controller('InscriptionCtrl', function ($scope, $http, myPort) {
                 let chem2 = "Controleur/index.php";
                 window.location.replace(chem1.concat(chem2));
             }
-			else {
-			if (response.message == "double"){ // else if message == "double" 
-				alert ("pseudo déjà utilisé");
-			} else
+            else {
+                if (response.message == "double") { // else if message == "double"
+                    alert("pseudo déjà utilisé");
+                } else
                 alert("Problème d'inscription");
-			
-			}
+
+            }
         });
     };
 });

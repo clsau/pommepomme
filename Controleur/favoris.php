@@ -29,34 +29,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="../Vue/js/javanous/favoris.js"></script>
 
 </head>
-<?php include "header.html";?>
+<?php include "header.html"; ?>
 
 <body ng-app="AppModule" ng-controller="favorisCrl">
 <section class="service-w3ls" id="services" style="margin-top:5px;">
-    
-	<br>
-	
-	<input type="hidden" id="user_id" value="<?php echo $_SESSION['id']; ?>">
-	
+
+    <br>
+
+    <input type="hidden" id="user_id" value="<?php echo $_SESSION['id']; ?>">
+
     <table border="3" align="center" width="75%" style="background-color: #546E7A" ng-init="affiche_favoris()">
-	<CAPTION>Favoris </CAPTION> 
+        <CAPTION>Favoris</CAPTION>
         <tr>
-           <TH> Nom du producteur </TH> 
-			<TH> Titre </TH> 
-			<TH> Ville </TH> 
-			<TH> Boutton</TH> 
-		</tr>
-		<TR ng-repeat="item in listeFavoris"> 
-			<TD> {{item.Nom}} {{item.Prenom}} </TD> 
-			<TD>{{item.Titre}}</TD> 
-			<TD>{{item.Commune}}</TD> 
-			<TD>                    <button id="<?php echo $_SESSION['id']; ?>" type="submit" data-ng-click="displayProfile($event)"
-                            class="btn btn-primary">Profil
-                    </button>
-					
-					</TD> 
-		</TR> 
-        
+            <TH> Nom du producteur</TH>
+            <TH> Titre</TH>
+            <TH> Ville</TH>
+            <TH> Boutton</TH>
+        </tr>
+        <TR ng-repeat="item in listeFavoris">
+            <TD> {{item.Nom}} {{item.Prenom}}</TD>
+            <TD>{{item.Titre}}</TD>
+            <TD>{{item.Commune}}</TD>
+            <TD>
+                <button id="<?php echo $_SESSION['id']; ?>" type="submit" data-ng-click="displayProfile($event)"
+                        class="btn btn-primary">Profil
+                </button>
+
+            </TD>
+        </TR>
+
     </table>
 </section>
 <!-- //header A REDUIRE  <input type="test" ng-model="user_id" id="user_id" value="1"> -->

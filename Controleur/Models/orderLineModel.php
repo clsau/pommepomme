@@ -70,7 +70,7 @@
                 $quqt->execute();
             } else {
                 $response = "place";
-				$_SESSION['contenance' . $this->ligne_commande_id] = 20;
+                $_SESSION['contenance' . $this->ligne_commande_id] = 20;
             }
             $row = $quid->fetchObject();
             $stmt = $this->conn->prepare($query);

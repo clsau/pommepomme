@@ -32,26 +32,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body ng-app="AppModule" ng-controller="favorisCrl">
 <section class="service-w3ls" id="services" style="margin-top:5px;">
-    
-	<br>
-	
-	<input ng-model="user_id" value="<?php echo $_SESSION['id']; ?>">
-	
+
+    <br>
+
+    <input ng-model="user_id" value="<?php echo $_SESSION['id']; ?>">
+
     <table border="3" align="center" width="75%" style="background-color: #546E7A" ng-init="affiche_favoris(user_id)">
-	<CAPTION>Favoris </CAPTION> 
+        <CAPTION>Favoris</CAPTION>
         <tr>
-           <TH> Nom du producteur </TH> 
-			<TH> Titre </TH> 
-			<TH> Ville </TH> 
-			<TH><?php echo $_SESSION['login']; ?></TH> 
-		</tr>
-		<TR ng-repeat="item in listeFavoris"> 
-			<TD> {{i.Nom}} {{item.Prenom}} </TD> 
-			<TD>{{i.Titre}}</TD> 
-			<TD>{{item.Commune}}</TD> 
-			<TD></TD> 
-		</TR> 
-        
+            <TH> Nom du producteur</TH>
+            <TH> Titre</TH>
+            <TH> Ville</TH>
+            <TH><?php echo $_SESSION['login']; ?></TH>
+        </tr>
+        <TR ng-repeat="item in listeFavoris">
+            <TD> {{i.Nom}} {{item.Prenom}}</TD>
+            <TD>{{i.Titre}}</TD>
+            <TD>{{item.Commune}}</TD>
+            <TD></TD>
+        </TR>
+
     </table>
 </section>
 <!-- //header A REDUIRE  -->

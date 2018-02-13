@@ -2,15 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1061fb84-9a20-4696-97f9-7ac57acf29b7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Controleur/Models/ligneViewModel.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Controleur/ajout_ligne_commande.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Controleur/get_commande_by_ligne_commande_id.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Controleur/get_ligne_by_user_id.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Vue/display_order_lines.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Vue/js/javanous/display_order_lines.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Controleur/commande.php" afterPath="$PROJECT_DIR$/Controleur/commande.php" />
-      <change beforePath="$PROJECT_DIR$/Vue/js/javanous/commandeCtrl.js" afterPath="$PROJECT_DIR$/Vue/js/javanous/commandeCtrl.js" />
+      <change beforePath="$PROJECT_DIR$/Controleur/Models/orderLineModel.php" afterPath="$PROJECT_DIR$/Controleur/Models/orderLineModel.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/Models/userModel.php" afterPath="$PROJECT_DIR$/Controleur/Models/userModel.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/affichage_prod.php" afterPath="$PROJECT_DIR$/Controleur/affichage_prod.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/affiche_profil.php" afterPath="$PROJECT_DIR$/Controleur/affiche_profil.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/create_user.php" afterPath="$PROJECT_DIR$/Controleur/create_user.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/favoris.php" afterPath="$PROJECT_DIR$/Controleur/favoris.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/index.php" afterPath="$PROJECT_DIR$/Controleur/index.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/index_mail.php" afterPath="$PROJECT_DIR$/Controleur/index_mail.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/inscription.php" afterPath="$PROJECT_DIR$/Controleur/inscription.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/inscriptionCtlr.js" afterPath="$PROJECT_DIR$/Controleur/inscriptionCtlr.js" />
+      <change beforePath="$PROJECT_DIR$/Controleur/insert_favoris.php" afterPath="$PROJECT_DIR$/Controleur/insert_favoris.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/modification.php" afterPath="$PROJECT_DIR$/Controleur/modification.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/modificationMDP.php" afterPath="$PROJECT_DIR$/Controleur/modificationMDP.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/recuperation.php" afterPath="$PROJECT_DIR$/Controleur/recuperation.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/some.php" afterPath="$PROJECT_DIR$/Controleur/some.php" />
+      <change beforePath="$PROJECT_DIR$/Controleur/update_user.php" afterPath="$PROJECT_DIR$/Controleur/update_user.php" />
+      <change beforePath="$PROJECT_DIR$/Vue/add_product_to_order.php" afterPath="$PROJECT_DIR$/Vue/add_product_to_order.php" />
+      <change beforePath="$PROJECT_DIR$/Vue/display_order_lines.html" afterPath="$PROJECT_DIR$/Vue/display_order_lines.html" />
+      <change beforePath="$PROJECT_DIR$/Vue/display_order_shipping.html" afterPath="$PROJECT_DIR$/Vue/display_order_shipping.php" />
+      <change beforePath="$PROJECT_DIR$/Vue/favoris.html" afterPath="$PROJECT_DIR$/Vue/favoris.html" />
+      <change beforePath="$PROJECT_DIR$/Vue/js/javanous/favoris.js" afterPath="$PROJECT_DIR$/Vue/js/javanous/favoris.js" />
+      <change beforePath="$PROJECT_DIR$/Vue/js/javanous/modificationCtrl.js" afterPath="$PROJECT_DIR$/Vue/js/javanous/modificationCtrl.js" />
+      <change beforePath="$PROJECT_DIR$/Web_services/get_favoris_by_user_id.php" afterPath="$PROJECT_DIR$/Web_services/get_favoris_by_user_id.php" />
+      <change beforePath="$PROJECT_DIR$/objetModels/favorisModel.php" afterPath="$PROJECT_DIR$/objetModels/favorisModel.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,195 +48,129 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5537139">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ajout_commande.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Controleur/ajout_commande.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="37" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="2" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ajout_ligne_commande.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Controleur/ajout_ligne_commande.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="get_commande_by_ligne_commande_id.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Controleur/get_commande_by_ligne_commande_id.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="346">
-                  <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="get_ligne_by_user_id.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Controleur/get_ligne_by_user_id.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-85">
-                  <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="display_order_lines.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Vue/js/javanous/display_order_lines.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="display_order_lines.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Vue/display_order_lines.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="312">
-                  <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="orderLineModel.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Controleur/Models/orderLineModel.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-                  <folding>
-                    <marker date="1516891525067" expanded="true" signature="501:831" ph="INSERT INTO ${$this-&gt;table_name}" />
-                    <marker date="1516891525067" expanded="true" signature="856:921" ph="SELECT user_... users" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="commande.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Vue/commande.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="47" column="95" lean-forward="false" selection-start-line="47" selection-start-column="95" selection-end-line="47" selection-end-column="95" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ligneViewModel.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Controleur/Models/ligneViewModel.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="227">
-                  <caret line="42" column="25" lean-forward="false" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-                  <folding>
-                    <marker date="1517502392000" expanded="true" signature="1548:1638" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="commande.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Controleur/commande.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="105" column="7" lean-forward="false" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
-                  <folding>
-                    <marker date="1517819519251" expanded="true" signature="2901:2926" ph="SELECT * FRO... departement" />
-                    <marker date="1517819519251" expanded="true" signature="2993:3016" ph="SELECT * FRO... categorie" />
-                    <marker date="1517819519251" expanded="true" signature="4897:5018" ph="SELECT * FRO... produit" />
-                    <marker date="1517819519251" expanded="true" signature="5065:5186" ph="SELECT * FRO... produit" />
-                    <marker date="1517819519251" expanded="true" signature="5233:5404" ph="SELECT P1.* produit" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="create_product.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Vue/create_product.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="816">
-                  <caret line="48" column="65" lean-forward="false" selection-start-line="48" selection-start-column="65" selection-end-line="48" selection-end-column="65" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="orderModel.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Controleur/Models/orderModel.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1020">
-                  <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-                  <folding>
-                    <element signature="n#__construct#0;n#orderModel#0;n#!!top" expanded="false" />
-                    <marker date="1517581711125" expanded="true" signature="600:704" ph="INSERT INTO ${$this-&gt;table_name}" />
-                    <marker date="1517581711125" expanded="true" signature="600:1097" ph="INSERT INTO ${$this-&gt;table_name}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="prodModel.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Controleur/Models/prodModel.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1275">
-                  <caret line="75" column="36" lean-forward="false" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="36" />
-                  <folding>
-                    <marker date="1517573985954" expanded="true" signature="591:1203" ph="INSERT INTO ${$this-&gt;table_name}" />
-                    <marker date="1517573985954" expanded="true" signature="1228:1293" ph="SELECT user_... users" />
-                    <marker date="1517573985954" expanded="true" signature="6920:7072" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-                    <marker date="1517573985954" expanded="true" signature="7101:7166" ph="SELECT user_... users" />
-                    <marker date="1517573985954" expanded="true" signature="7567:7709" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="commandeCtrl.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Vue/js/javanous/commandeCtrl.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="524">
-                  <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controleur/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1518519787806" expanded="true" signature="2870:2895" ph="SELECT * FRO... departement" />
+                <marker date="1518519787806" expanded="true" signature="2962:2985" ph="SELECT * FRO... categorie" />
+                <marker date="1518519787806" expanded="true" signature="7941:8030" ph="SELECT * FRO... commande" />
+                <marker date="1518519787806" expanded="true" signature="8088:8149" ph="SELECT * FRO... users" />
+                <marker date="1518519787806" expanded="true" signature="10785:10874" ph="SELECT * FRO... commande" />
+                <marker date="1518519787806" expanded="true" signature="11008:11043" ph="SELECT * FRO... users" />
+                <marker date="1518519787806" expanded="true" signature="11970:12005" ph="SELECT * FRO... users" />
+                <marker date="1518519787806" expanded="true" signature="17327:17397" ph="SELECT * FRO... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="favoris.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vue/js/javanous/favoris.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="display_order_shipping.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Vue/display_order_shipping.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="96" column="99" lean-forward="true" selection-start-line="96" selection-start-column="99" selection-end-line="96" selection-end-column="99" />
+              <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#4;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#5;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1518525894019" expanded="true" signature="2807:2853" ph="SELECT * FRO... commande" />
+                <marker date="1518525894019" expanded="true" signature="2807:2914" ph="SELECT * FRO... commande" />
+                <marker date="1518525894019" expanded="true" signature="2807:2916" ph="SELECT * FRO... commande" />
+                <marker date="1518525894019" expanded="true" signature="3191:3226" ph="SELECT * FRO... users" />
+                <marker date="1518525894019" expanded="true" signature="3694:3731" ph="..." />
+                <marker date="1518525894019" expanded="true" signature="3735:3736" ph="..." />
+                <marker date="1518525894019" expanded="true" signature="4277:4576" ph="..." />
+                <marker date="1518525894019" expanded="true" signature="4809:4854" ph="SELECT * FRO... line" />
+                <marker date="1518525894019" expanded="true" signature="4809:4912" ph="SELECT * FRO... ligne" />
+                <marker date="1518525894019" expanded="true" signature="5100:5135" ph="SELECT * FRO... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get_ligne_by_user_id.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controleur/get_ligne_by_user_id.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="display_order_lines.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vue/js/javanous/display_order_lines.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="affichage_prod.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controleur/affichage_prod.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3162">
+              <caret line="186" column="82" lean-forward="false" selection-start-line="186" selection-start-column="82" selection-end-line="186" selection-end-column="82" />
+              <folding>
+                <marker date="1518526592231" expanded="true" signature="2927:2952" ph="SELECT * FRO... departement" />
+                <marker date="1518526592231" expanded="true" signature="4501:4558" ph="SELECT * FRO... users" />
+                <marker date="1518526592231" expanded="true" signature="4646:4775" ph="SELECT * FRO... users" />
+                <marker date="1518526592231" expanded="true" signature="6440:6462" ph="..." />
+                <marker date="1518526592231" expanded="true" signature="6663:6686" ph="..." />
+                <marker date="1518526592231" expanded="true" signature="6894:6920" ph="..." />
+                <marker date="1518526592231" expanded="true" signature="7129:7158" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajout_ligne_commande.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controleur/ajout_ligne_commande.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>conser</find>
-      <find>lo</find>
-      <find>index</find>
-      <find>navbar</find>
-      <find>hover</find>
-      <find>strik</find>
-      <find>strike</find>
       <find>str</find>
       <find>services.jpg</find>
       <find>services</find>
@@ -244,53 +194,39 @@
       <find>commandeCtrl</find>
       <find>formsea</find>
       <find>sessi</find>
+      <find>colo</find>
+      <find>inser</find>
+      <find>id_produit</find>
+      <find>quantite</find>
+      <find>select</find>
+      <find>commande_da</find>
+      <find>connectez</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="version_fonctionnelle" repo="$PROJECT_DIR$" source="master" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Vue/css/font-awesome.min.css" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/id/identification_user.php" />
-        <option value="$PROJECT_DIR$/Vue/js/javanous/update_product.js" />
-        <option value="$PROJECT_DIR$/id/identificationCtlr.js" />
-        <option value="$PROJECT_DIR$/Controleur/identification_user.php" />
-        <option value="$PROJECT_DIR$/Controleur/send_mail.php" />
-        <option value="$PROJECT_DIR$/Controleur/sup_product.php" />
-        <option value="$PROJECT_DIR$/recherche/index.php" />
-        <option value="$PROJECT_DIR$/recherche/search_dept.js" />
-        <option value="$PROJECT_DIR$/recherche/search.php" />
-        <option value="$PROJECT_DIR$/recherche/resultat_recherche.php" />
-        <option value="$PROJECT_DIR$/Vue/js/javanous/display_product.js" />
-        <option value="$PROJECT_DIR$/Vue/js/javanous/display_search.js" />
-        <option value="$PROJECT_DIR$/Vue/js/javanous/identificationCtlr.js" />
-        <option value="$PROJECT_DIR$/Vue/js/javanous/modificationCtrl.js" />
-        <option value="$PROJECT_DIR$/Vue/modification.html" />
-        <option value="$PROJECT_DIR$/Vue/js/javanous/create_product.js" />
-        <option value="$PROJECT_DIR$/Web_services/create_user.php" />
-        <option value="$PROJECT_DIR$/Config/app.js" />
-        <option value="$PROJECT_DIR$/Controleur/affichage_prod.php" />
         <option value="$PROJECT_DIR$/Controleur/display_product.php" />
         <option value="$PROJECT_DIR$/objetModels/userModel.php" />
         <option value="$PROJECT_DIR$/Controleur/create_product.php" />
-        <option value="$PROJECT_DIR$/Controleur/index.php" />
         <option value="$PROJECT_DIR$/Vue/identification.html" />
         <option value="$PROJECT_DIR$/Vue/create_product.html" />
         <option value="$PROJECT_DIR$/Vue/display_products.html" />
         <option value="$PROJECT_DIR$/Vue/js/javanous/create_order.js" />
         <option value="$PROJECT_DIR$/Controleur/create_order.php" />
-        <option value="$PROJECT_DIR$/Controleur/Models/orderLineModel.php" />
         <option value="$PROJECT_DIR$/Vue/commande.html" />
         <option value="$PROJECT_DIR$/Controleur/update_product.php" />
         <option value="$PROJECT_DIR$/bdd_v3.txt" />
@@ -299,20 +235,41 @@
         <option value="$PROJECT_DIR$/Vue/js/javanous/search_dept.js" />
         <option value="$PROJECT_DIR$/Controleur/resultat_recherche.php" />
         <option value="$PROJECT_DIR$/Controleur/search.php" />
-        <option value="$PROJECT_DIR$/Controleur/Models/userModel.php" />
-        <option value="$PROJECT_DIR$/Vue/css/style.css" />
         <option value="$PROJECT_DIR$/Controleur/create_user.php" />
         <option value="$PROJECT_DIR$/Controleur/inscriptionCtlr.js" />
         <option value="$PROJECT_DIR$/Controleur/inscription.php" />
-        <option value="$PROJECT_DIR$/Controleur/Models/prodModel.php" />
-        <option value="$PROJECT_DIR$/Controleur/ajout_commande.php" />
-        <option value="$PROJECT_DIR$/Controleur/Models/orderModel.php" />
-        <option value="$PROJECT_DIR$/Vue/js/javanous/commandeCtrl.js" />
-        <option value="$PROJECT_DIR$/Controleur/commande.php" />
-        <option value="$PROJECT_DIR$/Controleur/ajout_ligne_commande.php" />
         <option value="$PROJECT_DIR$/Controleur/get_ligne_by_user_id.php" />
         <option value="$PROJECT_DIR$/Vue/js/javanous/display_order_lines.js" />
+        <option value="$PROJECT_DIR$/Vue/js/javanous/identificationCtlr.js" />
+        <option value="$PROJECT_DIR$/Vue/css/style.css" />
+        <option value="$PROJECT_DIR$/Controleur/Models/orderModel.php" />
+        <option value="$PROJECT_DIR$/Controleur/Models/userModel.php" />
+        <option value="$PROJECT_DIR$/Controleur/recuperation.php" />
+        <option value="$PROJECT_DIR$/Vue/js/javanous/display_product.js" />
+        <option value="$PROJECT_DIR$/Vue/add_picture.html" />
+        <option value="$PROJECT_DIR$/Vue/modification.html" />
+        <option value="$PROJECT_DIR$/Controleur/upload.php" />
+        <option value="$PROJECT_DIR$/Vue/js/javanous/create_product.js" />
+        <option value="$PROJECT_DIR$/Vue/add_picture.php" />
+        <option value="$PROJECT_DIR$/Controleur/identification_user.php" />
+        <option value="$PROJECT_DIR$/Controleur/Models/prodModel.php" />
+        <option value="$PROJECT_DIR$/Controleur/commande.php" />
+        <option value="$PROJECT_DIR$/Vue/js/javanous/add_line_to_order.js" />
+        <option value="$PROJECT_DIR$/Vue/add_product_to_order.php" />
+        <option value="$PROJECT_DIR$/Controleur/ajout_ligne_commande.php" />
+        <option value="$PROJECT_DIR$/Controleur/ajout_commande.php" />
+        <option value="$PROJECT_DIR$/Vue/js/javanous/commandeCtrl.js" />
+        <option value="$PROJECT_DIR$/Vue/js/javanous/add_order_line.js" />
+        <option value="$PROJECT_DIR$/Controleur/Models/orderLineModel.php" />
+        <option value="$PROJECT_DIR$/Vue/display_products.php" />
+        <option value="$PROJECT_DIR$/Config/app.js" />
+        <option value="$PROJECT_DIR$/Vue/js/display_order_ship.html" />
+        <option value="$PROJECT_DIR$/Controleur/affichage_prod.php" />
+        <option value="$PROJECT_DIR$/Vue/js/javanous/display_order_shipping.js" />
         <option value="$PROJECT_DIR$/Vue/display_order_lines.html" />
+        <option value="$PROJECT_DIR$/Vue/display_order_shipping.html" />
+        <option value="$PROJECT_DIR$/Controleur/index.php" />
+        <option value="$PROJECT_DIR$/Vue/display_order_shipping.php" />
       </list>
     </option>
   </component>
@@ -333,15 +290,20 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="728" />
-    <option name="y" value="6" />
-    <option name="width" value="1005" />
-    <option name="height" value="1035" />
+    <option name="x" value="452" />
+    <option name="width" value="1475" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -455,6 +417,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -470,10 +433,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -494,23 +453,6 @@
             <path>
               <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
               <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="Controleur" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="images_prod" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="images_prod" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
               <item name="Vue" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -526,22 +468,21 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="javanous" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="pommepomme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pommepomme" type="462c0819:PsiDirectoryNode" />
-              <item name="Web_services" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="C:/wamp64/bin/php/php7.1.9/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
@@ -552,17 +493,19 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\Vue" />
       <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\Controleur" />
-      <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\Controleur\Models" />
-      <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\Vue\js\javanous" />
-      <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\objetModels" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\recherche" />
       <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\traitement_produits" />
       <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\Controleur" />
+      <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\Vue" />
+      <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\Vue\js\javanous" />
+      <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\Controleur\Models" />
+      <recent name="C:\Users\Elhevan\PhpstormProjects\pommepomme\objetModels" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -612,7 +555,14 @@
       <workItem from="1516953795499" duration="12927000" />
       <workItem from="1517213089717" duration="624000" />
       <workItem from="1517560494318" duration="14782000" />
-      <workItem from="1517819194945" duration="3646000" />
+      <workItem from="1517819194945" duration="7360000" />
+      <workItem from="1517834328263" duration="1312000" />
+      <workItem from="1517904720193" duration="14341000" />
+      <workItem from="1517992546600" duration="4340000" />
+      <workItem from="1518006499271" duration="597000" />
+      <workItem from="1518079466064" duration="17308000" />
+      <workItem from="1518164214213" duration="9198000" />
+      <workItem from="1518510705218" duration="9581000" />
     </task>
     <task id="LOCAL-00001" summary="connexion">
       <created>1516028320313</created>
@@ -852,29 +802,43 @@
       <option name="project" value="LOCAL" />
       <updated>1517581743800</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="afficher cmd">
+      <created>1517824735256</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1517824735256</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Merge branch 'version_fonctionnelle' of https://github.com/clsau/pommepomme&#10;&#10;# Conflicts:&#10;#&#9;Controleur/index.php&#10;#&#9;Vue/js/javanous/commandeCtrl.js">
+      <created>1518448661895</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1518448661896</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191560000" />
+    <option name="totallyTimeSpent" value="272609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26630434" sideWeight="0.53731346" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26630434" sideWeight="0.46268657" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32826087" sideWeight="0.51865673" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944608" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2652174" sideWeight="0.45895523" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13166311" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13272922" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -890,12 +854,46 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.49791667" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.49791667" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.49743918" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.48347107" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.48347107" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.51865673" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944608" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.49791667" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39955106" sideWeight="0.49743918" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.49791667" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.49743918" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2652174" sideWeight="0.45895523" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13965885" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.48347107" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -904,6 +902,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Afficher profil" />
     <MESSAGE value="Integration + logo" />
     <MESSAGE value="integration graphique" />
@@ -914,132 +913,225 @@
     <MESSAGE value="inscription" />
     <MESSAGE value="trucs" />
     <MESSAGE value="add commande" />
-    <option name="LAST_COMMIT_MESSAGE" value="add commande" />
+    <MESSAGE value="afficher cmd" />
+    <MESSAGE value="commandes" />
+    <MESSAGE value="Merge branch 'version_fonctionnelle' of https://github.com/clsau/pommepomme&#10;&#10;# Conflicts:&#10;#&#9;Controleur/index.php&#10;#&#9;Vue/js/javanous/commandeCtrl.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'version_fonctionnelle' of https://github.com/clsau/pommepomme&#10;&#10;# Conflicts:&#10;#&#9;Controleur/index.php&#10;#&#9;Vue/js/javanous/commandeCtrl.js" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/modificationCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/modification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web_services/create_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular-1.6.6/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modèle/pomme.sql" />
-    <entry file="file://$PROJECT_DIR$/Modèle/pomme.sql" />
-    <entry file="file://$PROJECT_DIR$/objetModels/userModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="28" lean-forward="true" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/affichage_prod.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/identification.html" />
-    <entry file="file://$PROJECT_DIR$/Controleur/create_order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="45" lean-forward="false" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/update_product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bdd_v3.txt" />
-    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/create_order.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/display_product.js">
+    <entry file="file://$PROJECT_DIR$/Controleur/create_product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images_prod/uploads/22.png" />
+    <entry file="file://$PROJECT_DIR$/images_prod/uploads/22.jpeg" />
+    <entry file="file://$PROJECT_DIR$/images_prod/uploads/123.jpeg" />
+    <entry file="file://$PROJECT_DIR$/Vue/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/Models/ligneViewModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="42" column="29" lean-forward="false" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/Models/prodModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/commande.html" />
+    <entry file="file://$PROJECT_DIR$/Controleur/create_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="46" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/inscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="144" column="33" lean-forward="false" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/add_picture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/create_order.js" />
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/affiche_profilCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/create_product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="15" column="65" lean-forward="false" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/display_search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/modificationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/identificationCtlr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vue/js/javanous/display_profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        <state relative-caret-position="-705">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/create_product.php">
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/display_product.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="420">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="67" selection-end-column="3" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/deconnexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/ajout_commande.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="54" column="99" lean-forward="false" selection-start-line="54" selection-start-column="99" selection-end-line="54" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/inscriptionCtlr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/commandeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/add_line_to_order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/add_order_line.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/add_product_to_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="144" column="82" lean-forward="false" selection-start-line="144" selection-start-column="49" selection-end-line="144" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/commande.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5440">
+          <caret line="320" column="14" lean-forward="false" selection-start-line="320" selection-start-column="14" selection-end-line="320" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/display_products.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="106" column="35" lean-forward="true" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ge.js" />
     <entry file="file://$PROJECT_DIR$/Vue/js/javanous/search_dept.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        <state relative-caret-position="-95">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/display_products.html" />
-    <entry file="file://$PROJECT_DIR$/Controleur/recherche.php">
+    <entry file="file://$PROJECT_DIR$/Controleur/Models/userModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="2" lean-forward="false" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+        <state relative-caret-position="66">
+          <caret line="187" column="38" lean-forward="false" selection-start-line="187" selection-start-column="38" selection-end-line="187" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/search.php">
+    <entry file="file://$PROJECT_DIR$/Controleur/trait_login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1050,73 +1142,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/affiche_profil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1793">
-          <caret line="204" column="0" lean-forward="true" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/resultat_recherche.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="80" column="37" lean-forward="false" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/display_products.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="90" column="73" lean-forward="false" selection-start-line="90" selection-start-column="73" selection-end-line="90" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/upload.php">
+    <entry file="file://$PROJECT_DIR$/Controleur/search.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="33" />
+          <caret line="17" column="54" lean-forward="false" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/identificationCtlr.js">
+    <entry file="file://$PROJECT_DIR$/Controleur/identification_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="80" lean-forward="false" selection-start-line="0" selection-start-column="80" selection-end-line="0" selection-end-column="80" />
+        <state relative-caret-position="646">
+          <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/css/style.css">
+    <entry file="file://$PROJECT_DIR$/Controleur/Models/orderLineModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="2047" column="0" lean-forward="true" selection-start-line="2047" selection-start-column="0" selection-end-line="2047" selection-end-column="0" />
+        <state relative-caret-position="1122">
+          <caret line="71" column="36" lean-forward="false" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/create_user.php">
+    <entry file="file://$PROJECT_DIR$/Controleur/Models/orderModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        <state relative-caret-position="1003">
+          <caret line="59" column="35" lean-forward="false" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+          <folding>
+            <marker date="1518426601957" expanded="true" signature="600:1097" ph="INSERT INTO ${$this-&gt;table_name}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/Models/userModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="49" column="62" lean-forward="true" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="102" column="34" lean-forward="false" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/index.php">
+    <entry file="file://$PROJECT_DIR$/Controleur/ajout_ligne_commande.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/display_order_ship.html" />
+    <entry file="file://$PROJECT_DIR$/Controleur/affichage_prod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3162">
+          <caret line="186" column="82" lean-forward="false" selection-start-line="186" selection-start-column="82" selection-end-line="186" selection-end-column="82" />
+          <folding>
+            <marker date="1518526592231" expanded="true" signature="2927:2952" ph="SELECT * FRO... departement" />
+            <marker date="1518526592231" expanded="true" signature="4501:4558" ph="SELECT * FRO... users" />
+            <marker date="1518526592231" expanded="true" signature="4646:4775" ph="SELECT * FRO... users" />
+            <marker date="1518526592231" expanded="true" signature="6440:6462" ph="..." />
+            <marker date="1518526592231" expanded="true" signature="6663:6686" ph="..." />
+            <marker date="1518526592231" expanded="true" signature="6894:6920" ph="..." />
+            <marker date="1518526592231" expanded="true" signature="7129:7158" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/display_order_lines.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/display_order_shipping.js" />
+    <entry file="file://$PROJECT_DIR$/Controleur/get_ligne_by_user_id.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,166 +1224,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/inscriptionCtlr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="26" column="6" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/create_product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/Models/prodModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="36" lean-forward="false" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="36" />
-          <folding>
-            <marker date="1517573985954" expanded="true" signature="591:1203" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1517573985954" expanded="true" signature="1228:1293" ph="SELECT user_... users" />
-            <marker date="1517573985954" expanded="true" signature="6920:7072" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-            <marker date="1517573985954" expanded="true" signature="7101:7166" ph="SELECT user_... users" />
-            <marker date="1517573985954" expanded="true" signature="7567:7709" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/create_product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="65" lean-forward="false" selection-start-line="48" selection-start-column="65" selection-end-line="48" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/Models/orderModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-          <folding>
-            <element signature="n#__construct#0;n#orderModel#0;n#!!top" expanded="false" />
-            <marker date="1517581711125" expanded="true" signature="600:704" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1517581711125" expanded="true" signature="600:1097" ph="INSERT INTO ${$this-&gt;table_name}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/commandeCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/ajout_commande.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="37" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/Models/orderLineModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-          <folding>
-            <marker date="1516891525067" expanded="true" signature="501:831" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1516891525067" expanded="true" signature="856:921" ph="SELECT user_... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/commande.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="47" column="95" lean-forward="false" selection-start-line="47" selection-start-column="95" selection-end-line="47" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/Models/commandeViewModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/Models/ligneViewModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="42" column="25" lean-forward="false" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding>
-            <marker date="1517502392000" expanded="true" signature="1548:1638" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/ajout_ligne_commande.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/get_commande_by_ligne_commande_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/get_ligne_by_user_id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/display_order_lines.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/display_order_lines.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="84" lean-forward="true" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Vue/display_order_lines.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="83" column="13" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controleur/commande.php">
+    <entry file="file://$PROJECT_DIR$/Vue/js/javanous/favoris.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="105" column="7" lean-forward="false" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
+        <state relative-caret-position="510">
+          <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/affiche_profil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1517819519251" expanded="true" signature="2901:2926" ph="SELECT * FRO... departement" />
-            <marker date="1517819519251" expanded="true" signature="2993:3016" ph="SELECT * FRO... categorie" />
-            <marker date="1517819519251" expanded="true" signature="4897:5018" ph="SELECT * FRO... produit" />
-            <marker date="1517819519251" expanded="true" signature="5065:5186" ph="SELECT * FRO... produit" />
-            <marker date="1517819519251" expanded="true" signature="5233:5404" ph="SELECT P1.* produit" />
+            <marker date="1518448573488" expanded="true" signature="3599:3624" ph="SELECT * FRO... departement" />
+            <marker date="1518448573488" expanded="true" signature="4967:5092" ph="SELECT * FRO... users" />
+            <marker date="1518448573488" expanded="true" signature="5183:5247" ph="SELECT * FRO... produit" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1518519787806" expanded="true" signature="2870:2895" ph="SELECT * FRO... departement" />
+            <marker date="1518519787806" expanded="true" signature="2962:2985" ph="SELECT * FRO... categorie" />
+            <marker date="1518519787806" expanded="true" signature="7941:8030" ph="SELECT * FRO... commande" />
+            <marker date="1518519787806" expanded="true" signature="8088:8149" ph="SELECT * FRO... users" />
+            <marker date="1518519787806" expanded="true" signature="10785:10874" ph="SELECT * FRO... commande" />
+            <marker date="1518519787806" expanded="true" signature="11008:11043" ph="SELECT * FRO... users" />
+            <marker date="1518519787806" expanded="true" signature="11970:12005" ph="SELECT * FRO... users" />
+            <marker date="1518519787806" expanded="true" signature="17327:17397" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/display_order_shipping.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="96" column="99" lean-forward="true" selection-start-line="96" selection-start-column="99" selection-end-line="96" selection-end-column="99" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#4;n#table#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1518525894019" expanded="true" signature="2807:2853" ph="SELECT * FRO... commande" />
+            <marker date="1518525894019" expanded="true" signature="2807:2914" ph="SELECT * FRO... commande" />
+            <marker date="1518525894019" expanded="true" signature="2807:2916" ph="SELECT * FRO... commande" />
+            <marker date="1518525894019" expanded="true" signature="3191:3226" ph="SELECT * FRO... users" />
+            <marker date="1518525894019" expanded="true" signature="3694:3731" ph="..." />
+            <marker date="1518525894019" expanded="true" signature="3735:3736" ph="..." />
+            <marker date="1518525894019" expanded="true" signature="4277:4576" ph="..." />
+            <marker date="1518525894019" expanded="true" signature="4809:4854" ph="SELECT * FRO... line" />
+            <marker date="1518525894019" expanded="true" signature="4809:4912" ph="SELECT * FRO... ligne" />
+            <marker date="1518525894019" expanded="true" signature="5100:5135" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>

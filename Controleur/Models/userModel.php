@@ -58,7 +58,7 @@ class userModel{
         $this->Nom = htmlspecialchars(strip_tags($this->Nom));
         $this->Prenom = htmlspecialchars(strip_tags($this->Prenom));
         $this->Titre = htmlspecialchars(strip_tags($this->Titre));
-		$this->Id_CP = htmlspecialchars(strip_tags($this->Id_CP));
+        $this->Id_CP = htmlspecialchars(strip_tags($this->Id_CP));
 
         // bind new values
         //$stmt->bindParam(':id_user', $this->id_user);
@@ -72,7 +72,7 @@ class userModel{
         $stmt->bindParam(':type', $this->type);
         $stmt->bindParam(':Nom', $this->Nom);
         $stmt->bindParam(':Prenom', $this->Prenom);
-		$stmt->bindParam(':Id_CP', $this->Id_CP);
+        $stmt->bindParam(':Id_CP', $this->Id_CP);
 
 
         // execute the query
@@ -185,28 +185,29 @@ class userModel{
         return false;
     }
 
-    public function modificationMDP(){
+    public function modificationMDP()
+    {
 
-            $query = "UPDATE
+        $query = "UPDATE
                             " . $this->table_name . "
                         SET
                             user_mdp =  :mdp 
                         WHERE
                             user_login =  :login ;";
 
-            $stmt = $this->conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
 
-            $this->login = htmlspecialchars(strip_tags($this->login));
-            $this->mdp = htmlspecialchars(strip_tags($this->mdp));
-            
-            
-            $stmt->bindParam(':mdp', $this->mdp);
-            $stmt->bindParam(':login', $this->login);            
+        $this->login = htmlspecialchars(strip_tags($this->login));
+        $this->mdp = htmlspecialchars(strip_tags($this->mdp));
 
-            if ($stmt->execute()) {
-                return true;
-            } else {
-                return false;
+
+        $stmt->bindParam(':mdp', $this->mdp);
+        $stmt->bindParam(':login', $this->login);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
         }
     }
 

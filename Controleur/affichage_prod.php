@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <?php
                             mysqli_close($mysqli); //deconnection de mysql
                             ?>
-							
+
                     </li>
                     <li style="margin-top:15px;margin-left:10px;"><input type='submit' name='recherche'
                                                                          value='Rechercher' align="center"></li>
@@ -157,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </tr>
                     <tr>
                         <td>Ville</td>
-						
+
                         <td id="Ville"><?php echo $donnees2['code_postal_commune']; ?></td>
                     </tr>
                 </table>
@@ -180,9 +180,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <input type="submit" name="DisplayProduct" value="voir mes commandes"/>
         </div>
 
-    </form>	
-	
-	    </form>
+        </form>
+
+    <form action="../Vue/display_order_shipping.php" method="post">
+        <div align="center">
+            <input type="submit" name="DisplayShipping" value="voir mes livraisons"/>
+        </div>
+
+    </form>
+
+
+    </form>
     <form action="favoris.php" method="post">
         <div align="center">
             <input type="submit" name="" value="Favoris"/>

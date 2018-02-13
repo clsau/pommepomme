@@ -27,8 +27,8 @@ $data = json_decode(file_get_contents("php://input"));
 
 $user->login = $_SESSION['pseudo'];
 $user->Tel = $data->Tel;
-$user->Nom = $data->Nom;
-$user->Prenom = $data->Prenom;
+    $user->Nom = $data->Nom;
+    $user->Prenom = $data->Prenom;
 $user->Mail = $data->Mail;
 $user->Adresse = $data->Adresse;
 $user->Id_CP = $data->Id_CP;
