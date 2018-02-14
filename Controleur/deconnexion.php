@@ -16,5 +16,5 @@
 
     // Finally, destroy the session.
     session_destroy();
-    header("Location: index.php");
+    header("Location: ../Vue/index.php");
 ?>

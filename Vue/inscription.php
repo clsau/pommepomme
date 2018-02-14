@@ -30,7 +30,7 @@
             var codePostal = document.getElementById('CP').value;
             $.ajax({
                 type: "POST",
-                url: "some.php",
+                url: "../Controleur/some.php",
                 data: {codePostal: codePostal}, // je passe la variable JS
                 success: function (msg) { // je récupère la réponse dans la variable msg
                     $('#Ville').empty();
