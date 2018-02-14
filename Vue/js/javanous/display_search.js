@@ -18,7 +18,7 @@ app.controller("resultSearch", function ($rootScope, $scope, myPort, $window) {
 
         let value1 = event.target.id;
         let chem1 = myPort;
-        let chem2 = "Controleur/commande.php";
+        let chem2 = "Vue/commande.php";
         $scope.url = chem1.concat(chem2);
         $scope.url += "?produit_id=" + value1;
         window.location.replace($scope.url);

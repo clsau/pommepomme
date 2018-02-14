@@ -25,7 +25,7 @@ app.controller("formSearchCtrl", function ($rootScope, $scope, $http, myPort) {
                 window.localStorage.setItem("listeProd", JSON.stringify(data));
                 var p = window.localStorage.getItem("listeProd");
                 let chem1 = myPort;
-                let chem2 = "Controleur/resultat_recherche.php";
+                let chem2 = "Vue/resultat_recherche.php";
                 window.location.replace(chem1.concat(chem2));
             }
             else {

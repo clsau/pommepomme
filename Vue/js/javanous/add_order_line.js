@@ -20,13 +20,13 @@ app.controller("addLineCtrl", function ($scope, $http, myPort) {
                 else {
                     document.cookie = 'commandePassee=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
                     var chem1 = myPort;
-                    var chem2 = "Controleur/index.php";
+                    var chem2 = "Vue/index.php";
                 }
             }
             else {
                 alert('Produit ajouté !');
                 var chem1 = myPort;
-                var chem2 = "Controleur/index.php";
+                var chem2 = "Vue/index.php";
             }
             window.location.replace(chem1.concat(chem2));
         });

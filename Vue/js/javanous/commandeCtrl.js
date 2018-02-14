@@ -40,7 +40,7 @@ app.controller("commandeCtrl", function ($scope, $http, myPort) {
                     }
                     else {
                         var chem1 = myPort;
-                        var chem2 = "Controleur/index.php";
+                        var chem2 = "Vue/index.php";
                     }
                     window.location.replace(chem1.concat(chem2));
                 });

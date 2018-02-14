@@ -24,7 +24,7 @@ app.controller('IdentificationCtrl', function ($rootScope, $scope, $http, myPort
         }).success(function (reponse) {
             $rootScope.user = reponse;
             let chem1 = myPort;
-            let chem2 = "Controleur/index.php";
+            let chem2 = "Vue/index.php";
             window.location.replace(chem1.concat(chem2));
 
         }).error(function (reponse) {
