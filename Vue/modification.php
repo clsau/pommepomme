@@ -14,6 +14,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script src="../config/app.js"></script>
     <script src="js/javanous/modificationCtrl.js"></script>
+    <script src="js/javanous/search_dept.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- default css files -->
@@ -52,8 +53,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <?php include "header.html"; ?>
 
-
-<body ng-app="AppModule" ng-controller="ModificationCtrl">
+<header>
+    <body ng-app="AppModule" ng-controller="ModificationCtrl">
 
     <?php
         $mysqli = mysqli_connect("localhost", "root", "", "pomme");
@@ -129,7 +130,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </section>
     <!-- services section -->
-    </body>
 
-<?php include "footer.html"; ?>
+
+    </body>
+    <?php include "footer.html"; ?>
 </html>

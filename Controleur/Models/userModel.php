@@ -86,53 +86,60 @@
 
         public function update_user()
         {
+
             // update query
             $query = "UPDATE
 			                " . $this->table_name . "
 			            SET
+			                user_mdp = :mdp,
 			                user_tel = :Tel,
 			                user_mail = :Mail,
 			                user_adresse = :Adresse,
-			                user_description = :Description,
 			                user_titre = :Titre,
+			                user_description = :Description,
+			                user_login = :login,
+			                user_type = :type,
 			                user_nom = :Nom,
-			                user_prenom =:Prenom
-		
+			                user_prenom = :Prenom
 			            WHERE
-			                user_login = :login ";
-            //echo $query;
+			                user_id = :user_id ";
+
+            // echo $query;
             // prepare query statement
             $stmt = $this->conn->prepare($query);
 
             // sanitize
+            $this->id_user = htmlspecialchars(strip_tags($this->id_user));
+            $this->mdp = htmlspecialchars(strip_tags($this->mdp));
             $this->Tel = htmlspecialchars(strip_tags($this->Tel));
             $this->Mail = htmlspecialchars(strip_tags($this->Mail));
             $this->Adresse = htmlspecialchars(strip_tags($this->Adresse));
             $this->Description = htmlspecialchars(strip_tags($this->Description));
-            $this->Titre = htmlspecialchars(strip_tags($this->Titre));
             $this->login = htmlspecialchars(strip_tags($this->login));
+            $this->type = htmlspecialchars(strip_tags($this->type));
             $this->Nom = htmlspecialchars(strip_tags($this->Nom));
             $this->Prenom = htmlspecialchars(strip_tags($this->Prenom));
-            //$this->Id_CP = htmlspecialchars(strip_tags($this->Id_CP));
+            $this->Titre = htmlspecialchars(strip_tags($this->Titre));
 
             // bind new values
+            $stmt->bindParam(':mdp', $this->mdp);
             $stmt->bindParam(':Tel', $this->Tel);
             $stmt->bindParam(':Mail', $this->Mail);
             $stmt->bindParam(':Adresse', $this->Adresse);
-            $stmt->bindParam(':Description', $this->Description);
             $stmt->bindParam(':Titre', $this->Titre);
-            //$stmt->bindParam(':type', $this->type);
+            $stmt->bindParam(':Description', $this->Description);
+            $stmt->bindParam(':login', $this->login);
+            $stmt->bindParam(':type', $this->type);
             $stmt->bindParam(':Nom', $this->Nom);
             $stmt->bindParam(':Prenom', $this->Prenom);
-            $stmt->bindParam(':login', $this->login);
-            //$stmt->bindParam(':Id_CP', $this->Id_CP);
+            $stmt->bindParam(':user_id', $this->id_user);
+
 
             // execute the query
             if ($stmt->execute()) {
                 //true;
                 return true;
             }
-            print_r($stmt->errorInfo());
             return false;
         }
 
