@@ -9,7 +9,8 @@ app.controller('ModificationCtrl', function ($scope, $http, myPort) {
                 "Titre": document.getElementById("titre").value,
                 "Description": document.getElementById("description").value,
                 "Nom": document.getElementById("nom").value,
-                "Prenom": document.getElementById("prenom").value
+                "Prenom": document.getElementById("prenom").value,
+                "Id_CP": document.getElementById("Ville").value
             };
         }
         else {
@@ -20,7 +21,8 @@ app.controller('ModificationCtrl', function ($scope, $http, myPort) {
                 "Titre": null,
                 "Description": null,
                 "Nom": document.getElementById("nom").value,
-                "Prenom": document.getElementById("prenom").value
+                "Prenom": document.getElementById("prenom").value,
+                "Id_CP": document.getElementById("Ville").value
 
             };
         }
@@ -28,10 +30,10 @@ app.controller('ModificationCtrl', function ($scope, $http, myPort) {
         let chem2 = "Controleur/update_user.php";
         let url = chem1.concat(chem2);
         $http.post(url, data1).success(function (response) {
-            if (response == "true") {
+            if (response.message == "true") {
                 alert("Profil bien édité");
                 let chem1 = myPort;
-                let chem2 = "Controleur/affichage_prod.php";
+                let chem2 = "Vue/affichage_prod.php";
                 window.location.replace(chem1.concat(chem2));
             }
             else {

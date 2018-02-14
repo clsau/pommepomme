@@ -29,10 +29,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../config/app.js"></script>
     <script src="js/javanous/affiche_profilCtrl.js"></script>
+    <script src="js/javanous/search_dept.js"></script>
 
 
 </head>
-<?php include "header2.html"; ?>
+<?php include "header.html"; ?>
 
 
 <body ng-app="AppModule" ng-controller="SearchProfile">

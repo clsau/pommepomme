@@ -20,6 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../config/app.js"></script>
     <script src="../Vue/js/javanous/display_order_lines.js"></script>
+    <script src="js/javanous/search_dept.js"></script>
 
 </head>
 

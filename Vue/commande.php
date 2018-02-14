@@ -22,6 +22,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../config/app.js"></script>
     <script src="js/javanous/commandeCtrl.js"></script>
+    <script src="js/javanous/search_dept.js"></script>
+
     <script type="text/javascript">
         function yesnoCheck() {
             if (document.getElementById('delivChecked').checked) {

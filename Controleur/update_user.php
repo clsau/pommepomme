@@ -36,7 +36,7 @@ $user->Nom = $data->Nom;
 $user->Prenom = $data->Prenom;
 
     $user->Tel = (int)$user->Tel;
-    $user->Id_CP = (int)$user->Id_CP;
+//$user->Id_CP = (int)$user->Id_CP;
 
     // update the product
     header('Content-Type: application/json');

@@ -13,6 +13,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../config/app.js"></script>
+    <script src="js/javanous/search_dept.js"></script>
     <script src="js/javanous/create_product.js"></script>
     <meta charset="utf-8">
 </head>
@@ -72,13 +73,27 @@
                     </tr>
                 </table>
             </div>
-            <div class="form-group">
-                <label style="color: black" for="produit_categorie_id" class="col-sm-2 control-label">Catégorie du
-                    produit</label>
-                <div class="col-sm-10">
-                    <input ng-model="produit_categorie_id" type="text" id="produit_categorie_id" class="form-control">
-                </div>
+
+            <div class="col-sm-10">
+                <?php //Connection avec la BDD.
+                $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+                $request0 = mysqli_query($mysqli, "SET CHARACTER SET utf8");
+                $request = mysqli_query($mysqli, "SELECT * FROM categorie order by `categorie_nom`");
+
+                ?>
+                <label style="color: black" for="produit_categorie_id" class="col-sm-2 control-label">
+                    Catégorie du produit
+                </label>
+                <select style="width:168px" class="form-control" name="produit_categorie_id"
+                        ng-model="produit_categorie_id" id="produit_categorie_id">
+                    <?php while ($donnees = mysqli_fetch_array($request)) { ?>
+                        <option name="produit_cat"
+                                value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
+                    <?php } ?>
+                </select>
+                <?php mysqli_close($mysqli); //deconnection de mysql ?>
             </div>
+
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" ng-click="formsubmit(createProductForm.$valid)"
