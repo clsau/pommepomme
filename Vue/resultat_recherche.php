@@ -67,7 +67,7 @@
                         </button>
                     </form>
                 <?php } else { ?>
-                    <a href="../Vue/identification.html">
+                    <a href="identification.php">
                         <input type="button" value="Se connecter pour Commander" class="btn btn-primary">
                     </a>
                 <?php } ?>
