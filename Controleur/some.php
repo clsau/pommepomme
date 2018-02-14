@@ -14,6 +14,6 @@
     echo $retour;
     while ($dn1 = mysqli_fetch_array($request)) {
         $retour = "<option value='" . $dn1['code_postal_id'] . "'>" . $dn1['code_postal_commune'] . "</option>";
-        echo $retour; // envoi de la réponse (ça pourrait être du code html, un objet serializé etc.. l'important c'est qu'il s'agit d'un String)
+        echo $retour; // envoi de la réponse (ça pourrait être du code html, un objet serializé etc.. l'important c'est qu'il s'agisse d'un String)
     }
 ?> 

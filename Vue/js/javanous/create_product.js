@@ -21,7 +21,7 @@ app.controller("formCtrl", function ($scope, $http, myPort) {
                 if (confirm('Produit bien ajouté ! Voulez-vous ajouter une photo de ce produit ?')) {
                     $scope.produit_id = response;
                     let chem1 = myPort;
-                    let chem2 = "Vue/add_picture.html";
+                    let chem2 = "Vue/add_picture_from_order.php";
                     window.location.replace(chem1.concat(chem2));
                 } else {
 

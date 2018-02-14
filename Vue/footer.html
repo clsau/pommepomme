@@ -1,0 +1,33 @@
+<div class="footer">
+    <div class="container" style="margin-top:5px;">
+        <div class="col-md-6 footernav">
+            <div class="agileits-social">
+                <ul>
+                    <a href="inscription.php"
+                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
+                </ul>
+                <ul>
+                    <a href="identification.php"
+                       class="scroll"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
+                </ul>
+                <ul><a href="affichage_prod.php"
+                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
+                </ul>
+                <ul>
+                    <a href="../Controleur/deconnexion.php"
+                       class="scroll"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 footernav">
+            <div class="agileits-social">
+                <ul><a href="index.php" class="scroll">Mentions légales</a></ul>
+            </div>
+        </div>
+        <div class="col-md-6 footernav">
+            <div class="agileits-social">
+                <ul><a href="index.php" class="scroll">Contact</a></ul>
+            </div>
+        </div>
+    </div>
+</div>

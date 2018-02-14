@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="logo">
-                <a href="../Controleur/index.php"><img src="images/logo_litte.png" alt="LOGO"/></a>
+                <a href="index.php"><img src="images/logo_litte.png" alt="LOGO"/></a>
             </div>
         </div>
 
@@ -47,7 +47,7 @@
             <nav>
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="../Controleur/affichage_prod.php">Profil</a>
+                        <a href="affichage_prod.php">Profil</a>
                     </li>
                     <li>
                         <a href="../Controleur/deconnexion.php">Se déconnecter</a>
@@ -154,10 +154,10 @@
         <div class="col-md-6 footernav">
             <div class="agileits-social">
                 <ul>
-                    <a href="../Controleur/inscription.php"
+                    <a href="inscription.php"
                        class="scroll">S'inscrire</a>
                 </ul>
-                <ul><a href="../Controleur/affichage_prod.php"
+                <ul><a href="affichage_prod.php"
                        class="scroll">Profil</a>
                 </ul>
                 <ul>

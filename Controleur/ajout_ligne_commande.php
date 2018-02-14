@@ -9,7 +9,7 @@
 
 
 // include database and object files
-    include_once '../Config/database.php';
+    include_once '../config/database.php';
     include_once 'Models/orderLineModel.php';
 
 // get database connection

@@ -1,7 +1,6 @@
 app.controller("formSearchCtrl", function ($rootScope, $scope, $http, myPort) {
 
 
-
     $scope.formsubmit = function (value1, value2) {
 
 
@@ -10,19 +9,19 @@ app.controller("formSearchCtrl", function ($rootScope, $scope, $http, myPort) {
         }
 
         if (value2 == null) {
-            value2="%";
+            value2 = "%";
         }
 
         let chem1 = myPort;
         let chem2 = "Controleur/search.php";
         $scope.url = chem1.concat(chem2);
-        window.localStorage.setItem("listeProd","") ;
+        window.localStorage.setItem("listeProd", "");
 
-        $scope.url += "?cboDept="+value1;
-        $scope.url += "&categorie="+value2;
+        $scope.url += "?cboDept=" + value1;
+        $scope.url += "&categorie=" + value2;
 
         $http.get($scope.url).success(function (data) {
-            if (data.length > 0 ) {
+            if (data.length > 0) {
                 window.localStorage.setItem("listeProd", JSON.stringify(data));
                 var p = window.localStorage.getItem("listeProd");
                 let chem1 = myPort;

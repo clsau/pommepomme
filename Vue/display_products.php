@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           type="text/css"/>
     <title>Afficher les produits</title>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="../Config/app.js"></script>
+    <script src="../config/app.js"></script>
     <script src="js/javanous/display_product.js"></script>
     <script type="text/javascript">
         function addid(clicked_id) {
@@ -19,7 +20,7 @@
 <body>
 <div ng-app="AppModule" ng-controller="formDisplayCtrl" class="container">
     <h2 class="text-center text-primary">Gestion des produits
-        <form class="form-horizontal well form-search" action="../Controleur/affichage_prod.php" method="post"><input
+        <form class="form-horizontal well form-search" action="affichage_prod.php" method="post"><input
                     class="btn btn-primary" type="submit" name="Accueil" value="Retour"/></form>
     </h2>
 
@@ -35,7 +36,7 @@
                         </form>
                     </td>
                     <td width="700" align="center">
-                        <form class="form-horizontal well form-search" action="../Vue/create_product.html"
+                        <form class="form-horizontal well form-search" action="create_product.php"
                               method="post">
 
                             <input class="btn btn-primary" type="submit" name="AjouterProduit"

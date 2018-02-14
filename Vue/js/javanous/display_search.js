@@ -1,8 +1,8 @@
 app.controller("resultSearch", function ($rootScope, $scope, myPort, $window) {
 
-		var listeProd = window.localStorage.getItem("listeProd");
+    var listeProd = window.localStorage.getItem("listeProd");
 
-		$scope.listeProducteurs = JSON.parse(listeProd);
+    $scope.listeProducteurs = JSON.parse(listeProd);
 
     $scope.displayProfile = function () {
 

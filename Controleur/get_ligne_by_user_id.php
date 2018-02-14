@@ -8,7 +8,7 @@
 
 
     // include database and object files
-    include_once '../Config/database.php';
+    include_once '../config/database.php';
     include_once 'Models/ligneViewModel.php';
 
     // get database connection

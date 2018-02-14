@@ -14,8 +14,6 @@ app.controller('ModificationCtrl', function ($scope, $http, myPort) {
         $scope.user_code_postal_id = document.getElementById("Ville").value;
         $scope.user_titre = document.getElementById("titre").value;
         $scope.user_description = document.getElementById("description").value;
-        //$scope.user_mail = document.getElementById("courriel").value;
-        //alert(document.getElementById("adresse").value);
 
         let data1 = {
             "Nom": $scope.user_nom,
@@ -41,6 +39,5 @@ app.controller('ModificationCtrl', function ($scope, $http, myPort) {
                 alert("Profil non modifié. Vérifiez votre saisie");
             }
         });
-        //$scope.orderProp = 'age';
     }
 });

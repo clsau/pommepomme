@@ -2093,3 +2093,4 @@ input:checked + .slider .on {
 input:checked + .slider .off {
     display: none;
 }
+

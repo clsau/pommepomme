@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
 
-<?php $_SESSION['idprod'] = $_COOKIE['cookieName']; ?>
 <?php include "header.html"; ?>
 <body>
 <form action="../Controleur/upload.php" method="post" enctype="multipart/form-data">
