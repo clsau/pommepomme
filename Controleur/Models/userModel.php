@@ -122,7 +122,6 @@
             $this->Titre = htmlspecialchars(strip_tags($this->Titre));
 
             // bind new values
-            $stmt->bindParam(':id_user', $this->id_user);
             $stmt->bindParam(':mdp', $this->mdp);
             $stmt->bindParam(':Tel', $this->Tel);
             $stmt->bindParam(':Mail', $this->Mail);
@@ -133,6 +132,7 @@
             $stmt->bindParam(':type', $this->type);
             $stmt->bindParam(':Nom', $this->Nom);
             $stmt->bindParam(':Prenom', $this->Prenom);
+            $stmt->bindParam(':user_id', $this->id_user);
 
 
             // execute the query
