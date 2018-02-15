@@ -79,7 +79,7 @@
             </td>
             <td>
                 <form>
-                    <button id={{i.produit_user_id}} type="submit" data-ng-click="displayProfile($event)"
+                    <button id={{i.produit_user_id}} type="submit" data-ng-click="displayProfile($e)"
                             class="btn btn-primary">Voir le profil
                     </button>
                 </form>
