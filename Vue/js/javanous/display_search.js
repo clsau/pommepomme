@@ -15,7 +15,6 @@ app.controller("resultSearch", function ($rootScope, $scope, myPort, $window) {
     };
 
     $scope.commande = function () {
-
         let value1 = event.target.id;
         let chem1 = myPort;
         let chem2 = "Vue/commande.php";

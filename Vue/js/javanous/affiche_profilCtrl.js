@@ -5,7 +5,14 @@ app.controller("SearchProfile", function ($rootScope, $scope, $http, myPort) {
     $scope.url = chem1.concat(chem2);
     window.localStorage.setItem("listeProd", "");
 
-
+    $scope.commande = function () {
+        let value1 = event.target.id;
+        let chem1 = myPort;
+        let chem2 = "Vue/commande.php";
+        $scope.url = chem1.concat(chem2);
+        $scope.url += "?produit_id=" + value1;
+        window.location.replace($scope.url);
+    };
     $scope.formsubmit = function (value1, value2) {
 
 

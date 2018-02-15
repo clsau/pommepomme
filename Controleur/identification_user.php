@@ -49,6 +49,7 @@
     $_SESSION['pseudo'] = $user->user_login;
     $_SESSION['user_id'] = $user->user_id;
     $_SESSION['id'] = $user->user_id;
+    $_SESSION['type'] = $user->user_type;
 
 ?>
 
