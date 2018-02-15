@@ -27,16 +27,16 @@
 
     $user->login = $_SESSION['pseudo'];
     $user->Tel = $data->Tel;
-    $user->Nom = $data->Nom;
-    $user->Prenom = $data->Prenom;
     $user->Mail = $data->Mail;
     $user->Adresse = $data->Adresse;
     $user->Id_CP = $data->Id_CP;
     $user->Titre = $data->Titre;
     $user->Description = $data->Description;
+$user->Nom = $data->Nom;
+$user->Prenom = $data->Prenom;
 
     $user->Tel = (int)$user->Tel;
-    $user->Id_CP = (int)$user->Id_CP;
+//$user->Id_CP = (int)$user->Id_CP;
 
     // update the product
     header('Content-Type: application/json');

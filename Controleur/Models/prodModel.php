@@ -82,7 +82,7 @@
             $this->produit_user_id = null;
             $query = 'UPDATE 
 			                ' . $this->table_name . '
-			       SET produit_user_id = 0
+			       SET produit_user_id = 1
 			       WHERE produit_id =:produit_id;';
 
             $stmt = $this->conn->prepare($query);

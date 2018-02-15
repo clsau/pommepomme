@@ -31,6 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script src="js/javanous/search_dept.js"></script>
     <script src="js/javanous/affiche_profilCtrl.js"></script>
+    <script src="js/javanous/search_dept.js"></script>
 
 
 </head>

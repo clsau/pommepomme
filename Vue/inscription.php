@@ -38,8 +38,6 @@
                 }
             });
         }
-
-
     </script>
     <!-- incorporation du framework angular, et des javascripts correspondants -->
 
