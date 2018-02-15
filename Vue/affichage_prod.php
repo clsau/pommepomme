@@ -103,12 +103,12 @@
             <input type="submit" name="modifier" value="modifier"/>
         </div>
     </form>
-    <?php if($_SESSION['type'] ==1) { ?>
-    <form action="display_products.php" method="post">
-        <div align="center">
-            <input type="submit" name="DisplayProduct" value="Gérer ses  produits"/>
-        </div>
-    </form>
+    <?php if ($_SESSION['type'] == 1) { ?>
+        <form action="display_products.php" method="post">
+            <div align="center">
+                <input type="submit" name="DisplayProduct" value="Gérer ses  produits"/>
+            </div>
+        </form>
     <?php } ?>
     <form action="display_order_lines.php" method="post">
         <div align="center">

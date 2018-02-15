@@ -6,7 +6,7 @@ app.controller("order_lines_ctrl", function ($scope, $http, $window, myPort) {
     let chem1 = myPort;
     let chem2 = "Controleur/get_ligne_by_user_id.php";
     $scope.url = chem1.concat(chem2);
-    $http.post($scope.url, sent).success(function (data) {
+    $http.post($scope.url).success(function (data) {
         if (data.length == 0) {
             $scope.item.nodata = true;
         }

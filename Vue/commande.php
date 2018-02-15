@@ -53,7 +53,7 @@
 
         $id_produit = $_GET["produit_id"];
         $_SESSION['id_produit'] = $id_produit;
-        $mysqli = mysqli_connect("localhost", "root", "", "pomme");
+    $mysqli = mysqli_connect("localhost", "root", "", "pomme");
         $mysqli->set_charset("utf8");
         $Requete = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
         $Requete2 = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
