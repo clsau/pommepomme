@@ -19,19 +19,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
-    <!--web font-->
-    <link href="../Vue/fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
-          rel="stylesheet">
-    <link href="../Vue/fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
-          rel="stylesheet">
-    <!--//web font-->
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../config/app.js"></script>
 
     <script src="js/javanous/search_dept.js"></script>
     <script src="js/javanous/affiche_profilCtrl.js"></script>
-    <script src="js/javanous/search_dept.js"></script>
+
 
 
 </head>
@@ -119,9 +112,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <input class="btn btn-primary" type="submit" name="Favoris" value="Favoris"/>
                             </form>
 
-
+                        </td>
                     </tr>
-                    </td>
+
 
                 </table>
             </td>
@@ -142,7 +135,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <?php while ($donnees3 = mysqli_fetch_array($Requete3)) { ?>
 
                     <tr>
-                        <td><img src="../images_prod/uploads/<?php echo $donnees3['produit_photo']; ?>"/></td>
+                        <td><img style="width:75px; height:75px" src="../images_prod/uploads/<?php echo $donnees3['produit_photo']; ?>"/></td>
 
                         <td id="Produit" valign="top"><?php
                                 echo $donnees3['produit_nom']; ?></td>
@@ -161,7 +154,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 echo $donnees3['produit_unite']; ?></td>
 
                         <td>
-                            <button type="button" class="btn btn-primary ">Commander</button>
+                            <?php if (isset($_SESSION['pseudo'])) { ?>
+                                <form>
+                                    <button id=<?php echo $donnees3['produit_id']; ?> type="submit" data-ng-click="commande($e)"
+                                            class="btn btn-primary">Commander
+                                    </button>
+                                </form>
+                            <?php } else { ?>
+                                <a href="identification.php">
+                                    <input type="button" value="Se connecter pour Commander" class="btn btn-primary">
+                                </a>
+                            <?php } ?>
 
                         </td>
                     </tr>

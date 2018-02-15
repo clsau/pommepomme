@@ -66,7 +66,7 @@
             <td>
                 <?php if (isset($_SESSION['pseudo'])) { ?>
                     <form>
-                        <button id={{i.produit_id}} type="submit" data-ng-click="commande($event)"
+                        <button id={{i.produit_id}} type="submit" data-ng-click="commande($e)"
                                 class="btn btn-primary">Commander
                         </button>
                     </form>
