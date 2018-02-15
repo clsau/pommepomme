@@ -82,10 +82,12 @@
                     $request = mysqli_query($mysqli, "SELECT * FROM commande WHERE commande_statut = 'Ouverte' ORDER BY commande_date_livraison");
                     $fav_req = mysqli_query($mysqli, "SELECT favoris_producteur FROM favoris WHERE favoris_client =" . $_SESSION['user_id']);
                     $donnees_fav = mysqli_fetch_array($fav_req);
+
                 ?>
                 <table ng-controller="goToAddLineCtrl">
                     <tr>
                         <th>Date de livraison</th>
+                        <th>Producteur</th>
                         <th>Capacité de livraison</th>
                         <th>Lieu de livraison</th>
                         <th>Informations complémentaires</th>
@@ -94,10 +96,13 @@
                         $today = date("Y-m-d H:i:s");
                         mysqli_set_charset($mysqli, "utf8");
                         if ($donnees['commande_date_livraison'] > $today) {
-                            if (in_array($donnees['commande_producteur'], $donnees_fav, true)) { ?>
+                            if (in_array($donnees['commande_producteur'], $donnees_fav, true)) {
+                                $prod_request = mysqli_query($mysqli, "SELECT * FROM users WHERE user_id =" . $donnees['commande_producteur']);
+                                $donnees_prod = mysqli_fetch_array($prod_request); ?>
                                 <tr>
                                     <td><?php
                                             echo $donnees['commande_date_livraison']; ?></td>
+                                    <td><?php echo $donnees_prod['user_titre']; ?></td>
                                     <td><?php $_SESSION['contenance' . $donnees['commande_id']] = $donnees['commande_contenance'];
                                             echo $donnees['commande_contenance']; ?></td>
                                     <td><?php echo $donnees['commande_lieu']; ?></td>
@@ -138,6 +143,7 @@
                 <table ng-controller="goToAddLineCtrl">
                     <tr>
                         <th>Date de livraison</th>
+                        <th>Producteur</th>
                         <th>Capacité de livraison</th>
                         <th>Lieu de livraison</th>
                         <th>Informations complémentaires</th>
@@ -152,6 +158,7 @@
                             if ($dpt_prod == $dpt_user or $dpt_user == 100) { ?>
                                 <tr>
                                     <td><?php echo $donnees['commande_date_livraison']; ?></td>
+                                    <td><?php echo $donnees_dpt_prod['user_titre']; ?></td>
                                     <td><?php $_SESSION['contenance' . $donnees['commande_id']] = $donnees['commande_contenance'];
                                             echo $donnees['commande_contenance']; ?></td>
                                     <td><?php echo $donnees['commande_lieu']; ?></td>

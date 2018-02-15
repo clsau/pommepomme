@@ -19,6 +19,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../config/app.js"></script>
+    <script src="js/javanous/search_dept.js"></script>
     <script src="js/javanous/add_order_line.js"></script>
     <script type="text/javascript">
         function yesnoCheck() {

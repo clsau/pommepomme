@@ -21,6 +21,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../config/app.js"></script>
+
+    <script src="js/javanous/display_search.js"></script>
+
+    <script src="js/javanous/search_dept.js"></script>
     <script src="js/javanous/commandeCtrl.js"></script>
     <script type="text/javascript">
         function yesnoCheck() {
@@ -36,10 +40,8 @@
     </script>
 
 </head>
-
-<body ng-app="AppModule" ng-controller="commandeCtrl">
-
 <?php include "header.html"; ?>
+<body ng-app="AppModule" ng-controller="commandeCtrl">
 
 
 <section class="service-w3ls" id="services" style="margin-top:0;">
@@ -49,7 +51,7 @@
 
         $id_produit = $_GET["produit_id"];
         $_SESSION['id_produit'] = $id_produit;
-        $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
+        $mysqli = mysqli_connect("localhost", "root", "", "pomme");
         $mysqli->set_charset("utf8");
         $Requete = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
         $Requete2 = mysqli_query($mysqli, "SELECT * FROM produit, users WHERE produit.produit_id = '" . $id_produit . "' AND produit.produit_user_id = users.user_id");
@@ -220,14 +222,10 @@
             </tr>
         <?php } ?>
     </table>
-
-
 </section>
 
 
-<?php include "footer.html"; ?>
-
-
 </body>
+<?php include "footer.html"; ?>
 <!-- //Body -->
 </html>

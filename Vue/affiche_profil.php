@@ -28,71 +28,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../config/app.js"></script>
+
+    <script src="js/javanous/search_dept.js"></script>
     <script src="js/javanous/affiche_profilCtrl.js"></script>
 
 
 </head>
-<?php include "header2.html"; ?>
+<?php include "header.html"; ?>
 
 
 <body ng-app="AppModule" ng-controller="SearchProfile">
 
-<!-- header    MENU  
-<div class="container-fluid">
-    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 100px">
-        <!-- Brand and toggle get grouped for better mobile display 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="logo">
-                <img src="../Vue/images/logo_litte.png"/>
-            </div>
-        </div>
-
-        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-            <nav>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
-                    </li>
-                    <li>
-                        <a href="../Vue/identification.php"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                    </li>
-                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                    </li>
-                    <li>
-                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
-                    </li>
-                    <li style="margin-top:15px;">
-                        <?php //Connection avec la BDD.
-    $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-    $request = mysqli_query($mysqli, "SELECT * FROM departement"); ?>
-                        <form method="GET" action="recherche.php">
-                            <select name="cboDept">
-                                <?php while ($donnees = mysqli_fetch_array($request)) { ?>
-                                    <option name="departement"
-                                            value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
-                                <?php } ?>
-                            </select>
-                            <?php
-    mysqli_close($mysqli); //deconnection de mysql
-?>
-                    </li>
-                    <li style="margin-top:15px;margin-left:10px;"><input type='submit' name='recherche'
-                                                                         value='Rechercher' align="center"></li>
-                    </form>
-                </ul>
-            </nav>
-        </div>
-        <!-- /.navbar-collapse
-    </nav>
-</div>
-</body> -->
 
 <section class="service-w3ls" id="services" style="margin-top:5px;">
     <?php
