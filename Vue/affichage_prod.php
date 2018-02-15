@@ -103,21 +103,22 @@
             <input type="submit" name="modifier" value="modifier"/>
         </div>
     </form>
+    <?php if($_SESSION['type'] ==1) { ?>
     <form action="display_products.php" method="post">
         <div align="center">
             <input type="submit" name="DisplayProduct" value="Gérer ses  produits"/>
         </div>
     </form>
+    <?php } ?>
     <form action="display_order_lines.php" method="post">
         <div align="center">
-            <input type="submit" name="DisplayProduct" value="voir mes commandes"/>
+            <input type="submit" name="DisplayProduct" value="Voir mes commandes"/>
         </div>
-
     </form>
 
     <form action="display_order_shipping.php" method="post">
         <div align="center">
-            <input type="submit" name="DisplayShipping" value="voir mes livraisons"/>
+            <input type="submit" name="DisplayShipping" value="Voir mes livraisons"/>
         </div>
 
     </form>
