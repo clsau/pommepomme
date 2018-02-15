@@ -61,7 +61,6 @@
             <th>Producteur</th>
         </tr>
         <tr ng-repeat="i in listLigneCommandes">
-            <td></td>
             <td>
                 <table class="sous_tab">
                     <tr class="sous_tab">

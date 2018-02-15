@@ -13,6 +13,6 @@
 
     }
     //echo $_SESSION['msg'];
-    header('Location: http://localhost/pommepomme/Controleur/affiche_profil.php?produit_user_id=' . $_SESSION['profil']);
+header('Location: http://localhost:8888/pommepomme/Vue/affiche_profil.php?produit_user_id=' . $_SESSION['profil']);
     //exit();
 ?>

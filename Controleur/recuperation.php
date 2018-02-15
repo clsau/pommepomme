@@ -34,7 +34,7 @@
         $contenu = "Bonjour " . $nom . "\n" . "\n" . "Pour récuperer votre mot de passe suivez le lien suivant " . "\n" . "\n" . $lien;
         //$succes = mail($email,$sujet,$adresse_exp,$nom,$contenu);
         $succes = mail($email, $sujet, $contenu);
-        header('Location:http://localhost:8888/pommepomme/Controleur/index.php');
+        header('Location:http://localhost:8888/pommepomme/Vue/index.php');
         exit();
 
 

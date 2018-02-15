@@ -72,8 +72,7 @@
             $stmt = $this->conn->prepare($query);
 
             // sanitize
-            $this->ligne_user_id = htmlspecialchars(strip_tags($this->ligne_user_id));
-            $stmt->bindParam(':ligne_user_id', $this->ligne_user_id);
+            $stmt->bindParam(':ligne_user_id', $_SESSION['user_id']);
 
             // execute the query
             if ($stmt->execute()) {

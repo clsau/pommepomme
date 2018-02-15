@@ -47,6 +47,7 @@
         <div align="center" style=" margin-top:10px;">
             <input type="button" class="btn btn-primary" name="connexion" ng-click="connexion()" value="Connexion"/>
         </div>
+        <h4><a href='recuperationForm.php'>Mot de passe oublié?</a></h4>
     </form>
 </section>
 <?php include "footer.html"; ?>

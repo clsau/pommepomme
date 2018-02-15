@@ -1,6 +1,6 @@
 app.controller("order_lines_ctrl", function ($scope, $http, $window, myPort) {
-    let user_id = window.localStorage.getItem("session_user_id");
-    let sent = {"ligne_user_id": user_id};
+    //let user_id = window.localStorage.getItem("session_user_id");
+    //let sent = {"ligne_user_id": user_id};
     $scope.listLigneCommandes = [];
     $scope.item = {};
     let chem1 = myPort;

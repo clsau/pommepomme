@@ -22,7 +22,7 @@
     $data = json_decode(file_get_contents("php://input"));
 
     // set ID property of user to be edited
-    $commande->ligne_user_id = $data->ligne_user_id;
+//$commande->ligne_user_id = $data->ligne_user_id;
 
     $stmt = $commande->get_ligne_by_user_id();
 
@@ -41,15 +41,8 @@
             $item = array(
                 'ligne_id' => $row['ligne_id'],
                 'ligne_quantite' => $row['ligne_quantite'],
-                'ligne_nom_produit' => $row['ligne_nom_produit'],
-                'ligne_prix' => $row['ligne_prix'],
-                'client_nom' => $row['client_nom'],
-                'client_prenom' => $row['client_prenom'],
-                'client_type' => $row['client_type'],
-                'client_tel' => $row['client_tel'],
-                'client_mail' => $row['client_mail'],
-                'client_adresse' => $row['client_adresse'],
-                'client_description' => $row['client_description'],
+                'ligne_nom_produit' => $row['produit_nom'],
+                'ligne_prix' => $row['produit_prix'],
                 'ligne_user_id' => $row['ligne_user_id'],
                 'ligne_commande_id' => $row['ligne_commande_id'],
                 'commande_id' => $row['commande_id'],
@@ -69,15 +62,12 @@
                 'livreur_titre' => $row['livreur_titre'],
                 'livreur_description' => $row['livreur_description'],
                 'prod_id' => $row['prod_id'],
-                'prod_login' => $row['prod_login'],
-                'prod_type' => $row['prod_type'],
-                'prod_nom' => $row['prod_nom'],
-                'prod_prenom' => $row['prod_prenom'],
-                'prod_tel' => $row['prod_tel'],
-                'prod_mail' => $row['prod_mail'],
-                'prod_adresse' => $row['prod_adresse'],
-                'prod_code_postal_id' => $row['prod_code_postal_id'],
-                'prod_description' => $row['prod_description']
+                'prod_login' => $row['producteur_login'],
+                'prod_nom' => $row['producteur_nom'],
+                'prod_prenom' => $row['producteur_prenom'],
+                'prod_tel' => $row['producteur_tel'],
+                'prod_mail' => $row['producteur_mail'],
+                'prod_adresse' => $row['producteur_adresse']
             );
 
             array_push($liste_ligne, $item);
