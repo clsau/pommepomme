@@ -158,7 +158,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 echo $donnees3['produit_unite']; ?></td>
 
                         <td>
-                            <button type="button" class="btn btn-primary ">Commander</button>
+                            <?php if (isset($_SESSION['pseudo'])) { ?>
+                                <form>
+                                    <button id=<?php echo $donnees3['produit_id']; ?> type="submit"
+                                            data-ng-click="commande($e)"
+                                            + class="btn btn-primary">Commander
+                                    </button>
+                                </form>
+                            <?php } else { ?>
+                            <a href="identification.php">
+                                <input type="button" value="Se connecter pour Commander" class="btn btn-primary">
+                                <?php } ?>
 
                         </td>
                     </tr>
