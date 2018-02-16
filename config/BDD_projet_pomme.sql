@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `code_postal` (
   PRIMARY KEY (`code_postal_id`),
   CONSTRAINT `fk_Dpt`
   FOREIGN KEY (`code_postal_departement_id`)
-  REFERENCES `Pomme`.`departement` (`departement_id`)
+  REFERENCES `pomme`.`departement` (`departement_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
@@ -128,7 +128,7 @@ VALUES
   (37000, '98000', 'commune imaginaire', '1');
 
 
-CREATE TABLE IF NOT EXISTS `Pomme`.`users` (
+CREATE TABLE IF NOT EXISTS `pomme`.`users` (
   `user_id`             INT           NOT NULL AUTO_INCREMENT,
   `user_login`          VARCHAR(25)   NOT NULL UNIQUE,
   `user_mdp`            VARCHAR(30)   NOT NULL,
@@ -145,36 +145,38 @@ CREATE TABLE IF NOT EXISTS `Pomme`.`users` (
   PRIMARY KEY (`user_id`),
   CONSTRAINT `fk_Cp`
   FOREIGN KEY (`user_code_postal_id`)
-  REFERENCES `Pomme`.`code_postal` (`code_postal_id`)
+  REFERENCES `pomme`.`code_postal` (`code_postal_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
 
 INSERT INTO `users` (`user_id`, `user_login`, `user_mdp`, `user_type`, `user_nom`, `user_prenom`, `user_tel`, `user_mail`, `user_adresse`, `user_code_postal_id`, `user_titre`, `user_description`)
 VALUES ('1', 'login', 'mdp', '1', 'dupond', 'jean', '0659436732', 'jeandupond@hotmail.fr', '45 rue des oiseaux', 37000,
-             'vente de vin', 'vin de bordeaux 7euros la bouteille');
+             'vente de vin', 'vin de bordeaux 7euros la bouteille'),
+  ('2', 'fab', 'fab', '0', 'fabrice', 'imbert', '324532', NULL, NULL, '37000', 'producteur', NULL),
+  ('3', 'cla', 'cla', '1', 'clarisse', 'sauvage', '23432432', NULL, NULL, '37000', 'programmeuse', NULL);
 
-CREATE TABLE `Pomme`.`categorie` (
+CREATE TABLE IF NOT EXISTS `pomme`.`categorie` (
   `categorie_id`   INT         NOT NULL AUTO_INCREMENT,
   `categorie_nom`  VARCHAR(45) NOT NULL,
   `categorie_pere` INT         NULL,
   PRIMARY KEY (`categorie_id`),
   CONSTRAINT `fk_categorie`
   FOREIGN KEY (`categorie_pere`)
-  REFERENCES `Pomme`.`categorie` (`categorie_id`)
+  REFERENCES `pomme`.`categorie` (`categorie_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
 
 
 INSERT INTO `categorie` (`categorie_id`, `categorie_nom`, `categorie_pere`) VALUES ('1', 'Fruit', NULL);
-INSERT INTO `categorie` (`categorie_id`, `categorie_nom`, `categorie_pere`) VALUES ('2', 'Pomme', '1');
+INSERT INTO `categorie` (`categorie_id`, `categorie_nom`, `categorie_pere`) VALUES ('2', 'pomme', '1');
 INSERT INTO `categorie` (`categorie_id`, `categorie_nom`, `categorie_pere`) VALUES ('3', 'Vin', NULL);
 INSERT INTO `categorie` (`categorie_id`, `categorie_nom`, `categorie_pere`) VALUES ('4', 'vin de Bordeaux', '3');
 INSERT INTO `categorie` (`categorie_id`, `categorie_nom`, `categorie_pere`) VALUES ('5', 'Clémentine', '1');
 
 
-CREATE TABLE `Pomme`.`produit` (
+CREATE TABLE IF NOT EXISTS `pomme`.`produit` (
   `produit_id`           INT           NOT NULL AUTO_INCREMENT,
   `produit_user_id`      INT(11)       NOT NULL,
   `produit_nom`          VARCHAR(150)  NOT NULL,
@@ -187,11 +189,11 @@ CREATE TABLE `Pomme`.`produit` (
   `produit_categorie_id` INT           NOT NULL,
   PRIMARY KEY (`produit_id`),
   INDEX `fk_Produit_1_idx` (`produit_user_id` ASC),
-  CONSTRAINT `fk_Produit_1` FOREIGN KEY (`produit_user_id`) REFERENCES `Pomme`.`users` (`user_id`)
+  CONSTRAINT `fk_Produit_1` FOREIGN KEY (`produit_user_id`) REFERENCES `pomme`.`users` (`user_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Produit_5` FOREIGN KEY (`produit_categorie_id`)
-  REFERENCES `Pomme`.`categorie` (`categorie_id`)
+  REFERENCES `pomme`.`categorie` (`categorie_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
@@ -229,8 +231,8 @@ CREATE TABLE IF NOT EXISTS ligne (
   ligne_user_id     INT(11) NOT NULL,
   ligne_produit_id  INT(11) NOT NULL,
   ligne_nom_produit VARCHAR(77),
-  ligne_prix        DECIMAL(5, 2)
-  ligne_quantite INT (2) NOT NULL,
+  ligne_prix        DECIMAL(5, 2),
+  ligne_quantite    INT(2)  NOT NULL,
   ligne_commande_id INT(11) NOT NULL,
   PRIMARY KEY (ligne_id),
   CONSTRAINT `fk_ligne_commande_id`
@@ -292,7 +294,7 @@ CREATE VIEW `ligne_commande_view`  AS
          AND `user_livreur`.`user_id` = `commande`.`commande_client`
          AND `user_producteur`.`user_id` = `commande`.`commande_producteur`);
 
--- Table des favoris qui permet d'associer 2 user_id pour permetre de lié un client au un producteur favoris
+-- Table des favoris qui permet d'associer 2 user_id pour permetre de lier un client  un producteur favoris
 
 CREATE TABLE IF NOT EXISTS `favoris` (
   `favoris_id`         INT(11) NOT NULL AUTO_INCREMENT,
@@ -310,7 +312,8 @@ CREATE TABLE IF NOT EXISTS `favoris` (
     ON DELETE CASCADE
     ON UPDATE NO ACTION
 );
-INSERT INTO `pomme`.`favoris` (`favoris_id`, `favoris_client`, `favoris_producteur`) VALUES (NULL, ‘2’, '1');
+
+INSERT INTO `pomme`.`favoris` (`favoris_id`, `favoris_client`, `favoris_producteur`) VALUES (NULL, '2', '1');
 
 CREATE VIEW `favoris_view` AS
   SELECT
@@ -323,7 +326,6 @@ CREATE VIEW `favoris_view` AS
   FROM ((`favoris` `f`
     JOIN `users` `u`) JOIN `code_postal` `c`)
   WHERE ((`u`.`user_id` = `f`.`favoris_producteur`) AND (`c`.`code_postal_id` = `u`.`user_code_postal_id`));
-
 
 
 
