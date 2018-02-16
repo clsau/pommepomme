@@ -19,6 +19,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- incorporation du framework angular, et des javascripts correspondants -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="../Config/app.js"></script>
+    <script src="js/javanous/search_dept.js"></script>
     <script src="js/javanous/identificationCtlr.js"></script>
 
 
@@ -31,78 +32,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-<div class="container-fluid">
-    <nav class="navbar navbar-default" style=" height: 50px color:#000000">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" style="background-color: #c4e3f3">Menu
-            </button>
-            <div class="logo">
-                <h1><a class="navbar-brand" href="index.php"><img src="../Vue/images/logo_litte.png" alt="LOGO"/></a>
-                </h1>
-            </div>
-        </div>
 
-        <div class="collapse navbar-collapse nav-wil" ng-controller="formSearchCtrl" id="bs-example-navbar-collapse-1">
-            <nav>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="inscription.php"><?php if (!isset($_SESSION['pseudo'])) echo "S'inscrire"; ?></a>
-                    </li>
-                    <li>
-                        <a href="../Vue/identification.php"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                    </li>
-                    <li><a href="affichage_prod.php"><?php if (isset($_SESSION['pseudo'])) echo "Profil"; ?></a>
-                    </li>
-                    <li>
-                        <a href="deconnexion.php"><?php if (isset($_SESSION['pseudo'])) echo "Se deconnecter"; ?></a>
-                    </li>
+<?php include "header.html"; ?>
 
-                    <li style="margin-top:15px;">
-                        <?php //Connection avec la BDD.
-                        $mysqli = mysqli_connect("localhost", "root", "", "Pomme");
-                        mysqli_set_charset($mysqli, "utf8");
-                        $request = mysqli_query($mysqli, "SELECT * FROM departement");
-                        $request1 = mysqli_query($mysqli, "SELECT * FROM categorie");
-                        ?>
-
-                        <form name="SearchForm">
-                            <select name="cboDept" ng-model="item.cboDept">
-                                <option value="" selected> Département</option>
-                                <?php while ($donnees = mysqli_fetch_array($request)) { ?>
-
-                                    <option name="departement"
-                                            value="<?php echo $donnees['departement_id']; ?>"><?php echo $donnees['departement_nom']; ?></option>
-                                <?php } ?>
-
-                            </select>
-
-
-                            <select name="categorie" ng-model="item.categorie" hint="Produit">
-                                <option value="" selected> Produit</option>
-                                <?php while ($donnees = mysqli_fetch_array($request1)) { ?>
-                                    <option name="categorie"
-                                            value="<?php echo $donnees['categorie_id']; ?>"><?php echo $donnees['categorie_nom']; ?></option>
-                                <?php } ?>
-                            </select>
-                            <?php
-                            mysqli_close($mysqli); //deconnection de mysql ?>
-                    </li>
-                    <li style="margin-top:15px;margin-left:10px;">
-                        <button type="button" ng-click="formsubmit(item.cboDept,item.categorie)"
-                                ng-disabled="SearchForm.$invalid" class="btn btn-primary">Recherche
-                        </button>
-                    </li>
-                    </form>
-                </ul>
-            </nav>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-</div>
-
-</body>
 
 <div style="border-style:ridge;margin-top:2%;margin-left:10%;width:80%;height:400px;">
     <h2 style="color:black;margin-top:5%;margin-left:35%;">Modifiez votre mot de passe</h2>
@@ -113,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!--<form id="recup">-->
 
             <p>
-                <label> Saisissez votre mail :</label>
+                <label style="color:black;"> Saisissez votre mail :</label>
 
 
                 <input type="text" id="mail" name="mail" ng-model="item.mail" required/><br/><br/>
@@ -140,13 +72,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <a href="../Vue/identification.php"
                        class="scroll"
                        style="color:black;"><?php if (!isset($_SESSION['pseudo'])) echo "Se connecter"; ?></a>
-                </ul>
-                <ul>
-                    <a href="#" style="color:black;">
-                        <li> produits</li>
-                    </a>
-                </ul>
-                <ul>
                 </ul>
             </div>
         </div>

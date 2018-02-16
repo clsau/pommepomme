@@ -36,6 +36,7 @@
                 'Prenom' => $row['user_prenom'],
                 'Commune' => $row['code_postal_commune'],
                 'Titre' => $row['user_titre'],
+                'id' => $row['favoris_producteur']
             );
 
             array_push($favoris_arr, $favoris_item);

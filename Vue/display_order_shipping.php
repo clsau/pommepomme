@@ -11,6 +11,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="livrer-les-tous"/>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
     <!-- default css files -->
     <link rel="stylesheet" href="../Vue/css/bootstrap.css" type="text/css" media="all">
     <link href="../Vue/css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
@@ -19,7 +21,9 @@
     <link rel="stylesheet" href="../Vue/css/style.css" type="text/css" media="all">
     <!-- default css files -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+    <script src="../config/app.js"></script>
+    <script src="js/javanous/search_dept.js"></script>
 
 </head>
 
@@ -27,37 +31,7 @@
 
 <!-- header    MENU  -->
 
-<div class="container-fluid">
-    <nav class="navbar navbar-default" style="background-color: #FFFFFF; height: 0">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="logo">
-                <a href="index.php"><img src="images/logo_litte.png" alt="LOGO"/></a>
-            </div>
-        </div>
-
-        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-            <nav>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="affichage_prod.php">Profil</a>
-                    </li>
-                    <li>
-                        <a href="../Controleur/deconnexion.php">Se déconnecter</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
-</div>
+<?php include "header.html"; ?>
 
 
 <section class="service-w3ls" id="services">
@@ -88,7 +62,7 @@
                         <th colspan="2">Date</th>
                     </tr>
                     <tr>
-                        <td colspan="2"><?php echo $donnees_cmd['commande_id'] . $donnees_prod['user_prenom'] . ' ' . $donnees_prod['user_nom']; ?></td>
+                        <td colspan="2"><?php echo $donnees_prod['user_prenom'] . ' ' . $donnees_prod['user_nom']; ?></td>
 
                         <td><?php echo "0" . $donnees_prod['user_tel']; ?></td>
 

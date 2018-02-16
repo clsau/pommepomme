@@ -8,12 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
     <!-- default css files -->
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
     <link href="css/JiSlider.css" rel="stylesheet"> <!-- banner slider css file -->
     <link href="css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
     <link rel="stylesheet" href="css/font-awesome.min.css"/><!-- Font awesome css file -->
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <script src="../config/app.js"></script>
     <script src="js/javanous/search_dept.js"></script>
     <!-- default css files -->
 

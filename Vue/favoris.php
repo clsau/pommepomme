@@ -44,7 +44,7 @@
             <TD>{{item.Titre}}</TD>
             <TD>{{item.Commune}}</TD>
             <TD>
-                <button id="<?php echo $_SESSION['id']; ?>" type="submit" data-ng-click="displayProfile($event)"
+                <button id={{item.id}} type="submit" data-ng-click="displayProfile($e)"
                         class="btn btn-primary">Profil
                 </button>
 

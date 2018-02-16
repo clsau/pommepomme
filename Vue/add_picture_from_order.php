@@ -12,6 +12,7 @@
     <link href="css/simpleLightbox.css" rel="stylesheet" type="text/css"/><!-- gallery css file -->
     <link rel="stylesheet" href="css/font-awesome.min.css"/><!-- Font awesome css file -->
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <script src="../config/app.js"></script>
     <script src="js/javanous/search_dept.js"></script>
 </head>
 

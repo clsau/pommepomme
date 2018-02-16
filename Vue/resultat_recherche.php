@@ -51,8 +51,8 @@
         </tr>
         <tr ng-repeat="i in listeProducteurs">
             <td>
-                <a style="margin:50%" href="../images_prod/uploads/{{i.produit_photo}}"><img
-                            style="width:75px;height:75px;" src="../images_prod/uploads/{{i.produit_photo}}"
+                <a href="../images_prod/uploads/{{i.produit_photo}}"><img
+                            src="../images_prod/uploads/{{i.produit_photo}}"
                             class="img-responsive"/></td>
             </a>
             <td> {{i.Produit}}</td>
